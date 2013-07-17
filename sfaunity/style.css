@@ -1,0 +1,426 @@
+/*
+Theme Name: UConn SFA ART
+Theme URI:
+Description:
+Version: 1.01
+Author: Vi Ha, Besard Gjoni, Michael Kim
+Author URI: 
+Tags: 
+License: 
+License URI: 
+*/
+
+/* --------------------
+	CSS RESET
+ -------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End CSS Reset */
+
+/* --------------------
+	WEBFONTS
+ -------------------- */
+ 
+@font-face {
+	font-family: PN_Semibold;
+	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#webfont') format('svg');
+}
+
+@font-face {
+	font-family: PN_bold;
+	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#webfont') format('svg');
+}
+
+@font-face {
+    font-family: PN_Regular;
+	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf') format('truetype'),
+	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#webfont') format('svg');
+}
+/* End Fonts */
+
+/* --------------------
+	FONT ASSOCIATIONS
+ -------------------- */
+
+.PN_Semibold {
+    font-family: PN_Semibold;
+}
+
+.PN_Regular {
+    font-family: PN_Regular;
+}
+
+div{
+	font-family:PN_bold;
+}
+
+/* --------------------
+	TYPOGRAPHY
+ -------------------- */
+ 
+p {
+font-family: PN_Regular;
+}
+
+body {
+letter-spacing: 1px;
+}
+
+/* --------------------
+	UCONN HEADER
+ -------------------- */
+
+.uconn_header {
+	background-color: white;
+	height: 60px;
+}
+
+/* -----------------------
+	DEPARTMENTAL HEADER
+ ------------------------ */
+ 
+.school_header {
+	background-color: #F2761E;
+	height: 60px;
+}
+
+#department_title {
+	color: #131b30;  
+	float: left;
+	font-size: 24px;
+	margin-top: 22px;
+	margin-left: 20px;
+}
+
+#sfa_title {
+	color: white;  
+	float: left;
+	font-size: 24px;
+	margin-top: 22px;
+	margin-left: 20px;
+}
+/* END DEPARTMENTAL HEADER */
+
+/* --------------------
+	MAIN NAV BAR
+ -------------------- */
+ 
+.nav_bar{
+margin-bottom: 0px;
+/* overwrites bootstrap to clear the margin */
+}
+.navbar .nav {
+margin: 0 0 0 0;
+width: 100%; /* sets the percentage of the navigation container */
+}
+
+.navbar_inner {
+padding-left: 0px;
+padding-right: 0px;
+border-radius: 0px;
+border: 0px;
+background-image: none;
+background-color: white;
+min-height: 36px;
+width: 100%;
+margin-bottom: 0px;
+
+/* just a bunch of overwrites here */
+}
+
+.container .btn-navbar {
+margin-bottom: 4px;
+/* overwrites bootstrap fix button margin issue */
+}
+
+.navbar .nav li a {
+text-shadow: none;
+color: white;
+/* link stylings */
+}
+
+.dropdown-menu {
+background-color: #F25018;
+/* changes the background color for dropdwon */
+}
+
+/* styling for each one of navigation */
+.nav li {
+background-color: #E8AD45;
+min-width: 16.6667%;
+
+}
+
+#li_1 {
+	background-color: #F27200;
+}
+#li_2 {
+	background-color: #E8AD45;
+}
+#li_3 {
+	background-color: #761BA1;
+}
+#li_4 {
+	background-color: #2FA50F;
+}
+#li_5 {
+	background-color: #2AABE0;
+}
+#li_6 {
+	background-color: #F25018;
+}
+/* END MAIN NAV BAR */
+
+/* --------------------
+	HERO UNIT
+ -------------------- */
+ 
+#slider_main {
+	background-color: #FFC600;
+	height: 410px;
+	border-radius: 0px; /* bootstrap overrule */
+}
+/* END HERO UNIT */
+
+/* --------------------
+	TRI-BOX UNIT
+ -------------------- */
+ 
+.box_headers {
+	padding-bottom: 10px;
+}
+.box_headers h3 {
+	margin-left: 20px;
+	font-size: 40px;
+}
+.box_headers h5 {
+	margin-left: 10px;
+	font-size: 10px;
+	font-family: PN_Regular;
+}
+
+.box_content{ 
+
+}
+
+.tri_box {
+	padding-bottom: 10px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.left_box {
+	background-color: #6072FA;
+	margin-bottom: 10px;
+	padding: 20px;
+	min-height: 30px;
+}
+
+.middle_box {
+	background-color: #3387EF;
+	margin-bottom: 10px;
+	padding: 20px;
+	min-height: 30px;
+}
+
+.right_box {
+	background-color: #6072FA;
+	margin-bottom: 10px;
+	padding: 20px;
+	min-height: 30px;
+}
+/*  END THREE CONTENT UNIT */
+
+
+/* --------------------
+	TWO COLUMN PAGE
+ -------------------- */
+ 
+#breadcrumbs {
+padding: 10px 0 0 10px;
+font-size: 15px;
+}
+
+#left_column_title {
+font-size: 30px;
+color: #F27200;
+padding: 20px 0 15px 15px;
+}
+
+.left_column ul {
+padding: 5px 0 10px 15px;
+color: #1ba6da;
+line-height: 20px;
+}
+
+.left_column ul li{
+padding: 0 0 0 5px;
+}
+
+#post_body {
+padding-bottom: 60px;
+padding-left: 15px;
+}
+
+#post_body h4 {
+font-size: 20px;
+color: #F27200;
+padding: 30px 10px 15px 0px;
+}
+
+#post_body h5 {
+font-size: 18px;
+color: #F27200;
+padding: 30px 10px 15px 0px;
+}
+
+#post_body p{
+font-size: 17px;
+padding: 0 80px 15px 0px;
+}
+/*  END TWO COLUMN PAGE STYLING */
+
+/* --------------------
+	THREE COLUMN PAGE
+ -------------------- */
+
+#column_3 {
+padding: 22px 0 10px 0;
+}
+
+.column_3_content {
+padding: 8px 0 0 0;
+min-width: 100%;
+}
+
+.column_3_img{
+max-height: 300px;
+width: 100%;
+margin-bottom: 90px;
+}
+
+.column_3_img h5 {
+color: gray;
+}
+
+.column_3_boxes{
+margin-top: 15px;
+background-color: #f6c346;
+color: white;
+min-height: 100px;
+}
+.column_3_boxes h5{
+margin-bottom: 10px;
+color: #f0c634;
+background-color: none;
+}
+
+.column_3_boxes p {
+padding: 10px 10px 10px 10px;
+}
+/* END THREE COLUMN PAGE STYLING STYLING */
+
+/* --------------------
+	CATEGORY PAGE
+ -------------------- */
+
+#post_body h6 {
+padding: 20px 0 15px 0;
+}
+
+#featured_image {
+width: 100%;
+height: 250px;
+}
+
+#sub_featured_image {
+width: 100%;
+height: 150px;
+}
+
+#post_info{
+color: blue;
+}
+
+.social_media {
+padding: 30px 30px 0 0;
+max-width: 80%;
+}
+
+.social_media h5{
+padding-bottom: 7px;
+}
+
+.social_media p{
+padding-bottom: 7px;
+color: gray;
+}
+
+#left_col_push {
+margin-top: 70px;
+}
+
+/* END THREE COLUMN CATEGORY PAGE STYLING */
+
+/* --------------------
+	FOOTER
+ -------------------- */
+
+.uconn_footer{
+	background-color: gray;
+	height: 60px;
+}
