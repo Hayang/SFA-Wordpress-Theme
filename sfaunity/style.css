@@ -65,55 +65,68 @@ table {
  -------------------- */
  
 @font-face {
-	font-family: PN_Semibold;
-	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
-	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff') format('woff'),
-	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype'),
-	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#webfont') format('svg');
-}
-
-@font-face {
-	font-family: PN_bold;
-	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
-	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
-	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype'),
-	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#webfont') format('svg');
-}
-
-@font-face {
-    font-family: PN_Regular;
+    font-family: "Proxima Nova";
 	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot');
 	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
 	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.woff') format('woff'),
 	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf') format('truetype'),
 	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#webfont') format('svg');
+	font-weight: normal;
 }
+ 
+@font-face {
+	font-family: "Proxima Nova";
+	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype'),
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#webfont') format('svg');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype'),
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#webfont') format('svg');
+	font-weight: bold;
+}
+
+
 /* End Fonts */
 
 /* --------------------
 	FONT ASSOCIATIONS
  -------------------- */
 
+body {
+	font-family: "Proxima Nova", Verdana, Helvetica, Arial;
+}
+
+.PN_Bold {
+    font-weight: bold;
+}
+ 
 .PN_Semibold {
-    font-family: PN_Semibold;
+    font-weight: 500;
 }
 
 .PN_Regular {
-    font-family: PN_Regular;
-}
-
-div{
-	font-family:PN_bold;
+    font-weight: normal;
 }
 
 /* --------------------
 	TYPOGRAPHY
  -------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
  
 p {
-font-family: PN_Regular;
+	font-weight: normal;
 }
 
 body {
@@ -250,7 +263,7 @@ min-width: 16.6667%;
 .box_headers h5 {
 	margin-left: 10px;
 	font-size: 10px;
-	font-family: PN_Regular;
+	font-style: normal;
 }
 
 .box_content{ 
