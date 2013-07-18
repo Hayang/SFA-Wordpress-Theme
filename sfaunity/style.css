@@ -73,7 +73,7 @@ table {
 	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#webfont') format('svg');
 	font-weight: normal;
 }
- 
+
 @font-face {
 	font-family: "Proxima Nova";
 	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
@@ -94,6 +94,24 @@ table {
 	font-weight: bold;
 }
 
+/* Tell Chrome to render with SVG */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'Proxima Nova';
+		src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg') format('svg');
+		font-weight: normal;
+	}
+	@font-face {
+		font-family: "Proxima Nova";
+		src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg') format('svg');
+		font-weight: 500;
+	}
+	@font-face {
+		font-family: "Proxima Nova";
+		src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg') format('svg');
+		font-weight: bold;
+	}
+} 
 
 /* End Fonts */
 
@@ -103,6 +121,8 @@ table {
 
 body {
 	font-family: "Proxima Nova", Verdana, Helvetica, Arial;
+	text-rendering: optimizeLegibility
+	
 }
 
 .PN_Bold {
@@ -130,7 +150,7 @@ p {
 }
 
 body {
-letter-spacing: 1px;
+
 }
 
 /* --------------------
@@ -138,24 +158,28 @@ letter-spacing: 1px;
  -------------------- */
 
 .uconn_header {
-	background-color: white;
+	background-color: #0f1938;
 	height: 60px;
 }
+
+#uconn_logo { float: left; }
+#uconn_sidebuttons { float: right; }
 
 /* -----------------------
 	DEPARTMENTAL HEADER
  ------------------------ */
  
 .school_header {
-	background-color: #F2761E;
+	background-color: #e64445;
 	height: 60px;
+	letter-spacing: 0.07em;
 }
 
 #department_title {
 	color: #131b30;  
 	float: left;
 	font-size: 24px;
-	margin-top: 22px;
+	margin-top: 20px;
 	margin-left: 20px;
 }
 
@@ -163,7 +187,7 @@ letter-spacing: 1px;
 	color: white;  
 	float: left;
 	font-size: 24px;
-	margin-top: 22px;
+	margin-top: 20px;
 	margin-left: 20px;
 }
 /* END DEPARTMENTAL HEADER */
@@ -173,37 +197,41 @@ letter-spacing: 1px;
  -------------------- */
  
 .nav_bar{
-margin-bottom: 0px;
-/* overwrites bootstrap to clear the margin */
+	margin-bottom: 0px;
+	/* overwrites bootstrap to clear the margin */
 }
 .navbar .nav {
-margin: 0 0 0 0;
-width: 100%; /* sets the percentage of the navigation container */
+	margin: 0 0 0 0;
+	width: 100%; /* sets the percentage of the navigation container */
 }
 
 .navbar_inner {
-padding-left: 0px;
-padding-right: 0px;
-border-radius: 0px;
-border: 0px;
-background-image: none;
-background-color: white;
-min-height: 36px;
-width: 100%;
-margin-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-radius: 0px;
+	border: 0px;
+	background-image: none;
+	background-color: white;
+	min-height: 32px;
+	width: 100%;
+	margin-bottom: 0px;
 
-/* just a bunch of overwrites here */
+	/* just a bunch of overwrites here */
 }
 
 .container .btn-navbar {
-margin-bottom: 4px;
-/* overwrites bootstrap fix button margin issue */
+	margin-bottom: 4px;
+	/* overwrites bootstrap fix button margin issue */
 }
 
 .navbar .nav li a {
-text-shadow: none;
-color: white;
-/* link stylings */
+	text-shadow: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: white;
+	padding: 8px 15px 6px;
+	/* link stylings */
 }
 
 .dropdown-menu {
@@ -213,8 +241,8 @@ background-color: #F25018;
 
 /* styling for each one of navigation */
 .nav li {
-background-color: #E8AD45;
-min-width: 16.6667%;
+	background-color: #E8AD45;
+	min-width: 16.6667%;
 
 }
 
@@ -260,38 +288,53 @@ min-width: 16.6667%;
 	margin-left: 20px;
 	font-size: 40px;
 }
+
+.box_headers h3 a {
+	color: #222;
+}
+
 .box_headers h5 {
 	margin-left: 10px;
 	font-size: 10px;
 	font-style: normal;
 }
 
-.box_content{ 
+.box_contents a { 
+	color: white;
+	font-weight: bold;
+}
 
+.box_contents a:hover { 
+	text-decoration: none;
+}
+
+a.box_readmore {
+	text-align: right;
+	clear: both;
 }
 
 .tri_box {
 	padding-bottom: 10px;
-	padding-left:20px;
-	padding-right:20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .left_box {
-	background-color: #6072FA;
+	background-color: #e23738;
 	margin-bottom: 10px;
 	padding: 20px;
 	min-height: 30px;
 }
 
 .middle_box {
-	background-color: #3387EF;
+	background-color: #e23738;
 	margin-bottom: 10px;
 	padding: 20px;
 	min-height: 30px;
 }
 
 .right_box {
-	background-color: #6072FA;
+	background-color: #e23738;
 	margin-bottom: 10px;
 	padding: 20px;
 	min-height: 30px;
@@ -304,46 +347,46 @@ min-width: 16.6667%;
  -------------------- */
  
 #breadcrumbs {
-padding: 10px 0 0 10px;
-font-size: 15px;
+	padding: 10px 0 0 10px;
+	font-size: 15px;
 }
 
 #left_column_title {
-font-size: 30px;
-color: #F27200;
-padding: 20px 0 15px 15px;
+	font-size: 30px;
+	color: #F27200;
+	padding: 20px 0 15px 15px;
 }
 
 .left_column ul {
-padding: 5px 0 10px 15px;
-color: #1ba6da;
-line-height: 20px;
+	padding: 5px 0 10px 15px;
+	color: #1ba6da;
+	line-height: 20px;
 }
 
 .left_column ul li{
-padding: 0 0 0 5px;
+	padding: 0 0 0 5px;
 }
 
 #post_body {
-padding-bottom: 60px;
-padding-left: 15px;
+	padding-bottom: 60px;
+	padding-left: 15px;
 }
 
 #post_body h4 {
-font-size: 20px;
-color: #F27200;
-padding: 30px 10px 15px 0px;
+	font-size: 20px;
+	color: #F27200;
+	padding: 30px 10px 15px 0px;
 }
 
 #post_body h5 {
-font-size: 18px;
-color: #F27200;
-padding: 30px 10px 15px 0px;
+	font-size: 18px;
+	color: #F27200;
+	padding: 30px 10px 15px 0px;
 }
 
 #post_body p{
-font-size: 17px;
-padding: 0 80px 15px 0px;
+	font-size: 17px;
+	padding: 0 80px 15px 0px;
 }
 /*  END TWO COLUMN PAGE STYLING */
 
@@ -352,38 +395,38 @@ padding: 0 80px 15px 0px;
  -------------------- */
 
 #column_3 {
-padding: 22px 0 10px 0;
+	padding: 22px 0 10px 0;
 }
 
 .column_3_content {
-padding: 8px 0 0 0;
-min-width: 100%;
+	padding: 8px 0 0 0;
+	min-width: 100%;
 }
 
 .column_3_img{
-max-height: 300px;
-width: 100%;
-margin-bottom: 90px;
+	max-height: 300px;
+	width: 100%;
+	margin-bottom: 90px;
 }
 
 .column_3_img h5 {
-color: gray;
+	color: gray;
 }
 
 .column_3_boxes{
-margin-top: 15px;
-background-color: #f6c346;
-color: white;
-min-height: 100px;
+	margin-top: 15px;
+	background-color: #f6c346;
+	color: white;
+	min-height: 100px;
 }
 .column_3_boxes h5{
-margin-bottom: 10px;
-color: #f0c634;
-background-color: none;
+	margin-bottom: 10px;
+	color: #f0c634;
+	background-color: none;
 }
 
 .column_3_boxes p {
-padding: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
 }
 /* END THREE COLUMN PAGE STYLING STYLING */
 
@@ -392,39 +435,39 @@ padding: 10px 10px 10px 10px;
  -------------------- */
 
 #post_body h6 {
-padding: 20px 0 15px 0;
+	padding: 20px 0 15px 0;
 }
 
 #featured_image {
-width: 100%;
-height: 250px;
+	width: 100%;
+	height: 250px;
 }
 
 #sub_featured_image {
-width: 100%;
-height: 150px;
+	width: 100%;
+	height: 150px;
 }
 
 #post_info{
-color: blue;
+	color: blue;
 }
 
 .social_media {
-padding: 30px 30px 0 0;
-max-width: 80%;
+	padding: 30px 30px 0 0;
+	max-width: 80%;
 }
 
 .social_media h5{
-padding-bottom: 7px;
+	padding-bottom: 7px;
 }
 
 .social_media p{
-padding-bottom: 7px;
-color: gray;
+	padding-bottom: 7px;
+	color: gray;
 }
 
 #left_col_push {
-margin-top: 70px;
+	margin-top: 70px;
 }
 
 /* END THREE COLUMN CATEGORY PAGE STYLING */

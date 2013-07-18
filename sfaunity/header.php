@@ -17,7 +17,11 @@
 	<body>
     <!-- UCONN HEADER --->
 	<div class="row-fluid uconn_header">
-		<a href="www.uconn.edu" > UCONN HEADER HERE  </a>
+		<a href="www.uconn.edu" >
+			<!-- Placeholder Images -->
+			<img id="uconn_logo" src="<?php bloginfo('template_directory');?>/img/assets/uconn_logo.png" />
+			<img id="uconn_sidebuttons" src="<?php bloginfo('template_directory');?>/img/assets/uconn_sidebuttons.png" />
+		</a>
 	</div> 
 	<!-- END UCONN HEADER --->
 	
