@@ -8,3 +8,5 @@ There is only one issue, the drop-down menu acts a little weird, but I don't eve
 7-5 7:21 pm update
 
 Templates done with minimal coding (class/ids). I named them accordingly. I kept the code short as possible because i dont know exactly how each div is going to be intergrated. I can easily change anything though so feel free to ask.  Waiting for further details to complete template.  Also send me any more mock ups you need me to design.
+
+besard
