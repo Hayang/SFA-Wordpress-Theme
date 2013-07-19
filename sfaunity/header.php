@@ -45,14 +45,17 @@
           </button>
           
           <div class="nav-collapse collapse">
-					<?php 
-		
-						wp_nav_menu( array(
-						'theme_location' => 'top_nav_menu',
-						'container' => 'false',
-						'depth' => 0,
-						'menu_class' => 'nav'
-						) );
+					<?php
+				
+				$args = array(
+					'theme_location' => 'top_nav_menu',
+					'depth'		 => 2,
+					'container'	 => false,
+					'menu_class'	 => 'nav',
+					'walker'	 => new BootstrapNavMenuWalker()
+				);
+ 
+				wp_nav_menu($args);
             //~ <ul class="nav">
               //~ <li id="li_1"><a href="#">OVERVIEW</a></li>
               //~ <li id="li_2"><a href="#">PROGRAMS</a></li>
