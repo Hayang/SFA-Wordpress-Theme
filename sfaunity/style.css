@@ -246,24 +246,6 @@ background-color: #F25018;
 
 }
 
-#li_1 {
-	background-color: #F27200;
-}
-#li_2 {
-	background-color: #E8AD45;
-}
-#li_3 {
-	background-color: #761BA1;
-}
-#li_4 {
-	background-color: #2FA50F;
-}
-#li_5 {
-	background-color: #2AABE0;
-}
-#li_6 {
-	background-color: #F25018;
-}
 /* END MAIN NAV BAR */
 
 /* --------------------
@@ -315,7 +297,6 @@ a.box_readmore {
 
 .tri_box {
 	padding-bottom: 10px;
-
 }
 
 .left_box {
@@ -479,3 +460,70 @@ a.box_readmore {
 	background-color: gray;
 	height: 60px;
 }
+
+
+
+/* BESARD EDITS TO NAVBAR - WILL KEEP UPDATING  */
+/* NAVBAR DIFF COLOR THING */
+.li_1 {
+	background-color: #F27200;
+}
+.li_2 {
+	background-color: #E8AD45;
+}
+.li_3 {
+	background-color: #761BA1;
+}
+.li_4 {
+	background-color: #2FA50F;
+}
+.li_5 {
+	background-color: #2AABE0;
+}
+.li_6 {
+	background-color: #F25018;
+}
+/* NAVBAR DIFF COLOR THING */
+
+/* DROPDOWN BOOTSTRAP OVERRIGHT */
+
+.dropdown-menu {
+background-color: inherit;
+width: 100%;
+border-radius: 0;
+margin: 0;
+border: 0;
+overflow: hidden;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+color: white;
+background-color: inherit;
+}
+
+.dropdown-menu:after {
+    border: none !important;
+    content: "" !important;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .dropdown-menu {
+ margin-top: 0px;
+}
+
+/* DROPDOWN BOOTSTRAP OVERRIGHT */
