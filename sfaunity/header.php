@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+<head>
 
+	<title>
+	<?php
+	//Print the <title> tag based on what is being viewed.
+		global $page, $paged;
+		wp_title( '|', true, 'right' );
 	// Add the blog name.
-	bloginfo( 'name' );
-
+		bloginfo( 'name' );
 	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
 		echo " | $site_description";
-
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
+		if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
-
-	?></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- Bootstrap -->
-		<!-- Plus Wordpress -->
-		<!-- edited by Vi on 06.07.2013 -->
-		<link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet" media="screen"> <!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css--->
-		<link href="<?php bloginfo('template_directory');?>/css/bootstrap-responsive.css" rel="stylesheet"> <!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css--->
-		
-		<!-- SFA Web Team CSS (style.css) -->
-		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	?>
+	</title>
 	
-	</head>
-	<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Bootstrap -->	
+	<link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet" media="screen"> 
+		<!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css--->
+	<link href="<?php bloginfo('template_directory');?>/css/bootstrap-responsive.css" rel="stylesheet"> 
+		<!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css--->
+	
+	<!-- include jQuery -->
+	<?php wp_enqueue_script("jquery"); ?>
+	
+	<!-- SFA Web Team CSS (style.css) -->
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+<?php wp_head(); ?> 
+</head>
+	
+<body>
+
     <!-- UCONN HEADER --->
 	<div class="row-fluid uconn_header">
 		<a href="www.uconn.edu" >

@@ -1,6 +1,7 @@
 <?php
 
-//~ register_new_royalslider_files(1);
+// Register RoyalSlider Files
+register_new_royalslider_files(1);
 
 // When Admin Bar at top is not activated, don't insert a blank space
 //~ function my_function_admin_bar(){ return false; }
@@ -10,15 +11,11 @@ register_nav_menus( array(
 	'top_nav_menu' => 'Top Navigation Menu'
 ) );
 
-
-
-
-
-
-?>
-
-<?php
-
+// include jQuery
+add_action( 'wp_enqueue_script', 'load_jquery' );
+function load_jquery() {
+    wp_enqueue_script( 'jquery' );
+}
 /**
  * Extended Walker class for use with the
  * Twitter Bootstrap toolkit Dropdown menus in Wordpress.
@@ -27,7 +24,6 @@ register_nav_menus( array(
  */
 class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 
-
 	function start_lvl( &$output, $depth ) {
 
 		$indent = str_repeat( "\t", $depth );
@@ -35,7 +31,6 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 		$output	   .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\">\n";
 
 	}
-
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
 
@@ -78,14 +73,12 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= ($depth == 0 && $args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
+		$item_output .= ($depth == 0 && $args->has_children) ? ' </a>' : '</a>';
 		$item_output .= $args->after;
 
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
-	
-
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 		//v($element);
 		if ( !$element )

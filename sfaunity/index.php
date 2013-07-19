@@ -3,7 +3,7 @@
 		<!-- HERO UNIT --->
 		<div class="row-fluid" >
 			<div class="span12" id="slider_main">
-				ROYAL SLIDER EMBED HERE
+				<?php echo get_new_royalslider(1); ?>
 			</div> 
 		</div> 
 		<!-- HERO UNIT --->

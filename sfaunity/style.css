@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5, h6 {
  
 p {
 	font-weight: normal;
+	
 }
 
 body {
@@ -252,8 +253,8 @@ background-color: #F25018;
  -------------------- */
  
 #slider_main {
-	background-color: #FFC600;
-	height: 410px;
+	background-color: #eee;
+	max-height: 410px;
 	border-radius: 0px; /* bootstrap overrule */
 	margin-bottom: 20px;
 }
