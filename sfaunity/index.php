@@ -2,7 +2,7 @@
 		
 		<!-- HERO UNIT --->
 		<div class="row-fluid" >
-			<div class="hero-unit span12" id="slider_main">
+			<div class="span12" id="slider_main">
 				ROYAL SLIDER EMBED HERE
 			</div> 
 		</div> 

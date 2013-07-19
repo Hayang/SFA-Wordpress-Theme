@@ -255,6 +255,7 @@ background-color: #F25018;
 	background-color: #FFC600;
 	height: 410px;
 	border-radius: 0px; /* bootstrap overrule */
+	margin-bottom: 20px;
 }
 /* END HERO UNIT */
 
