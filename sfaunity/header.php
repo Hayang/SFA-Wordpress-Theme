@@ -8,9 +8,8 @@
 		<!-- edited by Vi on 06.07.2013 -->
 		<link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet" media="screen"> <!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css--->
 		<link href="<?php bloginfo('template_directory');?>/css/bootstrap-responsive.css" rel="stylesheet"> <!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css--->
-		<!-- SFA Web Team CSS
-		<link href="style.css" rel="stylesheet" media="screen">
-		 -->
+		
+		<!-- SFA Web Team CSS (style.css) -->
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	
 	</head>

@@ -293,7 +293,13 @@ background-color: #F25018;
 a.box_readmore {
 	text-align: right;
 	clear: both;
+	font-size: 14px;
 }
+
+	a.box_readmore p {
+		font-weight: bold;
+	}
+
 
 .tri_box {
 	padding-bottom: 10px;
