@@ -533,4 +533,14 @@ background-color: inherit;
  margin-top: 0px;
 }
 
+.dropdown-menu::before, 
+.dropdown-menu::after {
+    border: none;
+    content: none;
+}
+
+.navbar ul.dropdown-menu, .navbar li.dropdown b.caret {
+            display: none;
+        }
+		
 /* DROPDOWN BOOTSTRAP OVERRIGHT */
