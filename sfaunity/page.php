@@ -5,24 +5,26 @@
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
 			<div class="span2 left_column">
-				<div id="breadcrumbs"><!-- make rule in CSS!!!!!!!!!!!!!!! -->
-				
+			
+				<div id="breadcrumbs">
+				<?php 
+				//~ get_post_ancestors( $post->ID )    
+					$ancestor_id_list = get_post_ancestors( $post->ID );
+					$n_ancestor = sizeof( $ancestor_id_list);
+					for ($i=1; $i<=$n_ancestor; $i++) {
+						$j = $n_ancestor - $i;
+						echo get_the_title($ancestor_id_list[$j]);
+						echo " > ";
+					}
+					the_title();
+					?> 
+				</div> 
+					
 					<?php 
-					//~ get_post_ancestors( $post->ID )    
-						$ancestor_id_list = get_post_ancestors( $post->ID );
-						$n_ancestor = sizeof( $ancestor_id_list);
-						for ($i=1; $i<=$n_ancestor; $i++) {
-							$j = $n_ancestor - $i;
-							echo get_the_title($ancestor_id_list[$j]);
-							echo " > ";
-						}
-						the_title();
-						?> 
-						</div> 
-						<?php 
-							$load_2nd_ancestor = ($n_ancestor >= 2); 
+						$load_2nd_ancestor = ($n_ancestor >= 2); 
 
-						?>
+					?>
+					
 					<h3 id="left_column_title"><?php if($load_2nd_ancestor) echo (get_the_title($ancestor_id_list[$n_ancestor- 2])); else the_title() ?></h3>
 					<ul>  
 					<?php
@@ -44,7 +46,7 @@
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
-				<p><?php the_content(); ?></p>
+				<?php the_content(); ?>
 			</div>
 			
 			<!-- END MIDDLE COLUMN --->

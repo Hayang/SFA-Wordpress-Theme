@@ -11,56 +11,6 @@ License URI:
 */
 
 /* --------------------
-	CSS RESET
- -------------------- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* End CSS Reset */
-
-/* --------------------
 	WEBFONTS
  -------------------- */
  
@@ -68,9 +18,9 @@ table {
     font-family: "Proxima Nova";
 	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot');
 	src: url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#webfont') format('svg'),
 	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.woff') format('woff'),
-	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf') format('truetype'),
-	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#webfont') format('svg');
+	     url('fonts/ProximaNova/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf') format('truetype');
 	font-weight: normal;
 }
 
@@ -78,9 +28,10 @@ table {
 	font-family: "Proxima Nova";
 	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
 	src: url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#webfont') format('svg'),
 	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff') format('woff'),
-	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype'),
-	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#webfont') format('svg');
+	     url('fonts/ProximaNova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype');
+
 	font-weight: 500;
 }
 
@@ -88,9 +39,9 @@ table {
 	font-family: "Proxima Nova";
 	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
 	src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#webfont') format('svg'),
 	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
-	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype'),
-	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#webfont') format('svg');
+	     url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype');
 	font-weight: bold;
 }
 
@@ -160,7 +111,7 @@ body {
 
 .uconn_header {
 	background-color: #0f1938;
-	height: 60px;
+	height: 55px;
 }
 
 #uconn_logo { float: left; }
@@ -172,15 +123,18 @@ body {
  
 .school_header {
 	background-color: #e64445;
-	height: 60px;
+	height: 55px;
 	letter-spacing: 0.07em;
+}
+.school_header h2 {
+	line-height: 1em;
 }
 
 #department_title {
 	color: #131b30;  
 	float: left;
 	font-size: 24px;
-	margin-top: 20px;
+	margin-top: 18px;
 	margin-left: 20px;
 }
 
@@ -188,7 +142,7 @@ body {
 	color: white;  
 	float: left;
 	font-size: 24px;
-	margin-top: 20px;
+	margin-top: 18px;
 	margin-left: 20px;
 }
 /* END DEPARTMENTAL HEADER */
@@ -226,6 +180,7 @@ body {
 }
 
 .navbar .nav li a {
+	line-height: 1em;
 	text-shadow: none;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -267,13 +222,11 @@ background-color: #F25018;
 .box_headers {
 	padding-bottom: 10px;
 }
-.box_headers h3 {
-	margin-left: 20px;
-	font-size: 40px;
-}
 
 .box_headers h3 a {
 	color: #222;
+	margin-left: 20px;
+	font-size: 28px;
 }
 
 .box_headers h5 {
@@ -359,12 +312,7 @@ a.box_readmore {
 }
 
 #post_body {
-	padding-top: 40px;
-	padding-bottom: 60px;
-}
-
-#post_body {
-	padding-top: 40px;
+	padding-top: 50px;
 	padding-bottom: 60px;
 }
 
