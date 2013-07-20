@@ -126,4 +126,90 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 
 }
 
+// THEME CUSTOMIZATION OPTIONS // EDIT BY BESARD
+
+function sfa_theme_customizer_register($wp_customize) {
+	$wp_customize-> add_section('nav_btn_colors', array (
+	'title' => __('Main Nav Button Colors','uconn'),
+	'description' => 'Modify the Navigation button colors'
+	));
+
+	$wp_customize-> add_setting('button_2', array (
+	'default' =>  '#F27200',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_2', array (
+	'label' => __('Edit Button 2 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_2'
+	) ));
+	
+	$wp_customize-> add_setting('button_1', array (
+	'default' =>  '#E8AD45',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_1', array (
+	'label' => __('Edit Button 1 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_1'
+	) ));
+	
+	$wp_customize-> add_setting('button_3', array (
+	'default' =>  '#761BA1',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_3', array (
+	'label' => __('Edit Button 3 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_3'
+	) ));
+	
+	$wp_customize-> add_setting('button_4', array (
+	'default' =>  '#2FA50F',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_4', array (
+	'label' => __('Edit Button 4 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_4'
+	) ));
+	
+	$wp_customize-> add_setting('button_5', array (
+	'default' =>  '#2AABE0',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_5', array (
+	'label' => __('Edit Button 5 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_5'
+	) ));
+	
+	$wp_customize-> add_setting('button_6', array (
+	'default' =>  '#F25018',
+	));
+	
+	$wp_customize-> add_control( new WP_Customize_Color_Control($wp_customize,'button_6', array (
+	'label' => __('Edit Button 6 Color', 'uconn'),
+	'section' => 'nav_btn_colors',
+	'settings' => 'button_6'
+	) ));
+	
+}
+
+function sfa_css_customizer () {
+	?>
+	<style type="text/css">
+	.li_1 { background-color: <?php echo get_theme_mod('button_1'); ?> ; }
+	.li_2 { background-color: <?php echo get_theme_mod('button_2'); ?> ; }
+	.li_3 { background-color: <?php echo get_theme_mod('button_3'); ?> ; }
+	.li_4 { background-color: <?php echo get_theme_mod('button_4'); ?> ; }
+	.li_5 { background-color: <?php echo get_theme_mod('button_5'); ?> ; }
+	.li_6 { background-color: <?php echo get_theme_mod('button_6'); ?> ; }
+	</style>
+	<?php 
+
+}
+add_action('wp_head','sfa_css_customizer');
+add_action('customize_register','sfa_theme_customizer_register' );
+// END THEME CUSTOMIZATION OPTIONS // EDIT BY BESARD
 ?>
