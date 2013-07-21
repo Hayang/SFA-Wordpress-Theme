@@ -217,7 +217,7 @@ add_action('customize_register','sfa_theme_customizer_register' );
 
 
 
-// HOME PAGE WIDGET Register
+// Main Sidebar Register
 
 	register_sidebar (array(
 		'name' => __('Main Sidebar'),
@@ -232,14 +232,7 @@ add_action('customize_register','sfa_theme_customizer_register' );
 		));
 		
 
-
-
-
-
-
-
-
-
+// End Main Sidebar Register
 
 
 
