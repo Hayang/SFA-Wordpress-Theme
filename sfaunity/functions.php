@@ -131,7 +131,9 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 function sfa_theme_customizer_register($wp_customize) {
 	$wp_customize-> add_section('nav_btn_colors', array (
 	'title' => __('Main Nav Button Colors','uconn'),
+	'priority'   => 30,
 	'description' => 'Modify the Navigation button colors'
+	
 	));
 
 	$wp_customize-> add_setting('button_2', array (
@@ -212,4 +214,33 @@ function sfa_css_customizer () {
 add_action('wp_head','sfa_css_customizer');
 add_action('customize_register','sfa_theme_customizer_register' );
 // END THEME CUSTOMIZATION OPTIONS // EDIT BY BESARD
+
+
+
+// HOME PAGE WIDGET Register
+
+	register_sidebar (array(
+		'name' => __('Main Sidebar'),
+		'id' => 'sidebar',
+		'description'   => __('DESCIPTION'),
+        'class'         => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+		
+		));
+		
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

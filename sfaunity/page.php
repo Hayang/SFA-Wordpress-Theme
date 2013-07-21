@@ -47,16 +47,13 @@
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
 				<?php the_content(); ?>
+				
 			</div>
 			
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-			<div class="span4" id="column_3">
-				<div class="column_3_content"><img src="http://placehold.it/450x250"></img></div>
-				<div class="column_3_content"><img src="http://placehold.it/450x125"></img></div>
-				<div class="column_3_content"><img src="http://placehold.it/450x125"></img></div>
-			</div>
+		<?php get_sidebar(); ?> </div>
 			<!-- END RIGHT COLUMN --->
 			
 		</div>
