@@ -286,23 +286,30 @@ a.box_readmore {
 	TWO COLUMN PAGE
  -------------------- */
  
+.left_column {
+	padding-left:20px;
+}
+ 
 #breadcrumbs {
 	margin-top: 20px;
-	margin-left: 20px;
 	font-size: 15px;
 	text-transform: uppercase;
 }
 
-#left_column_title {
+h3#left_column_title {
 	color: #F27200;
 	font-size: 24px;
+	line-height: 24px;
 	margin-top: 10px;
-	margin-left: 20px;
 	text-transform: uppercase;
 }
 
+	h3#left_column_title a {
+		color: #F27200;
+	}
+
 .left_column ul {
-	padding: 5px 0 10px 15px;
+	padding: 5px 0 10px 0;
 	color: #1ba6da;
 	line-height: 20px;
 }
@@ -312,48 +319,61 @@ a.box_readmore {
 }
 
 #post_body {
-	padding-top: 50px;
-	padding-bottom: 60px;
+	padding: 50px 10px 60px 0;
 }
+
+#post_body h1,
+#post_body h2,
+#post_body h3 {
+	color: #F27200;
+	line-height: 1.1em;
+}
+
 
 /*  END TWO COLUMN PAGE STYLING */
 
 /* --------------------
 	THREE COLUMN PAGE
  -------------------- */
-
-#column_3 {
-	padding: 22px 0 10px 0;
+ 
+.row-fluid #right_column {
+	display: block;
+	min-height: 36px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: right;
+	width: 33.333333333%;
 }
 
-.column_3_content {
+.right_column_content {
 	padding: 8px 0 0 0;
 	min-width: 100%;
 }
 
-.column_3_img{
+.right_column_img{
 	max-height: 300px;
 	width: 100%;
 	margin-bottom: 90px;
 }
 
-.column_3_img h5 {
+.right_column_img h5 {
 	color: gray;
 }
 
-.column_3_boxes{
+.right_column_boxes{
 	margin-top: 15px;
 	background-color: #f6c346;
 	color: white;
 	min-height: 100px;
 }
-.column_3_boxes h5{
+.right_column_boxes h5{
 	margin-bottom: 10px;
 	color: #f0c634;
 	background-color: none;
 }
 
-.column_3_boxes p {
+.right_column_boxes p {
 	padding: 10px 10px 10px 10px;
 }
 /* END THREE COLUMN PAGE STYLING STYLING */
