@@ -101,9 +101,7 @@ p {
 	
 }
 
-body {
 
-}
 
 /* --------------------
 	UCONN HEADER
@@ -505,3 +503,25 @@ background-color: inherit;
         }
 		
 /* DROPDOWN BOOTSTRAP OVERRIGHT */
+
+/* FACULTY-MAIN PAGE */
+
+
+#faculty_overview  img {
+	float: left;
+	padding-right: 20px;
+	max-height: 200px;
+	max-width: 200px;
+}
+
+#faculty_overview  p {
+	height: 200px;
+	vertical-align: middle;
+}
+
+#faculty_cat_list h2 {
+	float: left;
+	
+}
+
+/* END FACULTY-MAIN PAGE */
