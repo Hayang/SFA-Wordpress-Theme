@@ -235,5 +235,16 @@ add_action('customize_register','sfa_theme_customizer_register' );
 // End Main Sidebar Register
 
 
+// Changes the excerpt length so the home tri boxes stay the same size and consistent...Default was 55 and way to much
+function custom_excerpt_length( $length ) {
+	return 10;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Changes the default more links
+function new_excerpt_more( $more ) {
+	return ' . . .';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>
