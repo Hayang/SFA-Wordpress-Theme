@@ -419,6 +419,15 @@ h3#left_column_title {
 /* END THREE COLUMN CATEGORY PAGE STYLING */
 
 /* --------------------
+	EVENTS
+ -------------------- */
+ 
+h2#event_page_title {
+	clear: none;
+	display: inline;
+}
+
+/* --------------------
 	FOOTER
  -------------------- */
 
@@ -525,3 +534,5 @@ background-color: inherit;
 }
 
 /* END FACULTY-MAIN PAGE */
+
+

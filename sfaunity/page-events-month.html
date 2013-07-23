@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SFA</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen"> <!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css--->
+		<link href="css/bootstrap-responsive.css" rel="stylesheet"> <!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css--->
+		<!-- SFA Web Team CSS -->
+		<link href="style.css" rel="stylesheet" media="screen">
+	</head>
+  <body>
+    <!-- UCONN HEADER --->
+	<div class="row-fluid uconn_header">
+		UCONN HEADER HERE 
+	</div> 
+	<!-- END UCONN HEADER --->
+	
+    <!-- DEPARTMENTAL HEADER --->
+	<div class="row-fluid school_header">
+		<h2 id="department_title">ART & ART HISTORY</h2>
+		<h2 id="sfa_title">SCHOOL OF FINE ARTS</h2>
+	</div> 
+	<!-- DEPARTMENTAL HEADER --->
+	
+	<!-- NAV BAR --->
+		<div class="row-fluid">
+		 <div class="navbar nav_bar">
+      <div class="navbar-inner navbar_inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li id="li_1"><a href="#">OVERVIEW</a></li>
+              <li id="li_2"><a href="#">PROGRAMS</a></li>
+              <li id="li_3"><a href="#">APPLY</a></li>
+			  <li id="li_4"><a href="#">COMMUNITY</a></li>
+              <li id="li_5"><a href="#">STUDENT WORK</a></li>
+              <li class="dropdown"  id="li_6">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">INFORMATION <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+		</div> 
+	<!-- END NAV BAR --->
+
+	
+	
+	
+	
+
+	<!-- MAIN BODY --->	
+		<div class="row-fluid">
+		
+			<!-- LEFT COLUMN, STATIC TITLE, LINKS TO EVENT PAGES --->	
+			<div class="span2 left_column">
+				<div id="breadcrumbs">
+				<p>COMMUNITY > EVENTS</p>
+				</div>
+					<h3 id="left_column_title">EVENTS</h3>
+					<ul>
+						<a href="#"><li>DAILY EVENTS</li></a>
+						<a href="#"><li>WEEKLY EVENTS</li></a>
+						<a href="#"><li>MONTHLY EVENTS</li></a>
+						<?php // (this should work, double check) wp_list_categories('style=none&child_of='.$parent_cat_id);  ?>
+					</ul>
+			</div>
+			
+			
+			<!-- MIDDLE COLUMN, DAILY EVENTS LISTING --->
+			
+			<div class="span8" id="post_body">
+				
+			<table id="sctable">
+				<div id="cal_info">
+					<h2 id="big_cal_date">July 2013</h2>
+					<div id="big_cal_month_buttons">
+						<a class="whitebutton" href="http://sfa.uconn.edu/events-this-month/&month=06&amp;year=2013">Previous Month</a>&nbsp;&nbsp;
+						<a class="whitebutton" href="http://sfa.uconn.edu/events-this-month/&month=08&amp;year=2013">Next Month</a>
+					</div>
+				</div>
+				
+				<thead>
+					<tr>
+						<th>Sunday</th>
+						<th>Monday</th>
+						<th>Tuesday</th>
+						<th>Wednesday</th>
+						<th>Thursday</th>
+						<th>Friday</th>
+						<th>Saturday</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>&nbsp;</td>
+						
+						<td>
+							<!-- days that have event gain the class "has_event" -->
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">1</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">2</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">3</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">4</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">5</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">6</a></h5><div>&nbsp;</div>
+						</td>
+
+					</tr>
+					
+					<tr>
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">7</a></h5><div>&nbsp;</div>
+						</td>
+					
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">8</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">9<a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">10</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">11</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">12</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">13</a></h5><div>&nbsp;</div>
+						</td>
+						
+					</tr>
+					
+					<tr>
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">14</a></h5><div>&nbsp;</div>
+						</td>
+					
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">15</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">16<a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">17</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">18</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">19</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">20</a></h5><div>&nbsp;</div>
+						</td>
+						
+					</tr>
+					
+					<tr>
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">21</a></h5><div>&nbsp;</div>
+						</td>
+					
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">22</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">23<a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">24</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">25</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">26</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">27</a></h5><div>&nbsp;</div>
+						</td>
+						
+					</tr>
+					
+					<tr>
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">28</a></h5><div>&nbsp;</div>
+						</td>
+					
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">29</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum has_event" href="EVENTS DAILY FOR THIS DAY">30<a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>
+							<h5><a class="daynum" href="EVENTS DAILY FOR THIS DAY">31</a></h5><div>&nbsp;</div>
+						</td>
+						
+						<td>&nbsp;</td>
+						
+						<td>&nbsp;</td>
+						
+						<td>&nbsp;</td>
+						
+					</tr>
+		
+				</tbody>
+			</table>
+
+				
+			</div>	<!-- END MIDDLE COLUMN --->
+
+			
+			
+			
+			
+			
+			
+			
+			<!-- RIGHT COLUMN, LEAVE BLANK LIKE THIS --->
+			<div class="span4" id="right_column_small">
+
+			</div>
+			<!-- END RIGHT COLUMN --->
+			
+		</div>
+	<!-- END MAIN BODY --->
+
+	<!-- UCONN FOOTER --->
+	<div class="row-fluid uconn_footer">
+		UCONN FOOTER HERE 
+	</div> 
+	<!-- END UCONN FOOTER --->
+	
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
