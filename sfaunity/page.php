@@ -53,7 +53,7 @@
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-		<?php get_sidebar(); ?> </div>
+	<?php get_sidebar('one'); ?>
 			<!-- END RIGHT COLUMN --->
 			
 		</div>

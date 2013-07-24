@@ -219,18 +219,23 @@ add_action('customize_register','sfa_theme_customizer_register' );
 
 // Main Sidebar Register
 
-	register_sidebar (array(
-		'name' => __('Main Sidebar'),
-		'id' => 'sidebar',
-		'description'   => __('DESCIPTION'),
-        'class'         => '',
+
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' => 'Sidebar One',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
-		'after_title' => '',
-		
-		));
-		
+		'after_title' => ''
+	));
+	register_sidebar(array(
+		'name' => 'Sidebar Two',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => ''
+	));
+}
 
 // End Main Sidebar Register
 
