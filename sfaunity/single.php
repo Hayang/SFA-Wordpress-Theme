@@ -64,40 +64,14 @@
 <!--
 					<img src="http://placehold.it/450x300"></img>
 					-->
-					<?php 
-						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail(array(450,300), array('class'	=> "post-featured-image"));
-						
-					 ?>
-					<h5>Above: 
-					<?php
-						the_excerpt();
-					
-					}
-					?>
+
 			<?php endwhile; endif; ?>
 <!--
 					Professor Sagnik and Professor Cardinal discuss matters.
 -->
 					</h5>
 				</div>
-				<span>OTHER NEWS AT CONN <?php bloginfo( 'name' ); ?> </span>
-				<?php echo ($category_parent->name); ?>
 
-		
-				<?php $page_count = 0; ?>
-				<?php $my_query = new WP_Query('category_name='.$category_parent->name.'&posts_per_page=3'); ?>
-
-				<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-				<?php $page_count += 1;
-				if ( ($this_post_id != get_the_ID()) && ($page_count <= 2 ) )	{ ?>
-				
-					<div class="column_3_boxes">
-					<p> <a href="<?php the_permalink(); ?>"> <?php the_excerpt(); ?> </a></p>
-					</div>
-					
-				<?php } ?>
-				<?php endwhile; ?>
 
 				
 <!--
