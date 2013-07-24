@@ -33,6 +33,7 @@
 	
 	<!-- SFA Web Team CSS (style.css) -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory');?>/style_sfa.css" />
 
 <?php wp_head(); ?> 
 </head>

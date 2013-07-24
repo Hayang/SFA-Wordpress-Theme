@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 		
 		<!-- HERO UNIT --->
-		<div class="row-fluid" >
-			<div class="span12" id="slider_main">
+		<div id="slider_main" class="row-fluid" >
+			<div class="span12" id="">
 				<?php echo get_new_royalslider(1); ?>
 			</div> 
 		</div> 
@@ -20,7 +20,7 @@
 					<div class="box_contents"> 
 						<?php query_posts('category_name=Featured&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="right_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single left_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>
@@ -32,10 +32,11 @@
 						<h3><a href="#" >Events</a></h3>
 						
 					</div>
+					<!-- ACTUAL CODE -->
 					<div class="box_contents"> 
 						<?php query_posts('category_name=Events&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="right_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single middle_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>
@@ -50,7 +51,7 @@
 					<div class="box_contents"> 
 						<?php query_posts('category_name=News&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="right_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single right_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>

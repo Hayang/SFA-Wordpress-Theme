@@ -120,16 +120,16 @@ p {
  ------------------------ */
  
 .school_header {
-	background-color: #e64445;
 	height: 55px;
 	letter-spacing: 0.07em;
 }
+
 .school_header h2 {
 	line-height: 1em;
+	text-transform: uppercase;
 }
 
 #department_title {
-	color: #131b30;  
 	float: left;
 	font-size: 24px;
 	margin-top: 18px;
@@ -179,6 +179,7 @@ p {
 
 .navbar .nav li a {
 	line-height: 1em;
+	font-size: 16px;
 	text-shadow: none;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -187,6 +188,29 @@ p {
 	padding: 8px 0px 6px 15px;
 	/* link stylings */
 }
+
+	.navbar .nav li a:hover {
+		color: #0f1938;	
+	}
+
+	.navbar .nav > .active > a,
+	.navbar .nav > .active > a:focus {
+	  color: white;
+	  text-decoration: none;
+	  background-color: inherit;
+	  -webkit-box-shadow: none;
+	  -moz-box-shadow: none;
+	  box-shadow: none;
+	}
+	
+	.navbar .nav > .active > a:hover {
+	  color: #0f1938;	
+	  text-decoration: none;
+	  background-color: inherit;
+	  -webkit-box-shadow: none;
+	  -moz-box-shadow: none;
+	  box-shadow: none;
+	}
 
 .dropdown-menu {
 background-color: #F25018;
@@ -209,7 +233,6 @@ background-color: #F25018;
 	background-color: #eee;
 	max-height: 410px;
 	border-radius: 0px; /* bootstrap overrule */
-	margin-bottom: 20px;
 }
 /* END HERO UNIT */
 
@@ -218,13 +241,18 @@ background-color: #F25018;
  -------------------- */
  
 .box_headers {
-	padding-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.box_headers h3 {
+	margin: 0;
 }
 
 .box_headers h3 a {
-	color: #222;
-	margin-left: 20px;
-	font-size: 28px;
+	color: #111;
+	margin-left: 35px;
+	font-size: 36px;
 }
 
 .box_headers h5 {
@@ -235,6 +263,7 @@ background-color: #F25018;
 
 .box_contents a { 
 	color: white;
+	font-size: 19px;
 	font-weight: bold;
 }
 
@@ -243,8 +272,9 @@ background-color: #F25018;
 }
 
 a.box_readmore {
+	position: absolute;
+	bottom: 10px;
 	text-align: right;
-	clear: both;
 	font-size: 14px;
 }
 
@@ -255,30 +285,116 @@ a.box_readmore {
 
 .tri_box {
 	padding-bottom: 10px;
+	line-height: 1.1em;
+}
+
+.tri_box_single {
+	height: 75px;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-left: 35px;
 }
 
 .left_box {
 	background-color: #e23738;
 	margin-bottom: 10px;
-	padding: 20px;
-	min-height: 30px;
 }
 
 .middle_box {
 	background-color: #e23738;
 	margin-bottom: 10px;
-	padding: 20px;
-	min-height: 30px;
 }
 
 .right_box {
 	background-color: #e23738;
 	margin-bottom: 10px;
-	padding: 20px;
-	min-height: 30px;
 }
 /*  END THREE CONTENT UNIT */
 
+/* --------------------
+	WORDPRESS CORE
+ -------------------- */
+ 
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #f7f7f7;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 5px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    padding: 10px 4px 5px;
+}
 
 /* --------------------
 	TWO COLUMN PAGE
@@ -317,7 +433,9 @@ h3#left_column_title {
 }
 
 #post_body {
+	position: relative;
 	padding: 50px 10px 60px 0;
+	min-height: 100%;
 }
 
 #post_body h1,
@@ -325,6 +443,10 @@ h3#left_column_title {
 #post_body h3 {
 	color: #F27200;
 	line-height: 1.1em;
+}
+
+#post_body img {
+	margin-bottom: 20px;
 }
 
 
@@ -445,6 +567,8 @@ h2#event_page_title {
 .uconn_footer{
 	background-color: gray;
 	height: 60px;
+	position: relative;
+	bottom:0;
 }
 
 
