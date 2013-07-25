@@ -242,7 +242,7 @@ if ( function_exists('register_sidebar') ) {
 
 // Changes the excerpt length so the home tri boxes stay the same size and consistent...Default was 55 and way to much
 function custom_excerpt_length( $length ) {
-	return 10;
+	return 25;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
