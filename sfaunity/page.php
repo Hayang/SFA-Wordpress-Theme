@@ -7,7 +7,17 @@
 			<div class="span2 left_column">
 			
 				<div id="breadcrumbs">
-				Back to Music Programs
+				<?php 
+				//~ get_post_ancestors( $post->ID )    
+					$ancestor_id_list = get_post_ancestors( $post->ID );
+					$n_ancestor = sizeof( $ancestor_id_list);
+					for ($i=1; $i<=$n_ancestor; $i++) {
+						$j = $n_ancestor - $i;
+						echo get_the_title($ancestor_id_list[$j]);
+						echo " > ";
+					}
+					the_title();
+					?> 
 				</div> 
 					
 					<?php 
