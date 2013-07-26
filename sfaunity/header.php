@@ -33,7 +33,7 @@
 	
 	<!-- SFA Web Team CSS (style.css) -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory');?>/style_sfa.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory');?>/style_csa.css" />
 
 <?php wp_head(); ?> 
 </head>
@@ -56,7 +56,7 @@
 			<h2 id="department_title">
 				<?php bloginfo('name'); ?> 
 			</h2>
-			<h2 id="sfa_title">
+			<h2 id="sfa_title" class="hidden-phone">
 				<?php bloginfo('description'); ?>
 			</h2></a>
 		</div>
@@ -68,7 +68,7 @@
 		 <div class="navbar nav_bar">
       <div class="navbar-inner navbar_inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" id="sfa_mobilenavbutton" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

@@ -1,5 +1,20 @@
 <?php
 
+// Add post thumbnail support
+add_theme_support( 'post-thumbnails' ); 
+add_image_size( 'featured_image_right_column', 455, 9999 );
+
+// Add post thumbnail caption support
+function the_post_thumbnail_caption() {
+  global $post;
+
+  $thumbnail_id    = get_post_thumbnail_id($post->ID);
+  $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    echo $thumbnail_image[0]->post_excerpt;
+  }
+}
 // Register RoyalSlider Files
 register_new_royalslider_files(1);
 
@@ -223,22 +238,30 @@ add_action('customize_register','sfa_theme_customizer_register' );
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
 		'name' => 'Sidebar One',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => ''
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<h4 class="widget_title">',
+		'after_title' => '</h4><div class="widget_content">'
 	));
 	register_sidebar(array(
 		'name' => 'Sidebar Two',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => ''
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<h4 class="widget_title">',
+		'after_title' => '</h4><div class="widget_content">'
 	));
 }
 
 // End Main Sidebar Register
 
+// Title Excerpt
+function string_limit_words($string, $word_limit)
+{
+$words = explode(' ', $string, ($word_limit + 1));
+if(count($words) > $word_limit)
+array_pop($words);
+return implode(' ', $words);
+}
 
 // Changes the excerpt length so the home tri boxes stay the same size and consistent...Default was 55 and way to much
 function custom_excerpt_length( $length ) {
@@ -246,10 +269,12 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+
 // Changes the default more links
 function new_excerpt_more( $more ) {
 	return ' . . .';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+*/
 
 ?>

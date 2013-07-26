@@ -20,7 +20,10 @@
 					<div class="box_contents"> 
 						<?php query_posts('category_name=Featured&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="tri_box_single left_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single left_box"><a href="<?php the_permalink(); ?>">
+							<?php $excerpt = get_the_title();
+							echo string_limit_words($excerpt, 15);
+							?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>
@@ -36,7 +39,10 @@
 					<div class="box_contents"> 
 						<?php query_posts('category_name=Events&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="tri_box_single middle_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single middle_box"><a href="<?php the_permalink(); ?>">
+							<?php $excerpt = get_the_title();
+							echo string_limit_words($excerpt, 15);
+							?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>
@@ -51,7 +57,10 @@
 					<div class="box_contents"> 
 						<?php query_posts('category_name=News&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
-						<div class="tri_box_single right_box"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><br /></a>
+						<div class="tri_box_single right_box"><a href="<?php the_permalink(); ?>">
+							<?php $excerpt = get_the_title();
+							echo string_limit_words($excerpt, 15);
+							?><br /></a>
 						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
 						</div>
 						<?php endwhile;?>

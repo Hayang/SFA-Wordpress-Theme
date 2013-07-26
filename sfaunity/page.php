@@ -7,17 +7,7 @@
 			<div class="span2 left_column">
 			
 				<div id="breadcrumbs">
-				<?php 
-				//~ get_post_ancestors( $post->ID )    
-					$ancestor_id_list = get_post_ancestors( $post->ID );
-					$n_ancestor = sizeof( $ancestor_id_list);
-					for ($i=1; $i<=$n_ancestor; $i++) {
-						$j = $n_ancestor - $i;
-						echo get_the_title($ancestor_id_list[$j]);
-						echo " > ";
-					}
-					the_title();
-					?> 
+				Back to Music Programs
 				</div> 
 					
 					<?php 
@@ -46,6 +36,7 @@
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
+				<h2 id="page_title"><?php the_title() ?></h2>
 				<?php the_content(); ?>
 				
 			</div>
@@ -53,7 +44,20 @@
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-	<?php get_sidebar('one'); ?>
+			<div id="right_column">
+				<?php 
+					if ( has_post_thumbnail() ) // check if the post has a Post Thumbnail assigned to it.
+					{ 
+					the_post_thumbnail( 'featured_image_right_column' );
+					?>
+					
+					<p class="featured_image_caption"><strong>ABOVE: </strong><?php the_post_thumbnail_caption(); 
+					} 
+					?>
+				</p>
+
+				<?php get_sidebar('one'); ?>
+			</div>
 			<!-- END RIGHT COLUMN --->
 			
 		</div>

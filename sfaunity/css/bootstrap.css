@@ -218,7 +218,6 @@ a {
 a:hover,
 a:focus {
   color: #0a7da2;
-  text-decoration: underline;
 }
 .img-rounded {
   -webkit-border-radius: 6px;
@@ -4889,7 +4888,7 @@ a.thumbnail:focus {
 .dropdown-submenu:focus > a {
   text-decoration: none;
   color: #555;
-  /* REMOVED BY MIKE
+  /* REMOVED BY MIKE TO PREVENT THE NAV DROPDOWN ITEMS FROM BECOMING BLUE ON HOVER 
   background-color: #0eade0;
   background-image: -moz-linear-gradient(top, #0fb4ea, #0da2d2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0fb4ea), to(#0da2d2));

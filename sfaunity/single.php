@@ -19,7 +19,7 @@
 			<!-- LEFT COLUMN --->	
 			<div class="span2 left_column">
 				<div id="breadcrumbs"> 
-				<?php echo get_category_parents($category, TRUE, ' > '); ?>
+					COMMUNITY > NEWS
 				</div>
 <!--
 				<div id="breadcrumbs">PROGRAMS > ACTING</div>
@@ -51,7 +51,7 @@
 			<!-- END LEFT COLUMN --->	
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
-					<h4><?php the_title();?></h4>
+					<h3 id="post_title"><?php the_title();?></h3>
 					 POSTED <?php the_date(); the_category(); ?>
 					<p><?php the_content();?></p>
 					
@@ -59,27 +59,26 @@
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-			<?php get_sidebar('two'); ?>
-				<div class="column_3_img">
-<!--
-					<img src="http://placehold.it/450x300"></img>
-					-->
+			<div id="right_column">
+				<?php 
+					if ( has_post_thumbnail() ) // check if the post has a Post Thumbnail assigned to it.
+					{ 
+					the_post_thumbnail( 'featured_image_right_column' );
+					?>
+					
+					<p class="featured_image_caption"><strong>ABOVE: </strong><?php the_post_thumbnail_caption(); 
+					} 
+					?>
+				</p>
 
-			<?php endwhile; endif; ?>
+				<?php get_sidebar('two'); ?>
+			</div>
 <!--
-					Professor Sagnik and Professor Cardinal discuss matters.
--->
-					</h5>
-				</div>
-
-
-				
-<!--
-				<div class="column_3_boxes">
+				<div class="right_column_boxes">
 				<p>Jesse Rifkin Writes on "What Makes Gatsby Your Classic?"</p>
 				</div>
 				
-				<div class="column_3_boxes"><p>CRT Production "Hairspray is a family-friendly musical. </p>
+				<div class="right_column_boxes"><p>CRT Production "Hairspray is a family-friendly musical. </p>
 				</div>
 -->
 			</div>
@@ -87,5 +86,5 @@
 			
 		</div>
 	<!-- END MAIN BODY --->
-
+<?php endwhile; endif; ?>	
 <?php get_footer(); ?>
