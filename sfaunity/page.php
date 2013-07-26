@@ -6,7 +6,8 @@
 			<!-- LEFT COLUMN --->	
 			<div class="span2 left_column">
 			
-				<div id="breadcrumbs">
+				<p id="breadcrumbs">
+				Home >
 				<?php 
 				//~ get_post_ancestors( $post->ID )    
 					$ancestor_id_list = get_post_ancestors( $post->ID );
@@ -18,7 +19,7 @@
 					}
 					the_title();
 					?> 
-				</div> 
+				</p> 
 					
 					<?php 
 						$load_2nd_ancestor = ($n_ancestor >= 2); 
@@ -42,36 +43,36 @@
 						?>
 						
 			</div>
-			<!-- END LEFT COLUMN --->
+			<!-- end LEFT COLUMN --->
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
-				<h2 id="page_title"><?php the_title() ?></h2>
+				<h2 id="page_title"><?php the_title() ?><?php edit_post_link(' &#9997','',' '); ?></h2>
 				<?php the_content(); ?>
 				
 			</div>
 			
-			<!-- END MIDDLE COLUMN --->
+			<!-- end MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-			<div id="right_column">
+			<div id="right_column" class=".hidden-phone">
 				<?php 
 					if ( has_post_thumbnail() ) // check if the post has a Post Thumbnail assigned to it.
 					{ 
 					the_post_thumbnail( 'featured_image_right_column' );
 					?>
 					
-					<p class="featured_image_caption"><strong>ABOVE: </strong><?php the_post_thumbnail_caption(); 
+					<p class="featured_image_caption"><?php the_post_thumbnail_caption(); 
 					} 
 					?>
 				</p>
 
-				<?php get_sidebar('one'); ?>
+				<?php get_sidebar('page'); ?>
 			</div>
-			<!-- END RIGHT COLUMN --->
+			<!-- end RIGHT COLUMN --->
 			
 		</div>
-	<!-- END MAIN BODY --->
+	<!-- end MAIN BODY --->
 
 			<?php endwhile; endif; ?>
 <?php get_footer(); ?>

@@ -47,8 +47,7 @@
 			<img id="uconn_logo" src="<?php bloginfo('template_directory');?>/img/assets/uconn_logo.png" />
 			<img id="uconn_sidebuttons" src="<?php bloginfo('template_directory');?>/img/assets/uconn_sidebuttons.png" />
 		</a>
-	</div> 
-	<!-- END UCONN HEADER --->
+	</div> <!-- end UCONN HEADER --->
 	
     <!-- DEPARTMENTAL HEADER --->
 	<div class="row-fluid school_header">
@@ -60,55 +59,53 @@
 				<?php bloginfo('description'); ?>
 			</h2></a>
 		</div>
-	</div> 
-	<!-- DEPARTMENTAL HEADER --->
+	</div> <!-- end DEPARTMENTAL HEADER --->
 	
 	<!-- NAV BAR --->
-		<div class="row-fluid">
-		 <div class="navbar nav_bar">
-      <div class="navbar-inner navbar_inner">
-        <div class="container">
-          <button type="button" id="sfa_mobilenavbutton" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-          <div class="nav-collapse collapse">
-					<?php
-				
-				$args = array(
-					'theme_location' => 'top_nav_menu',
-					'depth'		 => 2,
-					'container'	 => false,
-					'menu_class'	 => 'nav',
-					'walker'	 => new BootstrapNavMenuWalker()
-				);
- 
-				wp_nav_menu($args);
-            //~ <ul class="nav">
-              //~ <li id="li_1"><a href="#">OVERVIEW</a></li>
-              //~ <li id="li_2"><a href="#">PROGRAMS</a></li>
-              //~ <li id="li_3"><a href="#">APPLY</a></li>
-			  //~ <li id="li_4"><a href="#">COMMUNITY</a></li>
-              //~ <li id="li_5"><a href="#">STUDENT WORK</a></li>
-              //~ <li class="dropdown"  id="li_6">
-                //~ <a href="#" class="dropdown-toggle" data-toggle="dropdown">INFORMATION <b class="caret"></b></a>
-                //~ <ul class="dropdown-menu">
-                  //~ <li><a href="#">Action</a></li>
-                  //~ <li><a href="#">Another action</a></li>
-                  //~ <li><a href="#">Something else here</a></li>
-                  //~ <li class="divider"></li>
-                  //~ <li class="nav-header">Nav header</li>
-                  //~ <li><a href="#">Separated link</a></li>
-                  //~ <li><a href="#">One more separated link</a></li>
-                //~ </ul>
-                  ?>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-		</div> 
-		<!-- END NAV BAR --->
+	<div class="row-fluid">
+		<div class="navbar nav_bar">
+			<div class="navbar-inner navbar_inner">
+			<div class="container">
+			  <button type="button" id="sfa_mobilenavbutton" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  
+			  <div class="nav-collapse collapse">
+						<?php
+					
+					$args = array(
+						'theme_location' => 'top_nav_menu',
+						'depth'		 => 2,
+						'container'	 => false,
+						'menu_class'	 => 'nav',
+						'walker'	 => new BootstrapNavMenuWalker()
+					);
+
+					wp_nav_menu($args);
+				//~ <ul class="nav">
+				  //~ <li id="li_1"><a href="#">OVERVIEW</a></li>
+				  //~ <li id="li_2"><a href="#">PROGRAMS</a></li>
+				  //~ <li id="li_3"><a href="#">APPLY</a></li>
+				  //~ <li id="li_4"><a href="#">COMMUNITY</a></li>
+				  //~ <li id="li_5"><a href="#">STUDENT WORK</a></li>
+				  //~ <li class="dropdown"  id="li_6">
+					//~ <a href="#" class="dropdown-toggle" data-toggle="dropdown">INFORMATION <b class="caret"></b></a>
+					//~ <ul class="dropdown-menu">
+					  //~ <li><a href="#">Action</a></li>
+					  //~ <li><a href="#">Another action</a></li>
+					  //~ <li><a href="#">Something else here</a></li>
+					  //~ <li class="divider"></li>
+					  //~ <li class="nav-header">Nav header</li>
+					  //~ <li><a href="#">Separated link</a></li>
+					  //~ <li><a href="#">One more separated link</a></li>
+					//~ </ul>
+					  ?>
+				  </li>
+				</ul>
+			  </div><!--/.nav-collapse -->
+			</div>
+			</div>
+		</div>
+	</div> <!-- end NAV BAR --->
