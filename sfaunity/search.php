@@ -3,7 +3,7 @@
 	<!-- MAIN BODY --->	
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
-			<div class="span2 left_column">
+			<div id="left_column" class="span2">
 			
 				<div id="breadcrumbs">
 				<?php 

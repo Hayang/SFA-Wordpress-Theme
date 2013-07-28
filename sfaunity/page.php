@@ -4,7 +4,7 @@
 	<!-- MAIN BODY --->	
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
-			<div class="span2 left_column">
+			<div id="left_column" class="span2">
 			
 				<p id="breadcrumbs">
 				Home >
@@ -47,7 +47,7 @@
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
-				<h2 id="page_title"><?php the_title() ?><?php edit_post_link(' &#9997','',' '); ?></h2>
+				<h2 id="page_title"><?php the_title() ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?></h2>
 				<?php the_content(); ?>
 				
 			</div>

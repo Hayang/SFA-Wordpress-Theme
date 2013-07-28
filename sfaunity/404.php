@@ -1,10 +1,9 @@
 <?php get_header(); ?>
-	<?php if (have_posts()) : while (have_posts()) : the_post();?>
 	
 	<!-- MAIN BODY --->	
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
-			<div class="span2 left_column">
+			<div id="left_column" class="span2">
 			
 				<p id="breadcrumbs">
 				Home > 404
@@ -18,7 +17,8 @@
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
 				<h2 id="page_title">The page could not be found</h2>
-				<p></p>
+				
+				
 				
 			</div>
 			
@@ -44,5 +44,4 @@
 		</div>
 	<!-- end MAIN BODY --->
 
-			<?php endwhile; endif; ?>
 <?php get_footer(); ?>

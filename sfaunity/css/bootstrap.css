@@ -4905,6 +4905,7 @@ a.thumbnail:focus {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
+  /* REMOVED BY MIKE TO PREVENT THE NAV DROPDOWN ITEMS FROM BECOMING BLUE WHEN ACTIVE 
   background-color: #0eade0;
   background-image: -moz-linear-gradient(top, #0fb4ea, #0da2d2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0fb4ea), to(#0da2d2));
@@ -4913,6 +4914,7 @@ a.thumbnail:focus {
   background-image: linear-gradient(to bottom, #0fb4ea, #0da2d2);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0fb4ea', endColorstr='#ff0da2d2', GradientType=0);
+  */
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,

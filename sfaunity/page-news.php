@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 	<?php 
 
 		$category_name = single_cat_title('',FALSE);
@@ -13,15 +14,18 @@
 			$category_parent = $category;
 			$parent_cat_id = $category->term_id ;
 		}
-		?>
+	?>
+		
 	<!-- MAIN BODY --->	
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
 			<div id="left_column" class="span2">
 				<div id="breadcrumbs">
-				<?php echo get_category_parents($category, TRUE, ' > '); ?>
+				<p id="breadcrumbs">
+					COMMUNITY > NEWS
+				</p>
 				</div>
-					<h3 id="left_column_title"><a href="<?php echo get_category_link( $parent_cat_id ); ?> " ><?php echo $category_parent->name ?></a></h3>
+					<h3 id="left_column_title">NEWS</h3>
 					<ul>
 					<?php wp_list_categories('style=none&child_of='.$parent_cat_id);  ?>
 					</ul>
@@ -76,11 +80,11 @@
 		
 
 		
-	<?php }	?>
-	<?php endwhile; endif; ?>
-		<?php if ($postCount >= 2) { ?>
+			<?php }	?>
+			<?php endwhile; endif; ?>
+			<?php if ($postCount >= 2) { ?>
 			</div>
-		<?php }	?>
+			<?php }	?>
 <!--
 		<div id="featured_image"><img src="http://placehold.it/700x250"></img></div>
 		<h4>THE UCONN DRAMATIC ARTS DEPARTMENT HAS DEVELOPED ONE OF THE FINEST UNIVERSITY-BASED ACTOR-TRANING PROGRAMS IN THE COUNTRY.</h4> 
@@ -112,26 +116,20 @@
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-			<div class="span4" >
-				<div class="social_media"><h5>Connect with us<h5>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<p>UCONN Dramatic arts is on facebook and twiiter! Follow us and we'll fill you in on what's been going on!<p>
-				</div>
-				
-				<div id="left_col_push">
-					<span>OTHER NEWS AT UCONN DRAMA</span>
-					<div class="column_3_boxes">
-					<p>Jesse Rifkin Writes on "What Makes Gatsby Your Classic?"</p>
-					</div>
+			<div id="right_column">
+				<?php 
+					if ( has_post_thumbnail() ) // check if the post has a Post Thumbnail assigned to it.
+					{ 
+					the_post_thumbnail( 'featured_image_right_column' );
+					?>
 					
-					<div class="column_3_boxes"><p>CRT Production "Hairspray is a family-friendly musical. </p>
-					</div>
-				</div>
-			</div>
-			<!-- END RIGHT COLUMN --->
+					<p class="featured_image_caption"><?php the_post_thumbnail_caption(); 
+					} 
+					?>
+				</p>
+
+				<?php get_sidebar('post'); ?>
+			</div> <!-- end RIGHT COLUMN --->
 			
 		</div>
 	<!-- END MAIN BODY --->

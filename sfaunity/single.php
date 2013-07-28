@@ -19,7 +19,7 @@
 		<div class="row-fluid">
 		
 			<!-- LEFT COLUMN --->	
-			<div class="span2 left_column">
+			<div id="left_column" class="span2">
 				<p id="breadcrumbs">
 					COMMUNITY > NEWS
 				</p>
@@ -33,8 +33,8 @@
 			</div> <!-- end LEFT COLUMN --->	
 			
 			<!-- MIDDLE COLUMN --->
-			<div class="span6" id="post_body">
-					<h3 id="post_title"><?php the_title();?></h3>
+			<div id="post_body" class="span6">
+					<h3 id="post_title"><?php the_title();?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this post</span>','',' '); ?></h3>
 					<h6 class="post_meta">POSTED <?php the_date(); ?>&nbsp;&nbsp;|&nbsp;&nbsp;
 					
 					<?php
@@ -45,7 +45,7 @@
 						echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
 					}
 					}
-					?> STORIES</h6>
+					?></h6>
 					
 					<p><?php the_content();?></p>
 					

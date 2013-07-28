@@ -159,15 +159,17 @@ p {
 }
 
 .navbar_inner {
+	position: relative;
 	padding-left: 0px;
 	padding-right: 0px;
 	border-radius: 0px;
 	border: 0px;
 	background-image: none;
-	background-color: white;
+	background-color: grey;
 	min-height: 30px;
 	width: 100%;
 	margin-bottom: 0px;
+	
 
 	/* just a bunch of overwrites here */
 }
@@ -182,6 +184,7 @@ p {
 }
 
 .navbar .nav li a {
+	position: relative;
 	line-height: 1em;
 	font-size: 16px;
 	text-shadow: none;
@@ -216,6 +219,14 @@ p {
 	  box-shadow: none;
 	}
 
+/* To add a caret for items with children.
+li.dropdown a:after {
+	content: "\25BE";
+	position: absolute;
+	right: 8px;
+}
+*/
+	
 .dropdown-menu {
 background-color: #F25018;
 /* changes the background color for dropdwon */
@@ -444,10 +455,11 @@ p.featured_image_caption {
 }
 
 /* --------------------
-	TWO COLUMN PAGE
+	LEFT COLUMN
  -------------------- */
  
-.left_column {
+#left_column {
+	position:relative;
 	padding-left:20px;
 }
  
@@ -472,7 +484,8 @@ h3#left_column_title {
 		color: #F27200;
 	}
 
-.left_column ul {
+#left_column ul {
+	position: relative;
 	padding: 8px 0 10px 0;
 	color: #1ba6da;
 	font-size: 14px;
@@ -482,19 +495,39 @@ h3#left_column_title {
 	text-transform: uppercase;
 }
 
-.left_column ul li{
+#left_column ul.children {
+}
+
+#left_column ul li{
+	position: relative;
 	padding: 0 0 0 10px;
 	line-height: 100%;
 	margin-bottom: 10px;
 }
 
-li.current_page_item {
-	font-weight: bold;
+#left_column li.current_page_item:before {
+	position: absolute;
+	left: 1px;
+	content: "\2023"
 }
 
-li.current_page_item ul {
+#left_column li.current_page_ancestor:before {
+	position: absolute;
+	left: 1px;
+	content: "\2023"
+}
+
+#left_column li.current_page_item a {
+	font-weight: bold;
+}	
+	
+#left_column li.current_page_item ul {
 	font-weight: normal;
 }
+
+/* --------------------
+	CENTER BODY CONTENT
+ -------------------- */
 
 #post_body {
 	position: relative;
@@ -520,6 +553,23 @@ h2#page_title {
 	
 }
 
+a.post-edit-link {
+	font-weight: normal;
+}
+
+span.post-edit-text {
+	display: none;
+	font-size: 14px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 0;
+}
+
+a.post-edit-link:hover span.post-edit-text {
+	display: inline;
+}
+
 h6.post_meta {
 	color: #0fb4ea;
 	margin: 0;
@@ -527,8 +577,6 @@ h6.post_meta {
 	font-weight: normal;
 	text-transform: uppercase;
 }
-
-/*  END TWO COLUMN PAGE STYLING */
 
 /* --------------------
 	RIGHT COLUMN
@@ -587,10 +635,6 @@ h6.post_meta {
 	filter:alpha(opacity=100);
 }
 
-
-
-/* END THREE COLUMN PAGE STYLING STYLING */
-
 /* --------------------
 	CATEGORY PAGE
  -------------------- */
@@ -628,14 +672,31 @@ h2#event_page_title {
 	FOOTER
  -------------------- */
 
-.uconn_footer{
-	background-color: gray;
-	height: 60px;
+#uconn_footer{
+	background-color: #eee;
+	padding: 20px;
 	position: relative;
 	bottom:0;
 }
 
-/* DROPDOWN BOOTSTRAP OVERRIGHT */
+ul#uconn_footer_links {
+	list-style-type: none;
+}
+
+ul#uconn_footer_links li{
+	float: left;
+	font-size: 15px;
+	margin-right: 26px;
+}
+
+ul#uconn_footer_links li a{
+	color: #888;
+}
+ul#uconn_footer_links li a:hover{
+	color: #222;
+}
+
+/* DROPDOWN BOOTSTRAP OVERWRITE */
 
 .dropdown-menu {
 background-color: inherit;
