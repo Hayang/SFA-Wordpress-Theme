@@ -107,6 +107,13 @@ p {
 	UCONN HEADER
  -------------------- */
 
+ 
+@media (max-width: 767px) {
+  #top_header {
+     margin-left:-20px;
+	margin-right:-20px;
+  }
+}
 .uconn_header {
 	background-color: #0f1938;
 	height: 55px;

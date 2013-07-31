@@ -31,6 +31,7 @@ add_action( 'wp_enqueue_script', 'load_jquery' );
 function load_jquery() {
     wp_enqueue_script( 'jquery' );
 }
+
 /**
  * Extended Walker class for use with the
  * Twitter Bootstrap toolkit Dropdown menus in Wordpress.
@@ -141,19 +142,21 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 
 }
 
+// End NAV BAR DROP DOWN REGISTRATION
+
 // Main Sidebar Register
 
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'name' => 'Sidebar for Pages',
+		'name' => 'Sidebar Page',
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h4 class="widget_title">',
 		'after_title' => '</h4><div class="widget_content">'
 	));
 	register_sidebar(array(
-		'name' => 'Sidebar for Posts',
+		'name' => 'Sidebar Post',
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h4 class="widget_title">',
@@ -184,4 +187,11 @@ function new_excerpt_more( $more ) {
 	return ' . . .';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+// Theme Customization for stylesheet change
+
+
+
+
 ?>

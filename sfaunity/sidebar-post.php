@@ -1,5 +1,5 @@
 
-<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Two')) : ?>
+<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Post')) : ?>
 <?php endif;?>
 
 
