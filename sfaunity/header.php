@@ -31,11 +31,10 @@
 	<!-- include jQuery -->
 	<?php wp_enqueue_script("jquery"); ?>
 	
-	<!-- SFA Web Team CSS (style.css) -->
+	<!-- SFA Web Team CSS (style.css) And Custom Style -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory');?>/style_csa.css" />
-
-<?php wp_head(); ?> 
+	<?php wp_head(); ?> 
+	<!-- SFA Web Team CSS (style.css) And Custom Style -->
 </head>
 	
 <body>

@@ -192,6 +192,44 @@ add_filter('excerpt_more', 'new_excerpt_more');
 // Theme Customization for stylesheet change
 
 
+// THEME CUSTOMIZATION OPTIONS // EDIT BY BESARD
 
+function sfa_theme_customizer_register($wp_customize) {
+
+
+	$wp_customize-> add_section('styling_colors', array (
+	'title' => __('Main Site Styling','uconn'),
+	'priority'   => 30,
+	'description' => 'Modify the styling colors'
+	));
+
+	$wp_customize-> add_setting('styesheet_setting', array (
+	'default' =>  'style.css',
+	));
+	
+	$wp_customize-> add_control('sylesheet_select', array (
+	'label' => __('Change the Stylesheet', 'uconn'),
+	'section' => 'styling_colors',
+	'settings' => 'styesheet_setting',
+	'type' => 'radio',
+	'choices'    => array(
+            'style.css' => 'Main-Default',
+            'style_csa.css' => 'CSA',
+            'style_sfa.css' => 'SFA',
+        ),
+	));
+	
+		
+}
+
+function sfa_css_customizer () {
+	?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory');?>/<?php echo get_theme_mod('styesheet_setting'); ?>" />
+	<?php 
+
+}
+add_action('wp_head','sfa_css_customizer');
+add_action('customize_register','sfa_theme_customizer_register' );
+// END THEME CUSTOMIZATION OPTIONS // EDIT BY BESARD 
 
 ?>
