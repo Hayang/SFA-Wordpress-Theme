@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 		
 		<!-- HERO UNIT --->
+		<div id="top_header">
 		<div id="slider_main" class="row-fluid" >
 			<div class="span12" id="">
 				<?php echo get_new_royalslider(1); ?>
 			</div> 
 		</div> 
 		<!-- HERO UNIT --->
-		
+		</div>
 		<!-- THREE CONTENT UNIT --->
 		
 		<div class="row-fluid">

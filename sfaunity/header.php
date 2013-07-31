@@ -39,7 +39,7 @@
 </head>
 	
 <body>
-
+<div id="top_header" >
     <!-- UCONN HEADER --->
 	<div class="row-fluid uconn_header">
 		<a href="www.uconn.edu" >
@@ -108,4 +108,5 @@
 			</div>
 			</div>
 		</div>
-	</div> <!-- end NAV BAR --->
+	</div> 
+	</div><!-- end NAV BAR --->
