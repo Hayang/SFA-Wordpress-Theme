@@ -11,47 +11,14 @@ Template Name: Search Page
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
 			<div id="left_column" class="span2">
-			
-				<div id="breadcrumbs">
-				<?php 
-				//~ get_post_ancestors( $post->ID )    
-					$ancestor_id_list = get_post_ancestors( $post->ID );
-					$n_ancestor = sizeof( $ancestor_id_list);
-					for ($i=1; $i<=$n_ancestor; $i++) {
-						$j = $n_ancestor - $i;
-						echo get_the_title($ancestor_id_list[$j]);
-						echo " > ";
-					}
-					the_title();
-					?> 
-				</div> 
-					
-					<?php 
-						$load_2nd_ancestor = ($n_ancestor >= 2); 
-
-					?>
-					
-					<h3 id="left_column_title"><?php if($load_2nd_ancestor) echo (get_the_title($ancestor_id_list[$n_ancestor- 2])); else the_title() ?></h3>
-					<ul>  
-					<?php
-					  //~ wp_list_pages("title_li=&child_of=$id&show_date=modified&date_format=$date_format"); 
-					  
-					if ($load_2nd_ancestor ) {
-						wp_list_pages("title_li=&depth=2&child_of=".$ancestor_id_list[$n_ancestor- 2]); 
-					
-					}
-					else {
-						
-						wp_list_pages("title_li=&depth=2&child_of=".$post->ID); 
-				
-					}
-						?>
-						
+				<p id="breadcrumbs">Home > Information > Search</p>
+				<h3 id="left_column_title">Search</h3>
 			</div>
 			<!-- END LEFT COLUMN --->
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
+			<h3 id="post_title">Search within the the <?php echo bloginfo('name'); ?> website</h3>
 			<?php get_search_form(); ?>
 				
 			</div>
@@ -59,7 +26,11 @@ Template Name: Search Page
 			<!-- END MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
-	<?php get_sidebar('one'); ?>
+			<div id="right_column" class=".hidden-phone">
+				<div id="right_column_push">
+				<?php get_sidebar('post'); ?>
+				</div>
+			</div>
 			<!-- END RIGHT COLUMN --->
 			
 		</div>

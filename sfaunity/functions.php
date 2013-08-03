@@ -3,6 +3,8 @@
 // Add post thumbnail support
 add_theme_support( 'post-thumbnails' ); 
 add_image_size( 'featured_image_right_column', 455, 9999 );
+add_image_size( 'listing_featured_image', 683, 260 );
+add_image_size( 'listing_small_featured_image', 337, 179 );
 
 // Add post thumbnail caption support
 function the_post_thumbnail_caption() {

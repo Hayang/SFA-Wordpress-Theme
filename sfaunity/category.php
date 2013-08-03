@@ -15,125 +15,104 @@
 		}
 		?>
 	<!-- MAIN BODY --->	
-		<div class="row-fluid">
-			<!-- LEFT COLUMN --->	
-			<div id="left_column" class="span2">
-				<div id="breadcrumbs">
-				<?php echo get_category_parents($category, TRUE, ' > '); ?>
-				</div>
-					<h3 id="left_column_title"><a href="<?php echo get_category_link( $parent_cat_id ); ?> " ><?php echo $category_parent->name ?></a></h3>
-					<ul>
-					<?php wp_list_categories('style=none&child_of='.$parent_cat_id);  ?>
-					</ul>
-			</div>
-			<!-- END LEFT COLUMN --->	
-			<!-- MIDDLE COLUMN --->
-			<div class="span6" id="post_body">
-	<?php 
-		//query_posts( );
-		$n_posts_per_page = 9; 
-		query_posts($query_string . 'posts_per_page='.$n_posts_per_page ); 
-		$postCount = 0; 
-	?>
-			<h6><?php  single_cat_title(); ?></h6>
+	<div class="row-fluid">
+		
+		<!-- LEFT COLUMN --->	
+		<div id="left_column" class="span2">
+			<p id="breadcrumbs">
+			<?php echo get_category_parents($category, TRUE, ' > ', TRUE); ?>
+			</p>
+				<h3 id="left_column_title"><a href="<?php echo get_category_link( $parent_cat_id ); ?> " ><?php echo $category_parent->name ?></a></h3>
+				<ul>
+				<?php wp_list_categories('title_li=&child_of='.$parent_cat_id);  ?>
+				</ul>
+		</div> <!-- end LEFT COLUMN --->	
 			
+		<!-- MIDDLE COLUMN --->
+		<div class="span6" id="post_body">
+		<div class="flush">
+		
+			<?php 
+				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+				$postCount = 0; 
+			?>
+			<h3 id="page_blacktitle"><?php  single_cat_title(); ?></h3>
+		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); $postCount += 1;?>
-			<?php if ($postCount <= 1) { ?>
-			<?php the_title();?>
-			<div id="featured_image">
-			<?php 
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail(array(700,250), array('class' => "category-featured-image"));
-			}
-			?>
-			</div>
-			<h4><?php the_title();?></h4> 
-			<span id="post_info"> POSTED <?php the_date(); the_category(); ?> </span>
-
-			<p><?php the_content(); ?></p>
-	
-	
-			<?php } else {
-			if ($postCount <= 2) { ?>
-			<div class="row-fluid">
-			<?php } ?>
-
-				
-			<div class="span6" >
-			<div id="sub_featured_image">
-			<?php 
-			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-			the_post_thumbnail(array(300,150), array('class' => "category-featured-image"));
-			}
-			?>
-			</div>
-			<h5><?php the_title();?> </h5>
-			<span id="post_info">POSTED <?php the_date(); the_category(); ?> </span>
-			<p><?php the_content(); ?></p>
-			</div>
-		
-		
-		
-
-		
-	<?php }	?>
-	<?php endwhile; endif; ?>
-		<?php if ($postCount >= 2) { ?>
-			</div>
-		<?php }	?>
-<!--
-		<div id="featured_image"><img src="http://placehold.it/700x250"></img></div>
-		<h4>THE UCONN DRAMATIC ARTS DEPARTMENT HAS DEVELOPED ONE OF THE FINEST UNIVERSITY-BASED ACTOR-TRANING PROGRAMS IN THE COUNTRY.</h4> 
-		<span id="post_info">POSTED JULY 14, 2013 | FACULTY</span>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis eget nisi nec dignissim. Aliquam tempor hendrerit tortor. Nunc sed lacus ut ligula bibendum fermentum eu sit amet nunc. Maecenas nec fermentum mi.</p>
--->
-				
-				<!-- START SUB CATEGORIES --->
-				<div class="row-fluid">
-				
-					<div class="span6" >
-					<div id="sub_featured_image"><img src="http://placehold.it/300x150"></img></div>
-					<h5>Title 1</h5>
-					<span id="post_info">POSTED JULY 14, 2013 | FACULTY</span>
-					<p>Sed nec luctus metus. Aliquam sit amet tellus id dolor bibendum tempor eget at nunc. Vestibulum bibendum quam cursus arcu laoreet iaculis. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-					</div>
-					
-					<div class="span6" >
-					<div id="sub_featured_image"><img src="http://placehold.it/300x150"></img></div>
-					<h5>Title 2</h5>
-					<span id="post_info">POSTED JULY 14, 2013 | FACULTY</span>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae mauris nulla. Nunc tempor sagittis nulla et scelerisque.</p>
-					</div>
-					
-				</div>
-			<!-- END SUB CATEGORIES --->
-			</div>
-			<!-- END MIDDLE COLUMN --->
 			
-			<!-- RIGHT COLUMN --->
-			<div class="span4" >
-				<div class="social_media"><h5>Connect with us<h5>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<img src="http://placehold.it/50x50"></img>
-				<p>UCONN Dramatic arts is on facebook and twiiter! Follow us and we'll fill you in on what's been going on!<p>
+				
+				<?php if ($postCount <= 1) { ?> <!-- if first post -->
+				<div class="row-fluid listing_row"> 
+					<a href="<?php the_permalink(); ?>">
+						<div class="featured_image">
+							<?php 
+								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								the_post_thumbnail(array(700,250), array('class' => "listing_featured_image"));
+							}else {
+							echo '<img class="listing_featured_image wp-post-image" height="250" width="700" alt="no_image" src="http://www.futurity.org/wp-content/uploads/2013/03/nope_525.jpg"></img>	';
+							}
+							?>
+						</div>
+						<h3 class="post_listing_title"><?php the_title();?></h3>
+					</a>
+					<h6 class="post_meta">POSTED <?php the_date();?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php the_category(', '); ?></h6>
+					<?php the_excerpt(); ?>
 				</div>
 				
-				<div id="left_col_push">
-					<span>OTHER NEWS AT UCONN DRAMA</span>
-					<div class="column_3_boxes">
-					<p>Jesse Rifkin Writes on "What Makes Gatsby Your Classic?"</p>
-					</div>
+				<?php } else { ?> <!-- if it's a post after first post -->
+				
+					<?php
+					if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?>
+					<div class="row-fluid listing_row"> 
+					<?php } ?>
 					
-					<div class="column_3_boxes"><p>CRT Production "Hairspray is a family-friendly musical. </p>
-					</div>
-				</div>
-			</div>
-			<!-- END RIGHT COLUMN --->
+						<div class="span6" >
+						<a href="<?php the_permalink(); ?>">
+							<div class="sub_featured_image">
+							<?php 
+							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+							the_post_thumbnail(array(300,150), array('class' => "listing_small_featured_image"));
+							} else {
+							echo '<img class="listing_small_featured_image wp-post-image" height="150" width="150" alt="no_image" src="http://www.futurity.org/wp-content/uploads/2013/03/nope_525.jpg"></img>	';
+							}
+							?>
+							</div>
+							<h4 class="post_listing_title"><?php the_title();?> </h4>
+						</a>
+						<h6 class="post_meta"><?php the_date();?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php the_category(', '); ?></h6>
+						<?php the_excerpt(); ?>
+						</div>
 			
-		</div>
-	<!-- END MAIN BODY --->
+					<?php
+					if ( ($postCount > 1) && ($postCount % 2 == 1) ) { ?>
+					</div> 
+					<?php } ?>
+
+				<?php } ?> <!-- end if it's a post after first post -->
+					
+				<?php endwhile; endif; ?> <!-- end output of posts -->
+			
+				<?php if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?>
+				</div> 
+				<?php }	?>	
+		
+
+		<?php
+			next_posts_link( 'Older Entries' );
+			previous_posts_link( 'Newer Entries' );
+		?>
+
+		</div><!-- end flush -->
+		</div><!-- end MIDDLE COLUMN --->
+		
+			
+		<!-- RIGHT COLUMN --->
+		<div id="right_column">
+			<div id="right_column_push">
+			<?php get_sidebar('post'); ?>
+			</div>
+		</div> <!-- end RIGHT COLUMN --->
+			
+	</div> <!-- end MAIN BODY --->
 
 <?php get_footer(); ?>

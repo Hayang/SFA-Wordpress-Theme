@@ -7,7 +7,6 @@
 			<div id="left_column" class="span2">
 			
 				<p id="breadcrumbs">
-				Home >
 				<?php 
 				//~ get_post_ancestors( $post->ID )    
 					$ancestor_id_list = get_post_ancestors( $post->ID );

@@ -27,7 +27,7 @@
 					<ul>
 					<?php
 
-					wp_list_categories('style=none&child_of='.$parent_cat_id); 
+					wp_list_categories('style=list&title_li=&child_of='.$parent_cat_id); 
 					?>
 					
 			</div> <!-- end LEFT COLUMN --->	
