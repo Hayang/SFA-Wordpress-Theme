@@ -11,40 +11,66 @@
 				//~ get_post_ancestors( $post->ID )    
 					$ancestor_id_list = get_post_ancestors( $post->ID );
 					$n_ancestor = sizeof( $ancestor_id_list);
-					for ($i=1; $i<=$n_ancestor; $i++) {
-						$j = $n_ancestor - $i;
-						echo get_the_title($ancestor_id_list[$j]);
-						echo " > ";
-					}
-					the_title();
-					?> 
-				</p> 
-					
-					<?php 
-						$load_2nd_ancestor = ($n_ancestor >= 2); 
-
-					?>
-					
-					<h3 id="left_column_title"><?php if($load_2nd_ancestor) echo (get_the_title($ancestor_id_list[$n_ancestor- 2])); else the_title() ?></h3>
-					<ul>  
-					<?php
-					  //~ wp_list_pages("title_li=&child_of=$id&show_date=modified&date_format=$date_format"); 
-					  
-					if ($load_2nd_ancestor ) {
-						wp_list_pages("title_li=&depth=2&child_of=".$ancestor_id_list[$n_ancestor- 2]); 
-					
-					}
-					else {
+					if ($n_ancestor <= 0 ) {?>
+						<a href=" <?php the_permalink(); ?> " >
+						<?php the_title(); ?>
+						</a> 
 						
-						wp_list_pages("title_li=&depth=2&child_of=".$post->ID); 
-				
+					<?php }
+					elseif ($n_ancestor == 1 ) {?>
+						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor-1]) ?> " >
+						<?php echo get_the_title($ancestor_id_list[$n_ancestor-1]); ?>
+						</a> > 
+						<a href=" <?php the_permalink(); ?> " >
+						<?php the_title(); ?>
+						</a> 
+						<?php 
 					}
+					else { ?>
+						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor-1]) ?> " >
+						<?php echo get_the_title($ancestor_id_list[$n_ancestor-1]); ?>
+						</a> > 
+						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 2]) ?> " >
+						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 2]); ?>
+						</a> 
+						<?php } 
 						?>
+				
+				</p> 
+
+					
+						<h3 id="left_column_title">
+						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
+						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
+						</a> </h3>
+						<ul> <h5>
+						<?php 
+						$kid_list = ''; $first_child = true;
+
+						for ($k = 1; $k <= $n_ancestor; $k++) {
+							$children  = get_children('post_parent='.$ancestor_id_list[$n_ancestor- $k]); 
+							foreach ( $children as $kid ) { 
+								if (!$first_child)  $kid_list = $kid_list . ',';
+								$first_child = false;
+								$kid_list = $kid_list . $kid->ID;
+							}							
+						}
+							$children = get_children('post_parent='.$post->ID); 
+							foreach ( $children as $kid ) { 
+								if (!$first_child)  $kid_list = $kid_list . ',';
+								$first_child = false;
+								$kid_list = $kid_list . $kid->ID;
+							}
+							$dont_display_list = ($n_ancestor == 0) && empty($children);
+						if ($dont_display_list == false) wp_list_pages("sort_column=post_name&title_li=&include=".$kid_list); 
 						
+						?> </h5> </ul>
 			</div>
 			<!-- end LEFT COLUMN --->
 			
 			<!-- MIDDLE COLUMN --->
+
+			
 			<div class="span6" id="post_body">
 				<h2 id="page_title"><?php the_title() ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?></h2>
 				<?php the_content(); ?>

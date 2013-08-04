@@ -739,7 +739,7 @@ h2#event_page_title {
 
 #uconn_footer{
 	background-color: #eee;
-	padding: 20px;
+	padding: 10px 0 10px 0;
 	position: relative;
 	bottom:0;
 }
