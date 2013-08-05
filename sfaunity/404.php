@@ -17,8 +17,8 @@
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
 				<h2 id="page_title">The page could not be found</h2>
-				
-				
+				<p>You may want to <a href="<?php bloginfo('url'); ?>">return to the homepage</a> or make a search:</p>
+				<?php get_search_form(); ?>
 				
 			</div>
 			

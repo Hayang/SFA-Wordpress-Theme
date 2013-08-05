@@ -25,7 +25,10 @@
 							<?php $excerpt = get_the_title();
 							echo string_limit_words($excerpt, 15);
 							?><br /></a>
-						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							
+							<div class="readmore_container">
+								<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							</div>
 						</div>
 						<?php endwhile;?>
 					</div>
@@ -44,7 +47,9 @@
 							<?php $excerpt = get_the_title();
 							echo string_limit_words($excerpt, 15);
 							?><br /></a>
-						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							<div class="readmore_container">
+								<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							</div>
 						</div>
 						<?php endwhile;?>
 					</div>
@@ -62,7 +67,9 @@
 							<?php $excerpt = get_the_title();
 							echo string_limit_words($excerpt, 15);
 							?><br /></a>
-						<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							<div class="readmore_container">
+								<a class="box_readmore" href="<?php the_permalink(); ?>"><p>Read More ›</p></a>
+							</div>
 						</div>
 						<?php endwhile;?>
 					</div>

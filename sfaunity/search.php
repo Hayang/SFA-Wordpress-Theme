@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 	
 	<!-- MAIN BODY --->	
-		<div class="row-fluid">
+		<div class="row-fluid grid_aligned">
 			<!-- LEFT COLUMN --->	
 			<div id="left_column" class="span2">
 			
 				<p id="breadcrumbs">
-					Home > Information > Search
+					Information > Search
 				</p> 
 				<h3 id="left_column_title">Search</h3>
 			</div>
@@ -15,19 +15,19 @@
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
 			<div class="flush">
-				<?php get_search_form(); ?>
+				
 				<?php if (have_posts()) : ?>
 				<h3 id="page_blacktitle"><?php printf( __( 'Search Results for: %s' ), '<span><strong>"' . get_search_query() . '"</strong></span>' ); ?></h3>
-         
+				<?php get_search_form(); ?>
 				<?php while (have_posts()) : the_post(); ?>
-				<div class="row-fluid">
-						<?php if ( has_post_thumbnail()) : ?> <a href=" <?php the_permalink(); ?> " title=" <?php the_title_attribute(); ?>" > <?php the_post_thumbnail('thumbnail', array('class' => 'span4 featued_image_1col')); ?> </a>
-						<?php else: ?> <img src="http://clubworld360.com/data/venues/1775/full_noImage%20-%20Copy%20(2)%20-%20Copy.jpg" class="span4 featued_image_1col wp-post-image" /> <?php endif; ?>
+				<div class="row-fluid search_listing listing_row">
+						<?php if ( has_post_thumbnail()) : ?> <a href=" <?php the_permalink(); ?> " title=" <?php the_title_attribute(); ?>" > <?php the_post_thumbnail('thumbnail', array('class' => 'span4')); ?> </a>
+						<?php else: ?> <img src="<?php bloginfo('template_directory');?>/img/assets/noimage.png" class="span4 wp-post-image" /> <?php endif; ?>
 						
 						<div class="span8">
-						<h5><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h5>
-							<span id="post_info">POSTED <?php the_time('F j, Y') ?> | <?php the_category(', ') ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?></span>
-							<p> <?php the_excerpt(); ?> </p>
+						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+							<h6 class="post_meta"><?php echo get_post_type() ?> CREATED ON <?php the_time('F j, Y') ?> | <?php the_category(', ') ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this entry</span>','',' '); ?></h6>
+							<?php the_excerpt(); ?>
 						</div>
 				</div>
 				<?php endwhile; ?>
@@ -46,7 +46,7 @@
 				?>
 
 				<?php else : ?>
-					<h3>No pages found. Try a different search?</h3>
+					<h3 id="page_blacktitle">No pages found for <strong>"<?php echo get_search_query(); ?>"</strong>. Try a different search?</h3>
 					<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 				<?php endif; ?>
 				

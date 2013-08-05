@@ -48,8 +48,6 @@
 							<?php 
 								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 								the_post_thumbnail(array(700,250), array('class' => "listing_featured_image"));
-							}else {
-							echo '<img class="listing_featured_image wp-post-image" height="250" width="700" alt="no_image" src="http://www.futurity.org/wp-content/uploads/2013/03/nope_525.jpg"></img>	';
 							}
 							?>
 						</div>
@@ -72,8 +70,6 @@
 							<?php 
 							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 							the_post_thumbnail(array(300,150), array('class' => "listing_small_featured_image"));
-							} else {
-							echo '<img class="listing_small_featured_image wp-post-image" height="150" width="150" alt="no_image" src="http://www.futurity.org/wp-content/uploads/2013/03/nope_525.jpg"></img>	';
 							}
 							?>
 							</div>

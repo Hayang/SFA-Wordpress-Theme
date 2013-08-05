@@ -38,7 +38,7 @@
 </head>
 	
 <body>
-<div id="top_header" >
+	<div id="top_header" >
     <!-- UCONN HEADER --->
 	<div class="row-fluid uconn_header">
 		<a href="www.uconn.edu" >

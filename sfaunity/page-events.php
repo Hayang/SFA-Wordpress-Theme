@@ -6,10 +6,10 @@
 		<div class="row-fluid">
 		
 			<!-- LEFT COLUMN, STATIC TITLE, LINKS TO EVENT PAGES --->	
-			<div class="span2 left_column">
-				<div id="breadcrumbs">
-				<p>COMMUNITY > EVENTS</p>
-				</div>
+			<div id="left_column" class="span2">
+				<p id="breadcrumbs">
+				COMMUNITY > EVENTS
+				</p>
 					<h3 id="left_column_title">EVENTS</h3>
 					<ul>
 						<a href="<?php echo (get_permalink( $post->ID ).'&t=d') ?>"><li>DAILY EVENTS</li></a>
@@ -23,19 +23,22 @@
 			<!-- MIDDLE COLUMN, ONE WEEK EVENTS LISTING --->
 			
 			<div class="span8" id="post_body">
+				<div class="flush">
 				
-				<?php require( 'cal.php'); 	?>
-			</div>	<!-- END MIDDLE COLUMN --->
+					<?php require( 'cal.php'); 	?>
+					
+				</div>  <!-- end flush --->
+			</div>	<!-- end MIDDLE COLUMN --->
 			
 			
 			<!-- RIGHT COLUMN, LEAVE BLANK LIKE THIS --->
 			<div class="span4" id="right_column_small">
 
 			</div>
-			<!-- END RIGHT COLUMN --->
+			<!-- end RIGHT COLUMN --->
 			
 		</div>
-	<!-- END MAIN BODY --->
+	<!-- end MAIN BODY --->
 
 
 			<?php endwhile; endif; ?>

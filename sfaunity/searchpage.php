@@ -11,14 +11,14 @@ Template Name: Search Page
 		<div class="row-fluid">
 			<!-- LEFT COLUMN --->	
 			<div id="left_column" class="span2">
-				<p id="breadcrumbs">Home > Information > Search</p>
+				<p id="breadcrumbs">Information > Search</p>
 				<h3 id="left_column_title">Search</h3>
 			</div>
 			<!-- END LEFT COLUMN --->
 			
 			<!-- MIDDLE COLUMN --->
 			<div class="span6" id="post_body">
-			<h3 id="post_title">Search within the the <?php echo bloginfo('name'); ?> website</h3>
+			<h3 id="page_blacktitle">Make a search within the <?php echo bloginfo('name'); ?> website:</h3>
 			<?php get_search_form(); ?>
 				
 			</div>

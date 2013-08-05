@@ -5,8 +5,7 @@ date_default_timezone_set('America/Jamaica');
 	$charnum = 24;
 	$pad = 28;
 	//~ $calendar = 'Benton_Museum_of_Art1,Ballard_Institute_and_Museum_of_Puppetry1,Community_School_of_the_Arts1,Connecticut_Repertory_Theatre1,Jorgensen_Center_for_the_Performing_Arts1,UConn_Stamford_Art_Gallery1,von_der_Mehden_Recital_Hall1';
-	$calendar = 'Benton_Museum_of_Art1';
-	
+	require('calendar_select.php');
 	
 if(isset($_GET['ajax'])){
 	$ch = curl_init("http://web2.uconn.edu/wdlcalendar/index.php/smallcal_ajax/".$_GET['ajax']);
