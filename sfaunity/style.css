@@ -567,7 +567,7 @@ ul.navigation_list a {
 }
 
 #post_body .flush {
-	margin: -0.427350427350424%;
+	margin-left: -0.427350427350424%;
 }
 
 #post_body h1,
@@ -581,13 +581,18 @@ ul.navigation_list a {
 	margin-bottom: 20px;
 }
 
-h3#page_blacktitle {
+h3#page_blacktitle,
+h3#page_events_blacktitle {
 	margin-top: 5px;
 	vertical-align: top;
 	font-size: 24px;
 	font-weight: normal;
 	color: #222;
 } 
+
+	h3#page_events_blacktitle {
+		margin-bottom: 0px;
+	} 
 
 blockquote {
 	color: #555;
@@ -663,6 +668,17 @@ h6.post_meta {
 	box-sizing: border-box;
 	float: right;
 	width: 33.333333333%;
+}
+
+.row-fluid #right_column_small  {
+	margin-top: 15px;
+	display: block;
+	min-height: 36px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: right;
+	width: 16.6666666665%;
 }
 
 .grid_aligned #right_column {
@@ -773,10 +789,67 @@ input#big_search {
 /* --------------------
 	EVENTS
  -------------------- */
- 
+
 h2#event_page_title {
 	clear: none;
 	display: inline;
+	text-transform: uppercase;
+	font-size: 46.75px;
+}
+
+#events_table {
+	margin-top: 13px;
+	width: 100%;
+}
+
+#events_table thead {
+	margin-bottom: 13px;
+}
+
+#events_table td {
+	vertical-align: top;
+	width: 14.2857142857%;
+}
+
+#events_table td:hover {
+	background-color: #ffe3d7;
+}
+
+#events_table tr.weekrow {
+	height: 100px;
+}
+
+.cal_head_row {
+	text-align: center;
+	color: #93bd0c
+}
+
+#events_table h2.daynum {
+	font-size: 40px;
+	text-align: center;
+}
+	#events_table h2.daynum { color: #ffcab1; }
+	#events_table h2.daynum a { color:#F27200; }
+
+
+.events_right_column {
+	padding-top: 135px;
+}
+	
+.events_button {
+	width: 100%;
+	margin-bottom: 10px;
+}
+	.events_prev { background-color: #93bd0c; }
+	.events_next { background-color: #93bd0c; }
+	
+.events_button a{
+	display: block;
+	color: white;
+	line-height: 1;
+	padding: 5px 10px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* --------------------

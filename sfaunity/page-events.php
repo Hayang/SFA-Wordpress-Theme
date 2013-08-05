@@ -32,9 +32,7 @@
 			
 			
 			<!-- RIGHT COLUMN, LEAVE BLANK LIKE THIS --->
-			<div class="span4" id="right_column_small">
 
-			</div>
 			<!-- end RIGHT COLUMN --->
 			
 		</div>

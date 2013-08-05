@@ -149,25 +149,16 @@ var $this_month = array();
 		$already_display_date = true;
 				?>
 			<!-- MIDDLE COLUMN, DAILY EVENTS LISTING --->
-			
-			<div class="span8" id="post_body">
+				<h3 id="page_events_blacktitle">Events by Day</h3>
+				
 				<?php 
 					$yesterday = $this->stamp - $one_day_worth_of_seconds;
 					$tomorrow  = $this->stamp + $one_day_worth_of_seconds;
 				?>
-				<!-- Previous Day Button -->
-				<a id="previous_button" href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$yesterday  )?>" alt="Go to the previous day">
-					<img src="http://placehold.it/30x30" />
-				</a> 
-				
-				<!-- Week Title -->
-				<h2 id="event_page_title"> <?php echo date('l, F j',$this->stamp); ?></h2>
-				
-				<!-- Next Day Button -->
-				<a id="next_button"  href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$tomorrow  )?>" alt="Go to the next day">
 
-					<img src="http://placehold.it/30x30" />
-				</a>
+				<!-- Week Title -->
+				<h2 id="event_page_title"><?php echo date('l, F j',$this->stamp); ?></h2>
+				
 			<!-- START LISTING EVENTS -->
 				<?php
 		foreach($this->occurrences as $key => $occurrence){
@@ -194,16 +185,22 @@ var $this_month = array();
 					</div>
 				</div> <!-- END ONE EVENT -->
 
-								<?php
-				$n ++;
+			
+			<?php
+			$n ++;
 			}
 		}
 			if ($n <= 1) {
 			echo( "<h3>No events today</h3>");
 			}
-	?></div><?php
-
-	}
+			?>				
+			</div>  <!-- end flush --->
+			</div>	<!-- end MIDDLE COLUMN --->
+			<div id="right_column_small" class="events_right_column">
+				<div class="events_button events_prev"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$yesterday  )?>">Previous Day</a></div>
+				<div class="events_button events_next"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$tomorrow  )?>">Next Day</a></div>
+			</div>
+	<?php }
 
 	function print_registered_week(){
 		$today = date('mdY',$this->stamp) ;
@@ -217,9 +214,9 @@ var $this_month = array();
 		$event_list = array();
 		$already_display_date = true;
 				?>
-			<!-- MIDDLE COLUMN, DAILY EVENTS LISTING --->
-			
-			<div class="span8" id="post_body">
+			<!-- MIDDLE COLUMN, WEEKLY EVENTS LISTING --->
+				<h3 id="page_events_blacktitle">Events by Week</h3>
+				
 				<?php 
 					$last_week = $this->stamp - $one_week_worth_of_seconds;
 					$next_week  = $this->stamp + $one_week_worth_of_seconds;
@@ -227,20 +224,10 @@ var $this_month = array();
 					//~ $tomorrow  = $this->stamp + $one_day_worth_of_seconds;
 				?>
 				
-				<!-- Previous Week Button -->
-				<a id="previous_button" href="<?php echo (get_permalink( $post->ID ).'&t=w&st='.$last_week  )?>" alt="Go to the previous week">
-					<img src="http://placehold.it/30x30" />
-				</a> 
-				
 				<!-- Week Title -->
 				<h2 id="event_page_title"> WEEK OF <?php //echo date('j',$beginning_of_week).'-'.(date('t',$beginning_of_week));
 				echo date('j',$beginning_of_week).'-'.((date('j',$beginning_of_week)+6)%date('t',$beginning_of_week));?></h2>
 				
-				<!-- Next Week Button -->
-				<a id="next_button"  href="<?php echo (get_permalink( $post->ID ).'&t=w&st='.$next_week  )?>" alt="Go to the next week">
-
-					<img src="http://placehold.it/30x30" />
-				</a>
 			<!-- START LISTING EVENTS -->
 				<?php
 				$started_loop = false;
@@ -275,16 +262,23 @@ var $this_month = array();
 
 					</div>
 				</div>
-					<?php
-				$n ++;
+
+			<?php
+			$n ++;
 			}
 		}
 			if ($n <= 1) {
 			echo( "<h3>No events today</h3>");
 			}
-	?></div><?php
-
-	}
+			
+			?>				
+			</div>  <!-- end flush --->
+			</div>	<!-- end MIDDLE COLUMN --->
+			<div id="right_column_small" class="events_right_column">
+				<div class="events_button events_prev"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$yesterday  )?>">Previous Day</a></div>
+				<div class="events_button events_next"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$tomorrow  )?>">Next Day</a></div>
+			</div>
+	<?php }
 
 
 
@@ -336,9 +330,9 @@ var $this_month = array();
 				$this_date = $day.'-'.$this->this_month['month'].'-'.$this->this_month['year'];
 				$this_timestamp = strtotime($this_date);
 				if ($this->day_binary[$day] ) {
-					$num_rep = '<h2 class="has_events"><a class="daynum '.$this_date.'" href="'.get_permalink( $post->ID ).'&t=d&st='.$this_timestamp.'">'.$day.'</a></h2>';
+					$num_rep = '<h2 class="has_events daynum"><a class="'.$this_date.'" href="'.get_permalink( $post->ID ).'&t=d&st='.$this_timestamp.'">'.$day.'</a></h2>';
 				} else {
-					$num_rep = '<h2 class="">'.$day.'</h2>';
+					$num_rep = '<h2 class="daynum">'.$day.'</h2>';
 				}
 				$cell = '<td class="daybox">'.
 									''.
@@ -389,13 +383,11 @@ var $this_month = array();
 		$this->populateRows();
 		$monthName = date("F", mktime(0, 0, 0, $this->this_month['month'], 10));
 
-		echo '<table id="sctable">';
+		echo '<table id="events_table" class="row_fluid">';
 			echo '<div id="cal_info">';
-			echo '<h2 id="big_cal_date">'.$monthName. ' ' . $this->this_month['year'].'</h2>';
+			echo '<h3 id="page_events_blacktitle">Events by Month</h3>';
+			echo '<h2 id="event_page_title">'.$monthName. ' ' . $this->this_month['year'].'</h2>';
 			echo '<div id="big_cal_month_buttons">';
-			echo '<a class="whitebutton" href="'.get_permalink( $post->ID ).'&t=m&'.$this->lastDateBlock.'">Previous Month</a>&nbsp;&nbsp;';
-			echo '<a class="whitebutton" href="'.get_permalink( $post->ID ).'&t=m&'.$this->nextDateBlock.'">Next Month</a>';
-			echo '</div></div>';
 			
 		echo '<thead>';
 			echo '<tr class="cal_head_row">';
@@ -417,7 +409,16 @@ var $this_month = array();
 		echo '</tbody>';
 		
 		echo '</table>';
-	}
+		?>
+		</div>  <!-- end flush --->
+		</div>	<!-- end MIDDLE COLUMN --->
+		
+		<div id="right_column_small" class="events_right_column">
+			<div class="events_button events_prev"><a href="'.get_permalink( $post->ID ).'&t=m&'.$this->lastDateBlock.'">Previous Month</a></div>
+			<div class="events_button events_next"><a href="'.get_permalink( $post->ID ).'&t=m&'.$this->nextDateBlock.'">Next Month</a></div>
+		</div>
+		
+	<?php 	}
 
 
 
