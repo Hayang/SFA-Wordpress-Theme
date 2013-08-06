@@ -36,35 +36,46 @@
 						<?php } 
 						?>
 				
-				</p> 
+				</p> <!-- end Breadcrumbs -->
+				
+				<?php 
+					// Adding the current post ID to the array of its ancestor ID's
+					$ancestor_id_list = array_merge((array)array($post->ID), (array) $ancestor_id_list);
+					function print_page_link($kid,$k)
+					{ 
+						// This function is to print the <li> tag of the provide WP post object, classes will be printed as level $k
+						?>
+						<li class ="li_level<?php echo $k; ?>"><a href="<?php echo get_post_permalink($kid->ID); ?>" > <?php echo $kid->post_title; ?></a></li>
 
+					 <?php
+					}
+					function print_all_children($ancestor_id_list,$k)
+					{	
+						// local redefine the size of ancestor_id_list
+						$n_ancestor = sizeof( $ancestor_id_list);
+						// get the array of children WP post objects
+						$children = get_children('orderby=menu_order&order=ASC&post_parent='.$ancestor_id_list[$n_ancestor- $k]);
+						if ($children) {
+							$k += 1; // don't ask..
+							echo '<ul class ="ul_level'. $k.'">';
+							foreach ( $children as $kid ) { // for each WP post object
+								print_page_link($kid,$k); // print <li> links
+								// if the post id is next item in the ancestor_id_list, print the children of this post. Yep, it's recursive
+								if ($kid->ID == $ancestor_id_list[$n_ancestor- $k] )  print_all_children($ancestor_id_list,$k);
+							}	
+							echo '</ul>';
+						}
+					}
+				?>
 					
 						<h3 id="left_column_title">
 						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
 						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
 						</a> </h3>
-						<ul>
-						<?php 
-						$kid_list = ''; $first_child = true;
-
-						for ($k = 1; $k <= $n_ancestor; $k++) {
-							$children  = get_children('post_parent='.$ancestor_id_list[$n_ancestor- $k]); 
-							foreach ( $children as $kid ) { 
-								if (!$first_child)  $kid_list = $kid_list . ',';
-								$first_child = false;
-								$kid_list = $kid_list . $kid->ID;
-							}							
-						}
-							$children = get_children('post_parent='.$post->ID); 
-							foreach ( $children as $kid ) { 
-								if (!$first_child)  $kid_list = $kid_list . ',';
-								$first_child = false;
-								$kid_list = $kid_list . $kid->ID;
-							}
-							$dont_display_list = ($n_ancestor == 0) && empty($children);
-						if ($dont_display_list == false) wp_list_pages("sort_column=menu_order&title_li=&include=".$kid_list);
 						
-						?></ul>
+						<?php 
+							print_all_children($ancestor_id_list,1);						
+						?>
 			</div>
 			<!-- end LEFT COLUMN --->
 			

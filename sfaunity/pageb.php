@@ -43,7 +43,7 @@
 						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
 						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
 						</a> </h3>
-						<ul> <h5>
+						<ul>
 						<?php 
 						$kid_list = ''; $first_child = true;
 
@@ -62,9 +62,9 @@
 								$kid_list = $kid_list . $kid->ID;
 							}
 							$dont_display_list = ($n_ancestor == 0) && empty($children);
-						if ($dont_display_list == false) wp_list_pages("title_li=&include=".$kid_list); 
+						if ($dont_display_list == false) wp_list_pages("sort_column=menu_order&title_li=&include=".$kid_list);
 						
-						?> </h5> </ul>
+						?></ul>
 			</div>
 			<!-- end LEFT COLUMN --->
 			

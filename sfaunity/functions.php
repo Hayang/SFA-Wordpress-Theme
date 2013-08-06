@@ -1,5 +1,8 @@
 <?php
 
+// Add Faculty Custom Post Types
+require('faculty_function.php');
+
 // Add post thumbnail support
 add_theme_support( 'post-thumbnails' ); 
 add_image_size( 'featured_image_right_column', 455, 9999 );
