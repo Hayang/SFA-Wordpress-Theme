@@ -950,9 +950,36 @@ background-color: inherit;
 
 #faculty_cat_list h2 {
 	float: left;
-	
 }
-
 /* END FACULTY-MAIN PAGE */
 
+/* FACULTY-BIO PAGE */
+#bio_title {
+	text-transform: uppercase;
+	font-size: 56.75px
+}
 
+#bio_info{
+	list-style: none;
+	color: #8dbc50;
+	margin: 0 0 10px 0;
+}
+
+#bio_pic  h2{
+	margin: 0 0 5px 0;
+	float: right;
+}
+
+#bio_pic img {
+	height: 290px;
+	width: 295px;
+	float: left;
+	padding-right: 5px;
+	margin: 0;
+}
+
+#bio_content {
+	color: #88e2f9;
+	float: right;
+}
+/* END FACULTY-BIO PAGE */

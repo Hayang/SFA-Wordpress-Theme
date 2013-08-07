@@ -224,6 +224,27 @@ function sfa_theme_customizer_register($wp_customize) {
         ),
 	));
 	
+	$wp_customize-> add_section('changing_cal', array (
+	'title' => __('Calender Feed','uconn'),
+	'priority'   => 36,
+	'description' => 'Modify The Calender Feed'
+	));
+
+	$wp_customize-> add_setting('calender_setting', array (
+	'default' =>  'Benton_Museum_of_Art1',
+	));
+	
+	$wp_customize-> add_control('calender_select', array (
+	'label' => __('Change the Calender Feed', 'uconn'),
+	'section' => 'changing_cal',
+	'settings' => 'calender_setting',
+	'type' => 'radio',
+	'choices'    => array(
+            'option1' => 'Main-Default',
+            'option2' => 'Option 2 Title',
+            'option3' => 'Option 3 Title',
+        ),
+	));
 		
 }
 
