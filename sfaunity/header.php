@@ -38,6 +38,9 @@
 </head>
 	
 <body>
+<div id="wrapper">
+<div id="sub_wrapper">
+	
 	<div id="top_header" >
     <!-- UCONN HEADER --->
 	<div class="row-fluid uconn_header">

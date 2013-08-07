@@ -4,8 +4,8 @@ date_default_timezone_set('America/Jamaica');
 	//substr number
 	$charnum = 24;
 	$pad = 28;
-	//~ $calendar = 'Benton_Museum_of_Art1,Ballard_Institute_and_Museum_of_Puppetry1,Community_School_of_the_Arts1,Connecticut_Repertory_Theatre1,Jorgensen_Center_for_the_Performing_Arts1,UConn_Stamford_Art_Gallery1,von_der_Mehden_Recital_Hall1';
-	require('calendar_select.php');
+	$calendar = get_theme_mod('calendar_setting'); //'Benton_Museum_of_Art1,Ballard_Institute_and_Museum_of_Puppetry1,Community_School_of_the_Arts1,Connecticut_Repertory_Theatre1,Jorgensen_Center_for_the_Performing_Arts1,UConn_Stamford_Art_Gallery1,von_der_Mehden_Recital_Hall1';
+	//require('calendar_select.php');
 	
 if(isset($_GET['ajax'])){
 	$ch = curl_init("http://web2.uconn.edu/wdlcalendar/index.php/smallcal_ajax/".$_GET['ajax']);
@@ -174,13 +174,15 @@ var $this_month = array();
 					
 					<div class="span9"> 
 							<!-- First event for the day -->
-							<a href="http://web2.uconn.edu/wdlcalendar/index.php/occurrence/<?php echo $occurrence->id ?>">
-								<h5 class="event_day_title">
-									<b><?php echo(date('g:iA - ',$occurrence->start) )?></b> <?php echo ($occurrence->title); ?>
-								</h5>
-								<h6 class="event_day_location">at <?php echo ($occurrence->building); ?></h6>
-								<p> <?php echo ($occurrence->description); ?>	</p>
-							</a>
+								<a href="http://web2.uconn.edu/wdlcalendar/index.php/occurrence/<?php echo $occurrence->id ?>">
+								<h3 class="event_day_title">
+									<span class="event_day_time"><?php echo(date('g:iA',$occurrence->start) )?></span><span class="event_day_location"> at the <?php echo ($occurrence->building); ?></span>
+									<br />
+									<?php echo ($occurrence->title); ?>
+								</h3>
+								</a>
+								<?php echo ($occurrence->description); ?>
+							
 
 					</div>
 				</div> <!-- END ONE EVENT -->
@@ -191,7 +193,7 @@ var $this_month = array();
 			}
 		}
 			if ($n <= 1) {
-			echo( "<h3>No events today</h3>");
+			echo( "<h3>We haven't posted events for this day.</h3>");
 			}
 			?>				
 			</div>  <!-- end flush --->
@@ -225,40 +227,39 @@ var $this_month = array();
 				?>
 				
 				<!-- Week Title -->
-				<h2 id="event_page_title"> WEEK OF <?php //echo date('j',$beginning_of_week).'-'.(date('t',$beginning_of_week));
-				echo date('j',$beginning_of_week).'-'.((date('j',$beginning_of_week)+6)%date('t',$beginning_of_week));?></h2>
+				<h2 id="event_page_title"> Week of <?php //echo date('j',$beginning_of_week).'-'.(date('t',$beginning_of_week));
+				echo date('j',$beginning_of_week).' - '.((date('j',$beginning_of_week)+6)%date('t',$beginning_of_week));?></h2>
 				
-			<!-- START LISTING EVENTS -->
+				<!-- START LISTING EVENTS -->
 				<?php
 				$started_loop = false;
-		foreach($this->occurrences as $key => $occurrence){
-					
+				foreach($this->occurrences as $key => $occurrence){
 				
-			$day = date('mdY',$occurrence->start);
-			//~ if ($today == $day)  {
-			if (( ($occurrence->start  -  $beginning_of_week) > 0) 
-			&& (($occurrence->start  -  $beginning_of_week) <= $one_week_worth_of_seconds)  
-			){
+				$day = date('mdY',$occurrence->start);
+				//~ if ($today == $day)  {
+				if (( ($occurrence->start  -  $beginning_of_week) > 0) 
+				&& (($occurrence->start  -  $beginning_of_week) <= $one_week_worth_of_seconds)  
+				){
 				$same_day = (($day == $the_loop_day) && ($started_loop) ) ;
 				$the_loop_day = date('mdY',$occurrence->start);
-				$started_loop = true;
-							?>
+				$started_loop = true; 
+				?>
+				
 				<!-- Second eventful day of the week (Identical) -->
-				<div class="row-fluid"><? ?>
-					<h4 id="event_week_day" class="span3 event_week_day"><?php if (!$same_day) echo date('j l',$occurrence->start); ?></h4>
-
-					<!-- Image, for the first event only --> 
-					<img class="span3 event_week_image featued_image_1col" src="http://web2.uconn.edu/wdlcalendar/Images/events/l_<?php echo ($occurrence->image)?>" />
+				<div class="row-fluid">
 					
-					<div class="span6">
-							<!-- First event for the day -->
-							<a href="UCONN EVENTS, SINGLE EVENT DETAILS">
-								<h5 class="event_week_single">
-									<b><?php echo(date('g:iA ',$occurrence->start) )?></b> <?php echo ($occurrence->title); ?>
-								</h5>
-							</a>
-							
-
+					<!-- Image --> 
+					<img class="span3 event_week_image" src="http://web2.uconn.edu/wdlcalendar/Images/events/l_<?php echo ($occurrence->image)?>" />
+					
+					<div class="span9">
+					<h3 class="event_week_day">On <?php if (!$same_day) echo date('l',$occurrence->start); ?><span class="event_week_daynum"> <?php if (!$same_day) echo date('j',$occurrence->start); ?></span></h3>
+					
+						<!-- First event for the day -->
+						<a href="http://web2.uconn.edu/wdlcalendar/index.php/occurrence/<?php echo $occurrence->id ?>">
+							<h5 class="event_week_single">
+								<b><?php echo(date('g:iA ',$occurrence->start) )?></b> - <?php echo ($occurrence->title); ?>
+							</h5>
+						</a>
 
 					</div>
 				</div>
@@ -268,15 +269,15 @@ var $this_month = array();
 			}
 		}
 			if ($n <= 1) {
-			echo( "<h3>No events today</h3>");
+			echo( "<h3>We haven't posted events for this week.</h3>");
 			}
 			
 			?>				
 			</div>  <!-- end flush --->
 			</div>	<!-- end MIDDLE COLUMN --->
 			<div id="right_column_small" class="events_right_column">
-				<div class="events_button events_prev"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$yesterday  )?>">Previous Day</a></div>
-				<div class="events_button events_next"><a href="<?php echo (get_permalink( $post->ID ).'&t=d&st='.$tomorrow  )?>">Next Day</a></div>
+				<div class="events_button events_prev"><a href="<?php echo (get_permalink( $post->ID ).'&t=w&st='.$last_week  )?>">Previous Week</a></div>
+				<div class="events_button events_next"><a href="<?php echo (get_permalink( $post->ID ).'&t=w&st='.$next_week  )?>">Next Week</a></div>
 			</div>
 	<?php }
 
@@ -330,7 +331,7 @@ var $this_month = array();
 				$this_date = $day.'-'.$this->this_month['month'].'-'.$this->this_month['year'];
 				$this_timestamp = strtotime($this_date);
 				if ($this->day_binary[$day] ) {
-					$num_rep = '<h2 class="has_events daynum"><a class="'.$this_date.'" href="'.get_permalink( $post->ID ).'&t=d&st='.$this_timestamp.'">'.$day.'</a></h2>';
+					$num_rep = '<h2 class="has_events daynum"><a class="'.$this_date.'" href="'.get_permalink( $post->ID ).'&t=d&st='.$this_timestamp.'" title="This day has events!">'.$day.'</a></h2>';
 				} else {
 					$num_rep = '<h2 class="daynum">'.$day.'</h2>';
 				}

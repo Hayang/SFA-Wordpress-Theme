@@ -24,12 +24,14 @@
 					COMMUNITY > NEWS
 				</p>
 					<h3 id="left_column_title"><a href="<?php echo get_category_link( $parent_cat_id ); ?> " ><?php echo $category_parent->name ?></a></h3>
-					<ul>
-					<?php
+					<div id="left_navigation">
+						<ul>
+							<?php
 
-					wp_list_categories('style=list&title_li=&child_of='.$parent_cat_id); 
-					?>
-					
+							wp_list_categories('style=list&title_li=&child_of='.$parent_cat_id); 
+							?>
+						</ul>
+					</div>
 			</div> <!-- end LEFT COLUMN --->	
 			
 			<!-- MIDDLE COLUMN --->

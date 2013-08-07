@@ -1,3 +1,5 @@
+</div>
+</div> <!-- end WRAPPER -->
 
 	<!-- UCONN FOOTER --->
 	<div class="row-fluid" id="uconn_footer">

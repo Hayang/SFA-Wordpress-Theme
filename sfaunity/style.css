@@ -1,7 +1,7 @@
 /*
-Theme Name: SFA Together
-Theme URI:
-Description:
+Theme Name: Together, UConn School of Fine Arts
+Theme URI: 
+Description: The UConn SFA "Together" design was created to unify the visual identity of UConn's School of Fine Arts, and to make its websites easier to manage. It focuses on delivering a clear message about the competency of our faculty, the vibrancy of our culture, and our passion for art, through the theme "WE ART TOGETHER".
 Version: 1.01
 Author: Vi Ha, Besard Gjoni, Michael Kim
 Author URI: 
@@ -45,6 +45,16 @@ License URI:
 	font-weight: bold;
 }
 
+@font-face {
+	font-family: "Proxima Nova";
+	src: url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot');
+	src: url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.svg#webfont') format('svg'),
+	     url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.woff') format('woff'),
+	     url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.ttf') format('truetype');
+	font-style: italic;
+}
+
 /* Tell Chrome to render with SVG */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	@font-face {
@@ -61,6 +71,11 @@ License URI:
 		font-family: "Proxima Nova";
 		src: url('fonts/ProximaNova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg') format('svg');
 		font-weight: bold;
+	}
+	@font-face {
+		font-family: "Proxima Nova";
+		src: url('fonts/ProximaNova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.svg') format('svg');
+		font-style: italic;
 	}
 } 
 
@@ -101,12 +116,27 @@ p {
 	
 }
 
+/* ----------------------------
+	BASE LAYOUT
+	-->	these rules help to
+		push the footer down.
+ ----------------------------- */
+ 
+html, body {
+height: 100%;
+}
+ 
+#wrapper {
+	min-height: 100%;
+}
+#sub_wrapper {
+	overflow:auto;
+	padding-bottom: 50px;
+}
 
-
-/* --------------------
+/* ----------------------------
 	UCONN HEADER
- -------------------- */
-
+ ----------------------------- */
  
 @media (max-width: 767px) {
   #top_header {
@@ -464,6 +494,11 @@ h4.widget_title {
 	width: 340px;
 }
 
+img.featured_image_right_column,
+img.attachment-featured_image_right_column {
+	
+}
+
 p.featured_image_caption {
 	color: #aaa;
 	padding: 10px;
@@ -509,9 +544,13 @@ h3#left_column_title {
 		color: #F27200;
 	}
 
-#left_column ul {
+#left_navigation {
+	padding-top: 10px;
+}
+
+#left_navigation ul {
 	position: relative;
-	padding: 8px 0 10px 0;
+	padding-left: 10px;
 	color: #1ba6da;
 	font-size: 14px;
 	margin-left: 0px;
@@ -520,34 +559,33 @@ h3#left_column_title {
 	text-transform: uppercase;
 }
 
-#left_column ul.children {
+#left_navigation ul.children {
 }
 
-#left_column ul li,
+#left_navigation ul li,
 ul.navigation_list a {
 	position: relative;
-	padding: 0 0 0 10px;
 	line-height: 100%;
 	margin-bottom: 10px;
 }
 
-#left_column li.current_page_item:before {
+#left_navigation li.current_page_item:before {
 	position: absolute;
 	left: 1px;
 	content: "\2023"
 }
 
-#left_column li.current_page_ancestor:before {
+#left_navigation li.current_page_ancestor:before {
 	position: absolute;
 	left: 1px;
 	content: "\2023"
 }
 
-#left_column li.current_page_item a {
+#left_navigation li.current_page_item a {
 	font-weight: bold;
 }	
 	
-#left_column li.current_page_item ul li a {
+#left_navigation li.current_page_item ul li a {
 	font-weight: normal;
 }
 
@@ -792,27 +830,65 @@ input#big_search {
 
 h2#event_page_title {
 	clear: none;
-	display: inline;
-	text-transform: uppercase;
+	display: block;
+	margin-top: 0;
+	text-transform: none;
 	font-size: 46.75px;
 }
 
-#events_table {
-	margin-top: 13px;
-	width: 100%;
+/* DAILY */
+#post_body .event_day_title {
+	color: #93bd0c;
 }
 
-#events_table thead {
+#post_body .event_day_time {
+}
+
+.event_day_descr {
+}
+
+/* WEEKLY */
+
+#post_body .event_week_day {
+	margin-top: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #93bd0c;
+}
+
+#post_body .event_week_daynum {
+}
+
+#post_body h5.event_week_single {
+	margin: 0;
+	color: #F27200;
+	font-weight: normal;
+}
+
+/* MONTHLY */
+
+#events_table {
+	margin-top: 13px;
+	width: 90%;
+}
+
+#events_table thead th {
+	border: 1px solid #eee;
 	margin-bottom: 13px;
 }
 
 #events_table td {
 	vertical-align: top;
 	width: 14.2857142857%;
+	border: 1px solid #eee;
 }
 
 #events_table td:hover {
-	background-color: #ffe3d7;
+	background-color: #F27200;
+}
+
+#events_table td:hover h2.daynum a  {
+	color: white;
 }
 
 #events_table tr.weekrow {
@@ -821,7 +897,7 @@ h2#event_page_title {
 
 .cal_head_row {
 	text-align: center;
-	color: #93bd0c
+	color: #93bd0c;
 }
 
 #events_table h2.daynum {
@@ -852,18 +928,72 @@ h2#event_page_title {
 	text-transform: uppercase;
 }
 
+/* -------------------------------
+	FACULTY DIRECTORY AND BIOS
+ --------------------------------- */
+
+#bio_title h2{
+	margin: 0;
+	vertical-align: top;
+}
+#bio_title h3{
+	margin-top: 5px;
+	font-size: 24px;
+	font-weight: normal;
+	color: #222;
+}
+
+#bio_info {
+	margin-top: 8px;
+}
+
+#bio_info ul {
+	position: relative;
+	font-size: 15px;
+	list-style: none;
+	margin-left: 0;
+}
+
+#bio_info ul li {
+	line-height: 1.4;
+	position: relative;
+	padding-left: 90px;
+}
+
+#bio_info ul strong {
+	color: #93bd0c;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	clear: none;
+	font-weight: normal;
+	text-align: right;
+}	
+
+#bio_info ul a {
+	color: inherit;
+}
+	#bio_info ul a:hover {
+		color: #93bd0c;
+	}
+
+	
 /* --------------------
 	FOOTER
  -------------------- */
 
 #uconn_footer{
-	background-color: #eee;
-	padding: 10px 0 10px 0;
 	position: relative;
-	bottom:0;
+	margin-top: -50px; /* negative value of footer height */
+	height: 50px;
+	clear:both;
+	background-color: #eee;
 }
 
 ul#uconn_footer_links {
+	margin-top: 14px;
 	list-style-type: none;
 }
 
@@ -950,36 +1080,9 @@ background-color: inherit;
 
 #faculty_cat_list h2 {
 	float: left;
+	
 }
+
 /* END FACULTY-MAIN PAGE */
 
-/* FACULTY-BIO PAGE */
-#bio_title {
-	text-transform: uppercase;
-	font-size: 56.75px
-}
 
-#bio_info{
-	list-style: none;
-	color: #8dbc50;
-	margin: 0 0 10px 0;
-}
-
-#bio_pic  h2{
-	margin: 0 0 5px 0;
-	float: right;
-}
-
-#bio_pic img {
-	height: 290px;
-	width: 295px;
-	float: left;
-	padding-right: 5px;
-	margin: 0;
-}
-
-#bio_content {
-	color: #88e2f9;
-	float: right;
-}
-/* END FACULTY-BIO PAGE */

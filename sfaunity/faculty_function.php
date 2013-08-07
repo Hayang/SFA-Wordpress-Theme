@@ -7,13 +7,13 @@ add_action( 'init', 'create_my_taxonomies', 0 );
 
 function create_my_taxonomies() {
     register_taxonomy(
-        'profession_selections',
-        'profession',
+        'areafield_selection',
+        'areafield',
         array(
             'labels' => array(
-                'name' => 'Profession',
-                'add_new_item' => 'Add Profession',
-                'new_item_name' => "New Profession"
+                'name' => 'Area / Field Category',
+                'add_new_item' => 'Add Area / Field Category',
+                'new_item_name' => "New Area / Field Category"
             ),
             'show_ui' => true,
             'show_tagcloud' => false,
@@ -52,23 +52,23 @@ function save_name($my_post_name) {
 
 function add_faculty_custom_post() {
 	$labels = array(
-		'name' => 'Faculties',
-		'singular_name' => 'Faculty',
+		'name' => 'Faculty / Staff',
+		'singular_name' => 'Faculty / Staff',
 		'add_new' => 'Add New',
-		'add_new_item' => 'Add New Faculty',
-		'edit_item' => 'Edit Info',
-		'new_item' => 'New Faculty',
-		'all_items' => 'All Faculties',
-		'view_item' => 'View Faculty',
-		'search_items' => 'Search Faculties',
-		'not_found' =>  'No Faculties found',
+		'add_new_item' => 'Add New Faculty / Staff Listing',
+		'edit_item' => 'Edit Listing',
+		'new_item' => 'New Faculty / Staff',
+		'all_items' => 'All Faculty / Staff',
+		'view_item' => 'View Faculty / Staff',
+		'search_items' => 'Search Faculty / Staff',
+		'not_found' =>  'No Faculty / Staff Listings found.',
 		'not_found_in_trash' => 'No Faculties found in Trash', 
 		'parent_item_colon' => '',
-		'menu_name' => 'Faculties'
+		'menu_name' => 'Faculty / Staff'
 	);
 
 	$args = array( 
-		'taxonomies' => array('profession_selections'), 
+		'taxonomies' => array('areafield_selection'), 
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -81,7 +81,7 @@ function add_faculty_custom_post() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		//~ 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
-		'supports' => array( 'page-attributes', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+		'supports' => array( 'page-attributes', 'author', 'thumbnail', 'excerpt',)
 	); 
 
 	register_post_type( 'faculty', $args );
@@ -90,17 +90,10 @@ add_action( 'init', 'add_faculty_custom_post' );
 
 $meta_box['faculty'] = array(
     'id' => 'faculty-meta-details',
-    'title' => 'Faculty Details',
+    'title' => 'Faculty / Staff Details',
     'context' => 'normal',
     'priority' => 'high',
     'fields' => array(
-        array(
-            'name' => 'Last Name',
-            'desc' => '',
-            'id' => 'fac_last_name',
-            'type' => 'text',
-            'default' => ''
-        ),
         array(
             'name' => 'First Name',
             'desc' => '',
@@ -109,8 +102,22 @@ $meta_box['faculty'] = array(
             'default' => ''
         ),
         array(
+            'name' => 'Last Name',
+            'desc' => '',
+            'id' => 'fac_last_name',
+            'type' => 'text',
+            'default' => ''
+        ),
+        array(
+            'name' => 'Job Title',
+            'desc' => '',
+            'id' => 'job_title',
+            'type' => 'text',
+            'default' => ''
+        ),
+        array(
             'name' => 'Biography',
-            'desc' => 'Summary of the Faculty',
+            'desc' => 'A biography of the Faculty / Staff member.',
             'id' => 'fac_biography',
             'type' => 'textarea',
             'default' => ''
@@ -119,6 +126,13 @@ $meta_box['faculty'] = array(
             'name' => 'Email',
             'desc' => '',
             'id' => 'fac_email',
+            'type' => 'text',
+            'default' => ''
+        ),
+        array(
+            'name' => 'Website',
+            'desc' => '',
+            'id' => 'fac_website',
             'type' => 'text',
             'default' => ''
         ),

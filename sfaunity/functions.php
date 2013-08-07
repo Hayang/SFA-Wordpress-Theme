@@ -20,8 +20,6 @@ function the_post_thumbnail_caption() {
     echo $thumbnail_image[0]->post_excerpt;
   }
 }
-// Register RoyalSlider Files
-register_new_royalslider_files(1);
 
 // When Admin Bar at top is not activated, don't insert a blank space
 //~ function my_function_admin_bar(){ return false; }
@@ -219,31 +217,36 @@ function sfa_theme_customizer_register($wp_customize) {
 	'type' => 'radio',
 	'choices'    => array(
             'style.css' => 'Main-Default',
-            'style_csa.css' => 'CSA',
+            'style_dept.css' => 'Department Default',
             'style_sfa.css' => 'SFA',
         ),
 	));
 	
 	$wp_customize-> add_section('changing_cal', array (
-	'title' => __('Calender Feed','uconn'),
-	'priority'   => 36,
-	'description' => 'Modify The Calender Feed'
+	'title' => __('Calendar Feed','uconn'),
+	'priority' => 36,
+	'description' => 'Modify The Calendar Feed'
 	));
 
-	$wp_customize-> add_setting('calender_setting', array (
-	'default' =>  'Benton_Museum_of_Art1',
+	$wp_customize-> add_setting('calendar_setting', array (
+	'default' => 'Benton_Museum_of_Art1',
 	));
-	
-	$wp_customize-> add_control('calender_select', array (
-	'label' => __('Change the Calender Feed', 'uconn'),
+
+	$wp_customize-> add_control('calendar_select', array (
+	'label' => __('Change the Calendar Feed', 'uconn'),
 	'section' => 'changing_cal',
-	'settings' => 'calender_setting',
+	'settings' => 'calendar_setting',
 	'type' => 'radio',
-	'choices'    => array(
-            'option1' => 'Main-Default',
-            'option2' => 'Option 2 Title',
-            'option3' => 'Option 3 Title',
-        ),
+	'choices' => array(
+	'Benton_Museum_of_Art1,Ballard_Institute_and_Museum_of_Puppetry1,Community_School_of_the_Arts1,Connecticut_Repertory_Theatre1,Jorgensen_Center_for_the_Performing_Arts1,UConn_Stamford_Art_Gallery1,von_der_Mehden_Recital_Hall1' => 'ALL',
+	'Benton_Museum_of_Art1' => 'Benton Museum',
+	'Ballard_Institute_and_Museum_of_Puppetry1' => 'BIMP',
+	'Community_School_of_the_Arts1' => 'Community School of Arts',
+	'Connecticut_Repertory_Theatre1' => 'Connecticut Repertory Theatre',
+	'Jorgensen_Center_for_the_Performing_Arts1' => 'Jorgensen',
+	'UConn_Stamford_Art_Gallery1' => 'Stamford Art Gallery',
+	'von_der_Mehden_Recital_Hall1' => 'von der Mehden',
+	),
 	));
 		
 }
