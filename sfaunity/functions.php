@@ -199,7 +199,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 function sfa_theme_customizer_register($wp_customize) {
 
-
+// STYLESHEET SELECT
 	$wp_customize-> add_section('styling_colors', array (
 	'title' => __('Main Site Styling','uconn'),
 	'priority'   => 30,
@@ -221,7 +221,7 @@ function sfa_theme_customizer_register($wp_customize) {
             'style_sfa.css' => 'SFA',
         ),
 	));
-	
+	//  CALENDAR SELECTION
 	$wp_customize-> add_section('changing_cal', array (
 	'title' => __('Calendar Feed','uconn'),
 	'priority' => 36,
@@ -248,7 +248,81 @@ function sfa_theme_customizer_register($wp_customize) {
 	'von_der_Mehden_Recital_Hall1' => 'von der Mehden',
 	),
 	));
-		
+	
+	// TRI BOX SETTINGS
+	$wp_customize->add_section('tri_box_options', array(
+        'title'    => __('Tri Box Options', 'uconn'),
+        'priority' => 37,
+    ));
+	
+	// LEft Box Settings
+	$wp_customize->add_setting('tri_left_content', array(
+     'default'        => "whatson",
+ 
+    ));
+	$wp_customize->add_control('tri_content_left', array(
+    'label'      => __('Left Box Content (Enter Category Slug Only)', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_left_content',
+    ));
+	
+	 $wp_customize->add_setting('tri_left_setting', array(
+        'default'        => "What's On",
+ 
+    ));
+	$wp_customize->add_control('tri_select_left', array(
+    'label'      => __('Left Box Label', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_left_setting',
+    ));
+	
+
+	
+	// Middle Box Settings
+	 $wp_customize->add_setting('tri_middle_setting', array(
+        'default'        => "Featured",
+ 
+    ));
+	
+	$wp_customize->add_control('tri_select_middle', array(
+    'label'      => __('Middle Box Label', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_middle_setting',
+    ));
+	
+	$wp_customize->add_setting('tri_middle_content', array(
+     'default'        => "Featured",
+ 
+    ));
+	$wp_customize->add_control('tri_content_middle', array(
+    'label'      => __('Middle Box Content (Enter Category Slug Only)', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_middle_content',
+    ));
+	
+	
+	// Right Box Settings
+	$wp_customize->add_setting('tri_right_setting', array(
+        'default'        => "News",
+ 
+    ));
+	
+	$wp_customize->add_control('tri_select_right', array(
+    'label'      => __('Right Box Label', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_right_setting',
+    ));
+	
+	$wp_customize->add_setting('tri_right_content', array(
+     'default'        => "News",
+ 
+    ));
+	$wp_customize->add_control('tri_content_right', array(
+    'label'      => __('Right Box Content (Enter Category Slug Only)', 'uconn'),
+    'section'    => 'tri_box_options',
+    'settings'   => 'tri_right_content',
+    ));
+	
 }
 
 function sfa_css_customizer () {
