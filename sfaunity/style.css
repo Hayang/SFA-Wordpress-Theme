@@ -220,8 +220,11 @@ height: 100%;
 	margin-top: 15px;
 }
 
+.navbar .nav li {
+	word-wrap:break-word;
+}
+
 .navbar .nav li a {
-	position: relative;
 	line-height: 1em;
 	font-size: 16px;
 	text-shadow: none;
@@ -229,7 +232,8 @@ height: 100%;
 	text-transform: uppercase;
 	letter-spacing: 0.07em;
 	color: white;
-	padding: 8px 0px 6px 15px;
+	text-indent: -5px;
+	padding: 8px 0px 6px 20px;
 	/* link stylings */
 }
 
@@ -272,7 +276,7 @@ background-color: #F25018;
 /* styling for each one of navigation */
 .nav li {
 	min-width: 16.6667%;
-
+	max-width: 16.6666666666666666666667%;
 }
 
 /* END MAIN NAV BAR */

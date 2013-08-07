@@ -67,7 +67,7 @@
 						}
 					}
 				?>
-					
+						<?php $n_ancestor = sizeof( $ancestor_id_list); ?>
 						<h3 id="left_column_title">
 						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
 						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
