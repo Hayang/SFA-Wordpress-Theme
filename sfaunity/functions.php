@@ -20,6 +20,8 @@ function the_post_thumbnail_caption() {
     echo $thumbnail_image[0]->post_excerpt;
   }
 }
+// Register RoyalSlider Files
+register_new_royalslider_files(1);
 
 // When Admin Bar at top is not activated, don't insert a blank space
 //~ function my_function_admin_bar(){ return false; }

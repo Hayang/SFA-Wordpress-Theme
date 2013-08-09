@@ -104,7 +104,10 @@
 					} 
 					?>
 				</p>
-
+				<?php if ( in_category( 'programs' )) {
+					
+				}
+				?>
 				<?php get_sidebar('page'); ?>
 			</div>
 			<!-- end RIGHT COLUMN --->

@@ -4,7 +4,7 @@
 
 		<div id="top_header slider_main" class="row-fluid" >
 			<div class="span12" id="">
-				<?php //echo get_new_royalslider(1); ?>
+				<?php echo get_new_royalslider(1); ?>
 			</div> 
 		</div> 
 		<!-- HERO UNIT --->
