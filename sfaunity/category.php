@@ -47,7 +47,7 @@
 						<div class="featured_image">
 							<?php 
 								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-								the_post_thumbnail(array(700,250), array('class' => "listing_featured_image"));
+								the_post_thumbnail( 'listing_featured_image' );
 							}
 							?>
 						</div>
@@ -69,7 +69,7 @@
 							<div class="sub_featured_image">
 							<?php 
 							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-							the_post_thumbnail(array(300,150), array('class' => "listing_small_featured_image"));
+							the_post_thumbnail( 'listing_small_featured_image' );
 							}
 							?>
 							</div>

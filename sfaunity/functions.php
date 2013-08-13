@@ -6,8 +6,9 @@ require('faculty_function.php');
 // Add post thumbnail support
 add_theme_support( 'post-thumbnails' ); 
 add_image_size( 'featured_image_right_column', 455, 9999 );
-add_image_size( 'listing_featured_image', 683, 260 );
-add_image_size( 'listing_small_featured_image', 337, 179 );
+add_image_size( 'listing_featured_image', 1366, 520, true );
+add_image_size( 'listing_small_featured_image', 674, 358, true );
+add_image_size( 'listing_search_featured_image', 460, 320, true );
 
 // Add post thumbnail caption support
 function the_post_thumbnail_caption() {
@@ -220,6 +221,12 @@ function sfa_theme_customizer_register($wp_customize) {
 	'choices'    => array(
             'style.css' => 'Main-Default',
             'style_dept.css' => 'Department Default',
+			'style_art.css' => 'Art Department',
+			'style_bimp.css' => 'BIMP',
+			'style_csa.css' => 'CSA',
+			'style_dram.css' => 'Dramatic Arts',
+			'style_dmd.css' => 'Digital Media',
+			'style_mus.css' => 'Music',
             'style_sfa.css' => 'SFA',
         ),
 	));

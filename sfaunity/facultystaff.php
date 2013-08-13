@@ -1,5 +1,9 @@
+<?php
+/*
+Template Name: Faculty/Staff Directory
+*/
+?>
 <?php get_header(); ?>
-	<?php if (have_posts()) : while (have_posts()) : the_post();?>
 	
 	<!-- MAIN BODY --->	
 		<div class="row-fluid">
@@ -37,47 +41,31 @@
 						?>
 				
 				</p> 
-
-					
 						<h3 id="left_column_title">
 						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
 						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
 						</a> </h3>
-						<ul>
-						<?php 
-						$kid_list = ''; $first_child = true;
-
-						for ($k = 1; $k <= $n_ancestor; $k++) {
-							$children  = get_children('post_parent='.$ancestor_id_list[$n_ancestor- $k]); 
-							foreach ( $children as $kid ) { 
-								if (!$first_child)  $kid_list = $kid_list . ',';
-								$first_child = false;
-								$kid_list = $kid_list . $kid->ID;
-							}							
-						}
-							$children = get_children('post_parent='.$post->ID); 
-							foreach ( $children as $kid ) { 
-								if (!$first_child)  $kid_list = $kid_list . ',';
-								$first_child = false;
-								$kid_list = $kid_list . $kid->ID;
-							}
-							$dont_display_list = ($n_ancestor == 0) && empty($children);
-						if ($dont_display_list == false) wp_list_pages("sort_column=menu_order&title_li=&include=".$kid_list);
-						
-						?></ul>
+						<h5>
+							<ul> 
+							<?php 
+								print_all_children($ancestor_id_list,1);						
+							?> 
+							</ul>
+						</h5> 
 			</div>
 			<!-- end LEFT COLUMN --->
 			
 			<!-- MIDDLE COLUMN --->
-
-			
+			  
 			<div class="span6" id="post_body">
 				<h2 id="page_title"><?php the_title() ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?></h2>
 				<?php the_content(); ?>
-				
 			</div>
 			
 			<!-- end MIDDLE COLUMN --->
+			
+
+			
 			
 			<!-- RIGHT COLUMN --->
 			<div id="right_column" class=".hidden-phone">
@@ -99,5 +87,4 @@
 		</div>
 	<!-- end MAIN BODY --->
 
-			<?php endwhile; endif; ?>
 <?php get_footer(); ?>

@@ -1,17 +1,6 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post();?>
 	<?php 
-		$this_post_id = get_the_ID();
-		$category = get_the_category(); 
-		$parent_cat_id = $category[0]->parent;
-		$has_parents = ($parent_cat_id != 0) ;
-		if ($has_parents) {
-			$category_parent  = get_category($parent_cat_id ,false);
-		} 
-		else {
-			$category_parent = $category[0];
-			$parent_cat_id = $category[0]->term_id ;
-		}
 		
 		?>
 		
@@ -20,27 +9,74 @@
 		
 			<!-- LEFT COLUMN --->	
 			<div id="left_column" class="span2">
-				<p id="breadcrumbs">
-					FACULTY DIRECTORY
-				</p>
-					<h3 id="left_column_title">Directory</h3>
-					<ul>
+			
+			<p id="breadcrumbs">
+				Directory
+			</p>
+			
+			<h3 id="left_column_title">	
+					Faculty and Staff
+			</h3>
+			
+			<div id="left_navigation">
+			<ul>
+			<?php
+				$taxonomy_name = 'areafield_selection';
+				$term = $wp_query->get_queried_object();
+				//~ print_r($term);
+				//~ $term_id = $term->term_id;
+				//~ $term_slug = $term->slug;
+				$args_cats = array(
+					'taxonomy' => $taxonomy_name,
+					'hierarchical' => true,
+					//~ 'child_of' => $term_id,
+					'depth' => '2',
+					'hide_empty' => '0',
+					'title_li' => '',
+					'echo' => '0',
+				);
+				$args_children = array(
+					'parent' => $term_id,
+					'hide_empty' => false
+				);
+				$children = get_terms( 'areafield_selection', $args_children);
+				if($children) {
+					echo wp_list_categories($args_cats);
+				} else {
+					$args = array(
+						'post_type' => 'lessons',
+						'order' => 'ASC',
+						'tax_query' => array (
+							array (
+								'taxonomy' => 'topic',
+								'field' => 'slug',
+								'terms' => $term_slug
+							)
+						)
+					);
+				}
+				//~ $query = new WP_Query( $args );
+				//~ if ( $query->have_posts() ) {
+					//~ while ( $query->have_posts() ) {
+					//~ $query->the_post();
+					//~ the_title();
+				//~ 
+					//~ }
+				//~ }
 
-					
+			?>
+			</ul>
+			</div>
+				
 			</div> <!-- end LEFT COLUMN --->	
 			
 			<!-- MIDDLE COLUMN --->
 			<?php
-					$custom_fields = get_post_custom();
-					$terms = get_the_terms($custom_posts->ID, areafield_selection);
+				$custom_fields = get_post_custom();
+				$terms = get_the_terms(get_the_ID(), 'areafield_selection');
 			?>
-			
-			
-			
-
 							
 			<div class="span6" id="post_body">
-			
 			<div class="row-fluid">
 				<div id="bio_title" class="span6">
 					<h2><?php echo($custom_fields[fac_first_name][0]. ' ' . $custom_fields[fac_last_name][0]); ?> <?php edit_post_link(' &#9997<span class="post-edit-text"> Edit</span>','',' '); ?></h2>
@@ -69,15 +105,8 @@
 				</div>	
 			</div>
 			
-			<div class="row-fluid">	
-				<p id="bio_content"><?php echo $custom_fields[fac_biography][0]; ?>
-				</p>
-			</div>
-				
-		
-					
-					
-					
+			<?php the_content(); ?>
+			
 			</div> <!-- end MIDDLE COLUMN --->
 			
 			<!-- RIGHT COLUMN --->
@@ -92,6 +121,8 @@
 					} 
 					?>
 				</p>
+
+				<?php get_sidebar('post'); ?>
 			</div> <!-- end RIGHT COLUMN --->
 			
 		</div> <!-- end MAIN BODY --->	

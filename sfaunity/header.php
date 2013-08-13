@@ -43,13 +43,79 @@
 	
 	<div id="top_header" >
     <!-- UCONN HEADER --->
-	<div class="row-fluid uconn_header">
-		<a href="www.uconn.edu" >
-			<!-- Placeholder Images -->
-			<img id="uconn_logo" src="<?php bloginfo('template_directory');?>/img/assets/uconn_logo.png" />
-			<img id="uconn_sidebuttons" src="<?php bloginfo('template_directory');?>/img/assets/uconn_sidebuttons.png" />
-		</a>
-	</div> <!-- end UCONN HEADER --->
+	<div id="uc-header" >
+		<div class="uc-container">
+		<h1 id="uc-identity">
+			<span id="uc-logo" title="University of Connecticut">
+				<a href="http://uconn.edu"> 
+					<span class="uc-header-fallback" id="uc-logo-fallback">
+						<img src="<?php bloginfo('template_directory');?>/img/assets/uconn.png" alt="UCONN"/>
+					</span>
+				</a> 
+			</span>
+			<span id="uc-title">
+				<a href="http://uconn.edu">
+					<span id="uc-title-universityof"> 
+						<span class="uc-header-fallback" id="uc-title-universityof-fallback">
+							<img src="<?php bloginfo('template_directory');?>/img/assets/university-of.png" alt="University of"/>
+						</span> 
+					</span> 
+					<span id="uc-title-connecticut"> 
+						<span class="uc-header-fallback" id="uc-title-connecticut-fallback">
+							<img src="<?php bloginfo('template_directory');?>/img/assets/connecticut.png" alt="Connecticut" />
+						</span>
+					</span> 
+				</a>
+			</span> 
+		</h1>
+			<div id="uc-utility">
+			<ul id="uc-utility-list">
+				
+				<li class="uc-utility-item"> 
+					<!--<div id="uc-search" style="visibility:hidden; opacity: 0.0;">-->
+			<div id="uc-search">
+					<form action="
+					http://uconn.edu/search.php" method="get">
+						<fieldset>
+								<input name="cx"  type="hidden" value="004595925297557218349:65_t0nsuec8" />
+								<input name="page_id" value="160" type="hidden"/>
+								<input name="cof" type="hidden" value="FORID:10" />
+								<input name="ie" type="hidden" value="UTF-8" />
+							<input type="text" name="q" placeholder="Search..." id="uc-search-field" value="" />
+							<input type="image" id="uc-search-button" alt="Search" src="<?php bloginfo('template_directory');?>/img/assets/search-icon.png" />
+						</fieldset>
+									</form>
+					</div>
+			<!--<div  style=" float:right;" class="uc-utility-btn" id="uc-utility-btn-search"><svg version="1.1" id="uc-utility-btn-search-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="17.267px" height="17.033px" viewBox="0 0 17.267 17.033" enable-background="new 0 0 17.267 17.033" xml:space="preserve">
+					<path d="M17.267,14.742l-5.323-5.324c0.441-0.857,0.695-1.828,0.695-2.859c0-3.451-2.798-6.25-6.25-6.25
+		s-6.25,2.799-6.25,6.25c0,3.453,2.798,6.25,6.25,6.25c1.213,0,2.341-0.35,3.3-0.949l5.229,5.23L17.267,14.742z M2.806,6.559
+		c0-1.979,1.604-3.582,3.583-3.582S9.973,4.58,9.973,6.559c0,1.98-1.604,3.584-3.583,3.584S2.806,8.539,2.806,6.559z"/>
+					</svg> </div>-->
+				</li>
+				<li class="uc-utility-item"><div class="uc-utility-btn-wrap"><a href="http://uconn.edu/azindex.php" class="uc-utility-btn" id="uc-utility-btn-az"><span  id="uc-utility-btn-az-fallback">A-Z</span> </a></div>
+				</li>
+				<!--
+				<li class="uc-utility-item"> <a href="#" class="uc-utility-btn" id="uc-utility-btn-dash"><svg version="1.1" id="uc-utility-btn-dash-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="15px" height="13px" viewBox="0 0 15 13" enable-background="new 0 0 15 13" xml:space="preserve">
+					<g>
+						<rect  width="3" height="3"/>
+						<rect x="6"  width="3" height="3"/>
+						<rect x="12"  width="3" height="3"/>
+						<rect y="5"  width="3" height="3"/>
+						<rect x="6" y="5"  width="3" height="3"/>
+						<rect x="12" y="5"  width="3" height="3"/>
+						<rect y="10"  width="3" height="3"/>
+						<rect x="6" y="10"  width="3" height="3"/>
+						<rect x="12" y="10"  width="3" height="3"/>
+					</g>
+					</svg></a> </li>
+				-->
+			</ul>
+		</div>
+		</div>
+	</div>
+	<!-- end UCONN HEADER -->
 	
     <!-- DEPARTMENTAL HEADER --->
 	<div class="row-fluid school_header">
@@ -61,22 +127,24 @@
 				<?php bloginfo('description'); ?>
 			</h2></a>
 		</div>
+		
+		<!-- Mobile Navigation Button -->
+		<button type="button" id="sfa_mobilenavbutton" class="hidden-desktop btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<span>
+			<img src="<?php bloginfo('template_directory');?>/img/assets/menuicon.png" />
+		</span>
+		</button>
+		
 	</div> <!-- end DEPARTMENTAL HEADER --->
 	
 	<!-- NAV BAR --->
 	<div class="row-fluid">
 		<div class="navbar nav_bar">
 			<div class="navbar-inner navbar_inner">
-			<div class="container">
-			  <button type="button" id="sfa_mobilenavbutton" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-			  
+			<div class="container">			  
 			  <div class="nav-collapse collapse">
-						<?php
-					
+				<?php
+				
 					$args = array(
 						'theme_location' => 'top_nav_menu',
 						'depth'		 => 2,
@@ -86,26 +154,7 @@
 					);
 
 					wp_nav_menu($args);
-				//~ <ul class="nav">
-				  //~ <li id="li_1"><a href="#">OVERVIEW</a></li>
-				  //~ <li id="li_2"><a href="#">PROGRAMS</a></li>
-				  //~ <li id="li_3"><a href="#">APPLY</a></li>
-				  //~ <li id="li_4"><a href="#">COMMUNITY</a></li>
-				  //~ <li id="li_5"><a href="#">STUDENT WORK</a></li>
-				  //~ <li class="dropdown"  id="li_6">
-					//~ <a href="#" class="dropdown-toggle" data-toggle="dropdown">INFORMATION <b class="caret"></b></a>
-					//~ <ul class="dropdown-menu">
-					  //~ <li><a href="#">Action</a></li>
-					  //~ <li><a href="#">Another action</a></li>
-					  //~ <li><a href="#">Something else here</a></li>
-					  //~ <li class="divider"></li>
-					  //~ <li class="nav-header">Nav header</li>
-					  //~ <li><a href="#">Separated link</a></li>
-					  //~ <li><a href="#">One more separated link</a></li>
-					//~ </ul>
-					  ?>
-				  </li>
-				</ul>
+					?>
 			  </div><!--/.nav-collapse -->
 			</div>
 			</div>

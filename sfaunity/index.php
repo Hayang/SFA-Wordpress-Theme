@@ -16,10 +16,10 @@
 			
 				<div class="span4 tri_box">
 					<div class="box_headers" >
-						<h3><a href="#" ><?php echo get_theme_mod('tri_left_setting'); ?></a></h3>
+						<h3><a href="#" >What's On</a></h3>
 					</div>
 					<div class="box_contents"> 
-						<?php query_posts('category_name='. get_theme_mod('tri_left_content') . '&posts_per_page=2'); ?>
+						<?php query_posts('category_name=whatson&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 						<div class="tri_box_single left_box"><a href="<?php the_permalink(); ?>">
 							<?php $excerpt = get_the_title();
@@ -36,12 +36,12 @@
 				
 				<div class="span4 tri_box">
 					<div class="box_headers" >
-						<h3><a href="#" ><?php echo get_theme_mod('tri_middle_setting'); ?></a></h3>
+						<h3><a href="#" >Featured</a></h3>
 						
 					</div>
 					<!-- ACTUAL CODE -->
 					<div class="box_contents"> 
-						<?php query_posts('category_name='. get_theme_mod('tri_middle_content') . '&posts_per_page=2'); ?>
+						<?php query_posts('category_name=Featured&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 						<div class="tri_box_single middle_box"><a href="<?php the_permalink(); ?>">
 							<?php $excerpt = get_the_title();
@@ -58,10 +58,10 @@
 			
 				<div class="span4 tri_box">
 					<div class="box_headers" >
-						<h3><a href="#" ><?php echo get_theme_mod('tri_right_setting'); ?></a></h3>
+						<h3><a href="#" >News</a></h3>
 					</div>
 					<div class="box_contents"> 
-						<?php query_posts('category_name='. get_theme_mod('tri_right_content') . '&posts_per_page=2'); ?>
+						<?php query_posts('category_name=News&posts_per_page=2'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 						<div class="tri_box_single right_box"><a href="<?php the_permalink(); ?>">
 							<?php $excerpt = get_the_title();

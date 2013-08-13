@@ -11,7 +11,7 @@
 				<a href="http://uconn.edu/disclaimers-and-copyrights.php">Disclaimers, Privacy &amp; Copyright</a>
 			</li>
 			<li>
-				<a href="<?php bloginfo('template_directory');?>/wp-admin/">Webmaster Login</a>
+				<a href="<?php echo home_url();?>/wp-admin/">Webmaster Login</a>
 			</li>
 					
 		</ul>

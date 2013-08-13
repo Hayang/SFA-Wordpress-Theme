@@ -56,7 +56,7 @@ function add_faculty_custom_post() {
 		'singular_name' => 'Faculty / Staff',
 		'add_new' => 'Add New',
 		'add_new_item' => 'Add New Faculty / Staff Listing',
-		'edit_item' => 'Edit Listing',
+		'edit_item' => 'Edit Faculty / Staff Listing',
 		'new_item' => 'New Faculty / Staff',
 		'all_items' => 'All Faculty / Staff',
 		'view_item' => 'View Faculty / Staff',
@@ -81,7 +81,7 @@ function add_faculty_custom_post() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		//~ 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
-		'supports' => array( 'page-attributes', 'author', 'thumbnail', 'excerpt',)
+		'supports' => array( 'page-attributes', 'author', 'thumbnail', 'excerpt', 'editor',)
 	); 
 
 	register_post_type( 'faculty', $args );
@@ -115,13 +115,15 @@ $meta_box['faculty'] = array(
             'type' => 'text',
             'default' => ''
         ),
-        array(
+        /*
+		array(
             'name' => 'Biography',
             'desc' => 'A biography of the Faculty / Staff member.',
             'id' => 'fac_biography',
             'type' => 'textarea',
             'default' => ''
         ),
+		*/
         array(
             'name' => 'Email',
             'desc' => '',

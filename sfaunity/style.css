@@ -87,20 +87,6 @@ License URI:
 
 body {
 	font-family: "Proxima Nova", Verdana, Helvetica, Arial;
-	text-rendering: optimizeLegibility
-	
-}
-
-.PN_Bold {
-    font-weight: bold;
-}
- 
-.PN_Semibold {
-    font-weight: 500;
-}
-
-.PN_Regular {
-    font-weight: normal;
 }
 
 /* --------------------
@@ -109,11 +95,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
+	text-rendering: auto;
 }
  
 p {
 	font-weight: normal;
-	
+	text-rendering: auto;
 }
 
 /* ----------------------------
@@ -132,6 +119,346 @@ height: 100%;
 #sub_wrapper {
 	overflow:auto;
 	padding-bottom: 50px;
+}
+
+	## UConn Blue Banner
+		
+		* Will be moved to central file soon *
+	
+		Notes
+		- Built to work independently of any template, theme, or library.
+		
+		Changes from UC Template v4 		
+		- all selectors begin with prefix "uc-"
+		- single CSS file for all color variations. 
+		
+		Dependencies
+		- uc-print.css
+		- uc-modernizr.js
+
+*/
+
+#uc-header {
+	}
+	#uc-header .uc-container {
+		position: relative;
+		height:55px;
+		margin: 0 10px;
+		}
+	#uc-header .uc-container * {
+		min-height:0;
+		margin:0; 
+		padding:0; 
+		border:0; 
+		outline:0; 
+		font-weight:normal; 
+		font-family:inherit; 
+		vertical-align:baseline; 
+		background-image:none; 
+		font-style:normal; 
+		text-decoration:none;
+		font-size:1em;
+		line-height:normal;
+		list-style-type:none;
+		border-radius:0;
+		box-shadow:none;
+		transition:none;
+		color:#000;
+		}
+		
+	#uc-identity {}
+		#uc-header #uc-logo {
+			display:block;
+			position:absolute;
+				left:12px;
+				top:18px;
+			}
+			#uc-header #uc-logo a {
+				display:block;
+				}
+				#uc-header #uc-logo-fallback {
+					display:block;
+					}
+				.uc-svg #uc-header #uc-logo-fallback {
+					display:none;
+					}
+				#uc-header #uc-logo-svg {
+					display:none;
+					}
+				.uc-svg #uc-header #uc-logo-svg {
+					display:block;
+					}
+				#uc-header.container #uc-utility-btn-az {
+					display:block;
+					}
+				#uc-header .uc-container #uc-utility-btn-az-fallback {
+					color:white;
+					display:block;
+					text-align:center;
+					padding-top:8px;
+					font-size:80%;
+					font-weight:bold;
+					}
+				#uc-header #uc-utility-btn-az-svg {
+					display:none;
+					}
+				.uc-svg #uc-header #uc-utility-btn-az-svg {
+					display:block;
+					}
+				.uc-svg #uc-header #uc-utility-btn-az-fallback {
+					display:none;
+					}
+				
+		#uc-header #uc-title {
+			position:absolute;
+				top:18px;
+				left:124px;
+			height:21px;
+			padding-left:9px;
+			border-left:2px solid #3f4760;
+			}
+			#uc-header #uc-title a {
+				display:block;
+				height:13px;
+				margin-top:4px;
+				}
+				#uc-header #uc-title-universityof,
+				#uc-header #uc-title-connecticut {
+					float:left;
+					}
+				#uc-header #uc-title-universityof *,
+				#uc-header #uc-title-universityof img {
+					max-width:none;
+					height:13px;
+					width:145px;
+					}
+				#uc-header #uc-title-connecticut *,
+				#uc-header #uc-title-connecticut img {
+					max-width:none;
+					height:13px;
+					width:140px;
+					}
+				.uc-header-fallback {}		
+					#uc-header #uc-title-universityof-fallback {
+						margin-right:7px;
+						}
+					
+					#uc-header #uc-title-universityof-svg,
+					#uc-header #uc-title-connecticut-svg {
+						display:none;
+						}
+					.uc-svg #uc-header #uc-title-universityof-svg,
+					.uc-svg #uc-header #uc-title-connecticut-svg {
+						display:inline;
+						}
+						.uc-svg #uc-header #uc-title-universityof-svg {
+							margin-right:7px;
+							}
+					#uc-header .uc-svg .uc-header-fallback {
+						display:none;
+						}
+		#uc-header #uc-hc {
+			position:absolute;
+				top:18px;
+				left:124px;
+			height:21px;
+			padding-left:9px;
+			border-left:2px solid #3f4760;
+			}
+			#uc-header #uc-hc a {
+				display:block;
+				height:13px;
+				margin-top:4px;
+				}
+				#uc-header #uc-hc-health-center {
+					float:left;
+					}
+				#uc-header #uc-hc-health-center * {
+					height:13px;
+					width:145px;
+					}
+				#uc-header #uc-hc-health-center * {
+					height:13px;
+					width:140px;
+					}
+					#uc-header #uc-hc-health-center-svg {
+						display:none;
+						}
+					.uc-svg #uc-header #uc-hc-health-center-svg {
+						display:inline;
+						}
+					.uc-svg .uc-header-fallback {
+						display:none;
+						}		
+				
+	#uc-header #uc-utility {
+		float:right;
+		width:auto;
+		}
+		#uc-header #uc-utility-list {
+			padding:11px 20px 0 0;
+			}
+			#uc-header .uc-utility-item {
+				float:left;
+				margin-left:10px;
+				}
+				#uc-header .uc-utility-btn-wrap {
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					border-radius: 4px;
+					-moz-box-shadow:    1px 1px 0 0 #000000;
+					-webkit-box-shadow: 1px 1px 0 0 #000000;
+					box-shadow:         1px 1px 0 0 #000000;				
+					}
+				#uc-header .uc-utility-btn {
+					display:block;
+					position:relative;
+					width:32px;
+					height:32px;
+					background-color:#27355f;
+					border:1px solid #1e2b51;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+					border-radius: 3px;
+					
+					-moz-box-shadow:    inset 1px 1px 0 #3957b0;
+					-webkit-box-shadow: inset 1px 1px 0 #3957b0;
+					box-shadow:         inset 1px 1px 0 #3957b0;
+					
+					background: #304994;
+						background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMwNDk5NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYzMxNzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+						background: -moz-linear-gradient(top,  #304994 0%, #1c3173 100%); 
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#304994), color-stop(100%,#1c3173)); 
+						background: -webkit-linear-gradient(top,  #304994 0%,#1c3173 100%); 
+						background: -o-linear-gradient(top,  #304994 0%,#1c3173 100%); 
+						background: -ms-linear-gradient(top,  #304994 0%,#1c3173 100%);
+						background: linear-gradient(to bottom,  #304994 0%,#1c3173 100%); 
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304994', endColorstr='#1c3173',GradientType=0 ); 
+					}
+					.ie9 #uc-header .uc-utility-btn {
+						filter:none;
+						}
+				.uc-utility-btn svg {
+					fill:#c1e8f8;
+					position:absolute;
+					}
+					.uc-utility-btn:hover svg {
+						fill:#ffffff;
+						}
+					#uc-utility-btn-search svg {
+						left:7px;
+						top:7px;
+						}
+					#uc-utility-btn-az svg {
+						left:6px;
+						top:11px;
+						}			
+					#uc-utility-btn-dash svg {
+						left:9px;
+						top:9px;
+						}
+
+					#uc-utility-btn-search {
+						float:left;
+						}
+					#uc-search {
+						float:left;
+						display:block;
+						position: relative;
+						}
+						#uc-search label {
+							visibility: hidden;
+							position: absolute;
+							}
+						#uc-header .uc-container #uc-search fieldset {
+							border-radius:4px;
+							-moz-box-shadow:  		1px 1px 1px rgba(255,255,255,0.2);
+							-webkit-box-shadow:  	1px 1px 1px rgba(255,255,255,0.2);
+							box-shadow:  			1px 1px 1px rgba(255,255,255,0.2);
+							}
+						#uc-search #uc-search-field {
+							height: auto; /* Added to negate bootstrap */
+							width: 175px;
+							padding: 7px 28px 4px 7px;
+							background-image: none;
+							background-color: #212976;
+							-moz-box-shadow: 		inset 2px 2px 3px rgba(0,0,0,0.3);
+							-webkit-box-shadow: 	inset 2px 2px 3px rgba(0,0,0,0.3);
+							box-shadow: 			inset 2px 2px 3px rgba(0,0,0,0.3);
+							border-radius: 3px;
+							color: white;
+							line-height:20px;
+							border-top:1px solid #070e24;
+							border-left:1px solid #070e24;
+							}
+						#uc-search #uc-search-button {
+							position: absolute;
+							right: 7px;
+							top: 18px;
+							margin-top: -8px;
+							}
+
+
+#uc-header {
+	color:#fff;
+	background-color:#0f1938;
+	}
+	
+		.uc-svg #uc-logo-svg {
+			fill:#ffffff;
+			}
+		.uc-svg #uc-header #uc-title-universityof-svg,
+		.uc-svg #uc-header #uc-title-connecticut-svg,
+		.uc-svg #uc-header #uc-hc-health-center-svg {
+			fill:#9faab2;
+			}
+			
+			
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	## UConn Blue Banner - Mobile
+	
+		- Adapts the UConn banner for mobile devices. 
+			
+
+*/
+@media (max-width: 767px) {
+	body {
+		padding-left:0;
+		padding-right:0;
+		}
+	#uc-logo {
+		border-right:0;
+		}
+}
+	
+@media (max-width: 680px) {
+	#uc-title {
+		width:200px;
+		padding-left:5px;
+		}
+		#uc-title a {
+			margin-top:3px;
+			}
+			#uc-title-universityof #uc-title-universityof-svg,
+			#uc-title-connecticut #uc-title-connecticut-svg {
+				position: relative;
+				top:-8px;
+				height:10px;
+				}
+	#uc-search #uc-search-field {
+		width:140px;
+		}
+}
+@media (max-width: 510px) {
+	#uc-title {
+		display:none;
+		}
+	}
+@media (max-width: 321px) {
+	#uc-search #uc-search-field {
+		width:85px;
+		}
 }
 
 /* ----------------------------
@@ -190,6 +517,19 @@ height: 100%;
 	margin-bottom: 0px;
 	/* overwrites bootstrap to clear the margin */
 }
+
+#sfa_mobilenavbutton {
+	border: 0;
+	background: none;
+	box-shadow: none;
+	float: right;
+	margin-top: 7px;
+}
+
+#sfa_mobilenavbutton img {
+	height: auto;
+}
+
 .navbar .nav {
 	margin: 0 0 0 0;
 	width: 100%; /* sets the percentage of the navigation container */
@@ -202,12 +542,10 @@ height: 100%;
 	border-radius: 0px;
 	border: 0px;
 	background-image: none;
-	background-color: grey;
-	min-height: 30px;
+	background-color: white;
+	min-height: 0;
 	width: 100%;
 	margin-bottom: 0px;
-	
-
 	/* just a bunch of overwrites here */
 }
 
@@ -216,15 +554,14 @@ height: 100%;
 	/* overwrites bootstrap fix button margin issue */
 }
 
-#sfa_mobilenavbutton {
-	margin-top: 15px;
-}
-
 .navbar .nav li {
-	word-wrap:break-word;
+	min-height: 30px;
+	display: block;
+	max-width: 100%;
 }
 
 .navbar .nav li a {
+	display: block;
 	line-height: 1em;
 	font-size: 16px;
 	text-shadow: none;
@@ -234,11 +571,18 @@ height: 100%;
 	color: white;
 	text-indent: -5px;
 	padding: 8px 0px 6px 20px;
-	/* link stylings */
+	max-width: 100%;
+		/* Word Wrapping */
+		white-space: pre-wrap;      /* CSS3 */   
+		white-space: -moz-pre-wrap; /* Firefox */    
+		white-space: -pre-wrap;     /* Opera <7 */   
+		white-space: -o-pre-wrap;   /* Opera 7 */    
+		word-wrap: break-word;      /* IE */
 }
 
 	.navbar .nav li a:hover {
 		color: #0f1938;	
+		background-color: inherit;
 	}
 
 	.navbar .nav > .active > a,
@@ -276,7 +620,6 @@ background-color: #F25018;
 /* styling for each one of navigation */
 .nav li {
 	min-width: 16.6667%;
-	max-width: 16.6666666666666666666667%;
 }
 
 /* END MAIN NAV BAR */
@@ -457,66 +800,13 @@ a img.aligncenter {
     padding: 10px 4px 5px;
 }
 
-/* ------------------------------
-	WIDGETS and FEATURED IMAGE
- ------------------------------- */
-
-#widgetized_area {
-	margin-top: 42px;
-}
-
-#right_column_push .widget {
-	padding-left: 35px;
-}
-
-.widget {
-}
-
-h4.widget_title {
-	vertical-align: top;
-	font-size: 24px;
-	margin-top: 0;
-	font-weight: normal;
-	line-height: 100%;
-}
-
-.widget_content {
-	color: #555;
-	margin-left: 10px;
-	font-size: 16px;
-	line-height: 1.2;
-}
- 
-.social_media img {
-	width: 55px;
-	height: auto;
-	margin-right: 4px;
-	margin-bottom: 10px;
-}
-
-.social_media {
-	width: 340px;
-}
-
-img.featured_image_right_column,
-img.attachment-featured_image_right_column {
-	
-}
-
-p.featured_image_caption {
-	color: #aaa;
-	padding: 10px;
-	font-size: 15px;
-	line-height: 1.2;
-}
-
 /* --------------------
 	LEFT COLUMN
  -------------------- */
  
 #left_column {
 	position:relative;
-	padding-left:20px;
+	padding-left:17px;
 }
  
 p#breadcrumbs {
@@ -542,6 +832,7 @@ h3#left_column_title {
 	margin-bottom: 3px;
 	text-transform: uppercase;
 	vertical-align: top;
+	word-wrap: break-word;	
 }
 
 	h3#left_column_title a {
@@ -694,6 +985,7 @@ h6.post_meta {
 }
 
 .noimage_search {
+	height: 160px;
 }
 
 
@@ -743,23 +1035,39 @@ h6.post_meta {
 }
 
 .right_column_boxes{
-	margin-top: 15px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 	background-color: #f6c346;
 	min-height: 100px;
 	width: 100%;
 }
 
-
-.right_column_boxes a {
+.right_column_boxes_text {
 	color: white;
-	float:left;
-    width: 80%;
+	min-height: 100px;
+	width: 80%;
+	float: left;
 }
 
+	.right_column_boxes a {
+		line-height: 1;
+		font-size: 18px;
+		display: block;
+		margin: 20px;
+		color: white;
+	}
+
+	.right_column_boxes p.post_meta {
+		font-size: 14px;
+		margin: 10px 0;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
 .yellow_box_images {
+	background-color: #bc984f;
 	width: 20%;
-	height: 100px;
+	height: auto;
 	opacity:0.4;
 	filter:alpha(opacity=40);
 }
@@ -767,6 +1075,67 @@ h6.post_meta {
 .right_column_boxes  img:hover {
 	opacity:1.0;
 	filter:alpha(opacity=100);
+}
+
+/* ------------------------------
+	WIDGETS and FEATURED IMAGE
+ ------------------------------- */
+
+#widgetized_area {
+	margin-top: 42px;
+}
+
+#right_column_push .widget {
+	padding-left: 35px;
+}
+
+.widget {
+	margin-bottom: 39px;
+}
+
+h4.widget_title {
+	vertical-align: top;
+	font-size: 24px;
+	margin-top: 0;
+	font-weight: normal;
+	line-height: 100%;
+}
+
+h5.related {
+	font-size: 17px;
+	color: #f6c346;
+	margin: 0;
+	line-height: 1;
+}
+
+.widget_content {
+	color: #555;
+	margin-left: 10px;
+	font-size: 16px;
+	line-height: 1.2;
+}
+ 
+.social_media img {
+	width: 55px;
+	height: auto;
+	margin-right: 4px;
+	margin-bottom: 10px;
+}
+
+.social_media {
+	width: 340px;
+}
+
+img.featured_image_right_column,
+img.attachment-featured_image_right_column {
+	
+}
+
+p.featured_image_caption {
+	color: #aaa;
+	padding: 10px;
+	font-size: 15px;
+	line-height: 1.2;
 }
 
 /* --------------------

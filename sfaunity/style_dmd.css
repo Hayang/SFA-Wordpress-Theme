@@ -1,0 +1,63 @@
+.school_header {
+	background-color: #31547B; 
+}
+
+#department_title {
+	color: #131b30;  
+}
+
+#sfa_title {
+}
+
+/* NAVBAR COLORS  */
+
+.li_1 {
+	background-color: #692b9e;
+}
+.li_2 {
+	background-color: #f0a20b;
+}
+.li_3 {
+	background-color: #d12828;
+}
+.li_4 {
+	background-color: #8db832;
+}
+.li_5 {
+	background-color: #3c6075;
+}
+.li_6 {
+	background-color: #e29213;
+}
+
+/* TRI BOX */
+
+.tri_box_single {
+	background-color: #31547A;
+}
+
+/* HEADERS */
+h3#left_column_title {
+	color: #1D3652;	
+}
+
+	h3#left_column_title a {
+		color: #1D3652;
+	}
+	
+#post_body h1,
+#post_body h2,
+#post_body h3 {
+	color: #1D3652;
+	line-height: 1.1em;
+}
+
+.search_listing h3 a {
+	color: #1D3652;
+}
+
+#post_body h5.event_week_single {
+	margin: 0;
+	color: #1D3652;
+	font-weight: normal;
+}

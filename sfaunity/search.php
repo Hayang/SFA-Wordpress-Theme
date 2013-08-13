@@ -21,8 +21,8 @@
 				<?php get_search_form(); ?>
 				<?php while (have_posts()) : the_post(); ?>
 				<div class="row-fluid search_listing listing_row">
-						<?php if ( has_post_thumbnail()) : ?> <a href=" <?php the_permalink(); ?> " title=" <?php the_title_attribute(); ?>" > <?php the_post_thumbnail('thumbnail', array('class' => 'span4')); ?> </a>
-						<?php else: ?> <img src="<?php bloginfo('template_directory');?>/img/assets/noimage.png" class="span4 wp-post-image" /> <?php endif; ?>
+						<?php if ( has_post_thumbnail()) : ?> <a href=" <?php the_permalink(); ?> " title=" <?php the_title_attribute(); ?>" > <?php the_post_thumbnail('listing_search_featured_image', array('class' => 'span4')); ?> </a>
+						<?php else: ?> <img src="<?php bloginfo('template_directory');?>/img/assets/noimage.png" height="160" class="span4 noimage_search wp-post-image" /> <?php endif; ?>
 						
 						<div class="span8">
 						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
