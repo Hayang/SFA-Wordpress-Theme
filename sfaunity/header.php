@@ -24,9 +24,9 @@
 	
 	<!-- Bootstrap -->	
 	<link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet" media="screen"> 
-		<!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css--->
+		<!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css-->
 	<link href="<?php bloginfo('template_directory');?>/css/bootstrap-responsive.css" rel="stylesheet"> 
-		<!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css--->
+		<!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css -->
 	
 	<!-- include jQuery -->
 	<?php wp_enqueue_script("jquery"); ?>
@@ -35,14 +35,15 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<?php wp_head(); ?> 
 	<!-- SFA Web Team CSS (style.css) And Custom Style -->
+	
 </head>
 	
 <body>
 <div id="wrapper">
 <div id="sub_wrapper">
 	
-	<div id="top_header" >
-    <!-- UCONN HEADER --->
+	<div class="top_header" >
+    <!-- UCONN HEADER -->
 	<div id="uc-header" >
 		<div class="uc-container">
 		<h1 id="uc-identity">
@@ -117,7 +118,7 @@
 	</div>
 	<!-- end UCONN HEADER -->
 	
-    <!-- DEPARTMENTAL HEADER --->
+    <!-- DEPARTMENTAL HEADER -->
 	<div class="row-fluid school_header">
 		<div> <a href="<?php bloginfo( 'url' ); ?>"> 
 			<h2 id="department_title">
@@ -131,13 +132,13 @@
 		<!-- Mobile Navigation Button -->
 		<button type="button" id="sfa_mobilenavbutton" class="hidden-desktop btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 		<span>
-			<img src="<?php bloginfo('template_directory');?>/img/assets/menuicon.png" />
+			<img src="<?php bloginfo('template_directory');?>/img/assets/menuicon.png" alt="Menu Icon"/>
 		</span>
 		</button>
 		
-	</div> <!-- end DEPARTMENTAL HEADER --->
+	</div> <!-- end DEPARTMENTAL HEADER -->
 	
-	<!-- NAV BAR --->
+	<!-- NAV BAR -->
 	<div class="row-fluid">
 		<div class="navbar nav_bar">
 			<div class="navbar-inner navbar_inner">
@@ -160,4 +161,4 @@
 			</div>
 		</div>
 	</div> 
-	</div><!-- end NAV BAR --->
+	</div><!-- end NAV BAR -->

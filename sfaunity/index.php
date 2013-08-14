@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 		
-		<!-- HERO UNIT --->
+		<!-- HERO UNIT -->
 
-		<div id="top_header slider_main" class="row-fluid" >
-			<div class="span12" id="">
-				<?php echo get_new_royalslider(1); ?>
+		<div id="slider_main" class="row-fluid top_header" >
+			<div class="span12">
+				<?php echo get_new_royalslider(2); ?>
 			</div> 
 		</div> 
-		<!-- HERO UNIT --->
+		<!-- HERO UNIT -->
 
-		<!-- THREE CONTENT UNIT --->
+		<!-- THREE CONTENT UNIT -->
 		
 		<div class="row-fluid">
 			<div class="box_content">
@@ -77,6 +77,6 @@
 				
 			</div>
 		</div> 
-		<!-- END THREE CONTENT UNIT --->
+		<!-- END THREE CONTENT UNIT -->
   
 <?php get_footer(); ?>

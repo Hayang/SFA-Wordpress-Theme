@@ -1,7 +1,7 @@
 </div>
 </div> <!-- end WRAPPER -->
 
-	<!-- UCONN FOOTER --->
+	<!-- UCONN FOOTER -->
 	<div class="row-fluid" id="uconn_footer">
 		<ul id="uconn_footer_links" >
 			<li>
@@ -15,10 +15,9 @@
 			</li>
 					
 		</ul>
-	</div> <!-- end UCONN FOOTER --->
+	</div> <!-- end UCONN FOOTER -->
 
     <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
-	
 	<?php wp_footer(); ?>
 		
 </body>

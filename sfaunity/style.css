@@ -466,7 +466,7 @@ height: 100%;
  ----------------------------- */
  
 @media (max-width: 767px) {
-  #top_header {
+  .top_header {
      margin-left:-20px;
 	margin-right:-20px;
   }
