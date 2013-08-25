@@ -15,7 +15,8 @@
 			</p>
 			
 			<h3 id="left_column_title">	
-					Faculty and Staff
+				Faculty<br />
+				and Staff
 			</h3>
 			
 			<div id="left_navigation">
@@ -78,12 +79,12 @@
 							
 			<div class="span6" id="post_body">
 			<div class="row-fluid">
-				<div id="bio_title" class="span6">
+				<div id="bio_title" class="span7">
 					<h2><?php echo($custom_fields[fac_first_name][0]. ' ' . $custom_fields[fac_last_name][0]); ?> <?php edit_post_link(' &#9997<span class="post-edit-text"> Edit</span>','',' '); ?></h2>
 					<h3><?php echo $custom_fields[job_title][0]; ?></h3>
 				</div>
 			
-				<div id="bio_info" class="span6">
+				<div id="bio_info" class="span5">
 					<ul>
 						<li class="bio_phone"><strong>PHONE: </strong>
 							<ul>
@@ -97,7 +98,7 @@
 						</li>
 						<li class="bio_website"><strong>WEBSITE: </strong>
 							<ul>
-								<a href="<?php echo $custom_fields[fac_website][0]; ?>" >
+								<a href="http://<?php echo $custom_fields[fac_website][0]; ?>" >
 								<?php echo $custom_fields[fac_website][0]; ?></a>
 							</ul>
 						</li>

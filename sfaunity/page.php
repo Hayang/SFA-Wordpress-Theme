@@ -54,7 +54,7 @@
 						// local redefine the size of ancestor_id_list
 						$n_ancestor = sizeof( $ancestor_id_list);
 						// get the array of children WP post objects
-						$children = get_children('orderby=menu_order&order=ASC&post_parent='.$ancestor_id_list[$n_ancestor- $k]);
+						$children = get_children('orderby=menu_order&post_type=page&order=ASC&post_status=publish&post_parent='.$ancestor_id_list[$n_ancestor- $k]);
 						if ($children) {
 							$k += 1; // don't ask..
 							echo '<ul class ="ul_level'. $k.'">';

@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Category Page Template
+*/
+?>
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post();?>
 	
@@ -54,7 +59,7 @@
 						// local redefine the size of ancestor_id_list
 						$n_ancestor = sizeof( $ancestor_id_list);
 						// get the array of children WP post objects
-						$children = get_children('orderby=menu_order&order=ASC&post_parent='.$ancestor_id_list[$n_ancestor- $k]);
+						$children = get_children('orderby=menu_order&post_type=page&order=ASC&post_parent='.$ancestor_id_list[$n_ancestor- $k]);
 						if ($children) {
 							$k += 1; // don't ask..
 							echo '<ul class ="ul_level'. $k.'">';
@@ -67,15 +72,17 @@
 						}
 					}
 				?>
-					
+						<?php $n_ancestor = sizeof( $ancestor_id_list); ?>
 						<h3 id="left_column_title">
 						<a href=" <?php echo get_permalink($ancestor_id_list[$n_ancestor - 1]) ?> " >
 						<?php echo get_the_title($ancestor_id_list[$n_ancestor - 1]); ?>
 						</a> </h3>
 						
-						<?php 
-							print_all_children($ancestor_id_list,1);						
-						?>
+						<div id="left_navigation">
+							<?php 
+								print_all_children($ancestor_id_list,1);						
+							?>
+						</div>
 			</div>
 			<!-- end LEFT COLUMN --->
 			
@@ -83,42 +90,85 @@
 
 			
 			<div class="span6" id="post_body">
-				<h2 id="bio_title">Richard Bass</h2>
-				<ul id="bio_info">
-					<li>Professor of Music</li>
-					<li>(860)486-8197</li>
-					<li>Richard.Bass@uconn.edu</li>
-				</ul>
-				<div id="bio_pic"><img src="http://placehold.it/290x320" id="bio_pic" /> <h2>Click here for artwork</h2>
-				<p id="bio_content">Richard Bass is professor of music theory in the Department of 	Music. He holds degrees 
-				in piano performance from Georgia State University and Northern Illinois University, and 
-				a doctor of philosophy degree in music theory from the University of Texas at Austin. 
-				He has also studied at the Aspen Music School and Indiana University and attended 
-				Yale University as a visiting Faculty Fellow. Before joining the faculty at the University 
-				of Connecticut in 1987, he held teaching appointments at institutions in Illinois, Texas
-				</p>
-				</div>
+			<div class="flush">
+		
+				<h3 id="page_blacktitle"><?php the_title() ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?></h3>
 				
-			
-			
+				<?php the_content(); ?>
 				
-			</div>
-			
-			<!-- end MIDDLE COLUMN --->
-			
+				<?php $postCount = 0;
+					$cat_title = get_the_title();
+				if( is_term( $cat_title , 'category' ) ) {
+						$my_query = new WP_Query( 'category_name='.strtolower($cat_title));
+						if ( $my_query->have_posts() ) { 
+							while ( $my_query->have_posts() ) { 
+							   $my_query->the_post(); $postCount += 1; ?>
+				
+								<?php if ($postCount <= 1) { ?> <!-- if first post -->
+								<div class="row-fluid listing_row"> 
+									<a href="<?php the_permalink(); ?>">
+										<div class="featured_image">
+											<?php 
+												if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+												the_post_thumbnail( 'listing_featured_image' );
+											}
+											?>
+										</div>
+										<h3 class="post_listing_title"><?php the_title();?></h3>
+									</a>
+									<h6 class="post_meta">POSTED <?php the_date();?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php the_category(', '); ?></h6>
+									<?php the_excerpt(); ?>
+								</div>
+								
+								<?php } else { ?> <!-- if it's a post after first post -->
+							   
+								<?php
+								if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?> 
+								<!-- if the post is the first of two in a row, start a new row -->
+								<div class="row-fluid listing_row"> 
+								<?php } ?>
+								
+							   	<div class="span6" >
+									<a href="<?php the_permalink(); ?>">
+										<div class="sub_featured_image">
+											<?php 
+											if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+											the_post_thumbnail( 'listing_small_featured_image' );
+											}
+											?>
+										</div>
+										<h4 class="post_listing_title"><?php the_title();?> </h4>
+									</a>
+									<h6 class="post_meta"><?php the_date();?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php the_category(', '); ?></h6>
+									<?php the_excerpt(); ?>
+								</div>
+									
+								<?php
+								if ( ($postCount > 1) && ($postCount % 2 == 1) ) { ?>
+								</div> 
+								<?php } 
+								}
+								
+				
+							}
+					
+						}?>
+				
+				<?php
+				if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?>
+				</div> 
+				<?php } ?>
+							
+				<?php
+				wp_reset_postdata();
+				
+			} ?>
+				 
+			</div><!-- end flush -->
+			</div><!-- end MIDDLE COLUMN --->
+				
 			<!-- RIGHT COLUMN --->
 			<div id="right_column" class=".hidden-phone">
-				<?php 
-					if ( has_post_thumbnail() ) // check if the post has a Post Thumbnail assigned to it.
-					{ 
-					the_post_thumbnail( 'featured_image_right_column' );
-					?>
-					
-					<p class="featured_image_caption"><?php the_post_thumbnail_caption(); 
-					} 
-					?>
-				</p>
-
 				<?php get_sidebar('page'); ?>
 			</div>
 			<!-- end RIGHT COLUMN --->

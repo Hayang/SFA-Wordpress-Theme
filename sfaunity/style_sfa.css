@@ -9,3 +9,56 @@
 #sfa_title {
 	display: none;
 }
+
+/* NAVBAR COLORS  */
+
+.li_1 {
+	background-color: #ef3b26;
+}
+.li_2 {
+	background-color: #f19228;
+}
+.li_3 {
+	background-color: #63459b;
+}
+.li_4 {
+	background-color: #f7c513;
+}
+.li_5 {
+	background-color: #a29d2b;
+}
+.li_6 {
+	background-color: #ddb589;
+}
+
+/* TRI BOX */
+
+.tri_box_single {
+	background-color: #ce9029;
+}
+
+/* HEADERS */
+h3#left_column_title {
+	color: #F27200;	
+}
+
+	h3#left_column_title a {
+		color: #F27200;
+	}
+	
+#post_body h1,
+#post_body h2,
+#post_body h3 {
+	color: #F27200;
+	line-height: 1.1em;
+}
+
+.search_listing h3 a {
+	color: #F27200;
+}
+
+#post_body h5.event_week_single {
+	margin: 0;
+	color: #F27200;
+	font-weight: normal;
+}

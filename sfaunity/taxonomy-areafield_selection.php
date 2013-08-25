@@ -1,8 +1,9 @@
 <?php
 /*
-Template Name: Faculty List
+Template Name: Faculty and/or Staff List
 */
 ?>
+
 <?php get_header(); ?>
 
 	<!-- MAIN BODY --->	
@@ -16,7 +17,8 @@ Template Name: Faculty List
 			</p>
 			
 			<h3 id="left_column_title">	
-					Faculty and Staff
+				Faculty<br />
+				and Staff
 			</h3>
 			
 			<div id="left_navigation">
@@ -66,52 +68,74 @@ Template Name: Faculty List
 			<!-- END LEFT COLUMN --->	
 			
 			<!-- MIDDLE COLUMN --->
-			<div class="span6" id="post_body">
-			
-			<?php if  ( (strtolower( get_the_title()) == 'faculties') ||( strtolower( get_the_title()) == 'faculty') )
+				<?php if (is_tax()) // If this is a taxonomy page (if it is a Faculty Area/Field Category), give the name of the category.
 				{ ?>
-				<h2 id="page_title"><?php the_title(); ?></h2>
+				<div class="span8" id="post_body">
+					<h2 id="page_title">
+						<?php echo($wp_query->queried_object->name); ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>'); ?>
+					</h2>
 				<?php
-				} else { ?>
-				<h2 id="page_title"><?php echo($wp_query->queried_object->name); ?></h2>
+				} 
+				else { // If this is just a normal page using the "Faculty and/or Staff List" Template, give the title.
+				if (have_posts()) : while (have_posts()) : the_post();?>
+				<div class="span6" id="post_body">
+					<h2 id="page_title">
+						<?php the_title(); ?><?php edit_post_link(' &#9997<span class="post-edit-text"> Click to edit this page</span>','',' '); ?>
+					</h2>
+				<?php endwhile; endif; ?>	
 				<?php } ?>
-			
-				<!-- START SUB CATEGORIES --->
 				
-				<?php if (have_posts()) : while (have_posts()) : the_post();	
-				//~ the_title();
-				if  ( (strtolower( get_the_title()) == 'faculties') ||( strtolower( get_the_title()) == 'faculty') )
-				{ ?>
-					<?php the_content(); ?>
-					<?php
-				} else { ?>
+				<?php the_content(); ?>
+				
+				<!-- START SUB CATEGORIES --->
+				<?php 
+				if (is_tax()) { // If this is a taxonomy page, start printing the posts.
+				$posts = query_posts($query_string . '&posts_per_page=-1&orderby=title&order=asc');
+				$postCount = 0; 
+				if (have_posts()) : while (have_posts()) : the_post(); $postCount += 1;?>
+
+					<?php if ( $postCount % 2 == 1 ) { ?>
+						<div class="row-fluid"> 
+					<?php } ?>
 					
 					<?php $custom_fields = get_post_custom(); ?>
-					<ul>
-						<li>
-							<a href="<?php echo the_permalink(); ?>"><?php echo($custom_fields[fac_first_name][0]. ' ' . $custom_fields[fac_last_name][0]); ?></a>
-						</li>
-						<li><?php echo $custom_fields[job_title][0];  ?></li>
-						<li><?php echo $custom_fields[fac_email][0]; ?></li>
-						<li><?php echo $custom_fields[fac_phone_number][0]; ?></li>
-					</ul>
-				<?php } ?>
-				
+					
+					<ul class="fac_list span6 row-fluid">
+						<div class="span8">
+							<li class="fac_list_title">
+								<h3><a href="<?php echo the_permalink(); ?>"><?php echo($custom_fields[fac_last_name][0]. ', ' . $custom_fields[fac_first_name][0]); ?></a></h3>
+							</li>
+							<li class="fac_list_small"><strong><?php echo $custom_fields[job_title][0];  ?></strong></li>
+							<li class="fac_list_small"><?php echo $custom_fields[fac_email][0]; ?></li>
+							<li class="fac_list_small"><?php echo $custom_fields[fac_phone_number][0]; ?></li>
+						</div>
+						<div class="span4">
+							<?php
+								// Must be inside a loop.
 
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail( array(100,100) );
+								}
+								else {
+									echo '<img width="100" height="100" src="' . get_bloginfo( 'stylesheet_directory' ) . '/img/assets/noimage.png" />';
+								}
+							?>
+						</div>
+					</ul>
+					
+					<?php if ( $postCount % 2 == 0 ) { ?>
+						</div>
+					<?php } ?>
 				
-			<?php endwhile; endif; ?>	
+				<?php endwhile; endif; ?>	
+				
+				<?php if ( $postCount % 2 == 1 ) { ?>
+				</div> 
+				<?php }
+				} ?>
+			
 			<!-- END SUB CATEGORIES --->
-			</div>
-			<!-- END MIDDLE COLUMN --->
-			
-			
-		<!-- RIGHT COLUMN --->
-		<div id="right_column">
-			<div id="right_column_push">
-			<?php get_sidebar('post'); ?>
-			</div>
-		</div> <!-- end RIGHT COLUMN --->
+			</div> <!-- end MIDDLE COLUMN --->
 			
 	</div> <!-- end MAIN BODY --->
-
 <?php get_footer(); ?>

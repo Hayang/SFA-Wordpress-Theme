@@ -23,9 +23,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- Bootstrap -->	
-	<link href="<?php bloginfo('template_directory');?>/css/bootstrap.css" rel="stylesheet" media="screen"> 
-		<!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css-->
-	<link href="<?php bloginfo('template_directory');?>/css/bootstrap-responsive.css" rel="stylesheet"> 
+	<link href="<?php bloginfo('template_directory');?>/bootstrap/bootstrap.css" rel="stylesheet" media="screen"> 
+		<!-- FINALIZED VERISON WILL LINK TO bootstrap.min.css -->
+	<link href="<?php bloginfo('template_directory');?>/bootstrap/bootstrap-responsive.css" rel="stylesheet"> 
 		<!-- FINALIZED VERISON WILL LINK TO bootstrap-responsive.min.css -->
 	
 	<!-- include jQuery -->
@@ -33,8 +33,8 @@
 	
 	<!-- SFA Web Team CSS (style.css) And Custom Style -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	
 	<?php wp_head(); ?> 
-	<!-- SFA Web Team CSS (style.css) And Custom Style -->
 	
 </head>
 	
@@ -43,29 +43,41 @@
 <div id="sub_wrapper">
 	
 	<div class="top_header" >
-    <!-- UCONN HEADER -->
+    <!-- UCONN HEADER --->
 	<div id="uc-header" >
 		<div class="uc-container">
 		<h1 id="uc-identity">
 			<span id="uc-logo" title="University of Connecticut">
 				<a href="http://uconn.edu"> 
 					<span class="uc-header-fallback" id="uc-logo-fallback">
-						<img src="<?php bloginfo('template_directory');?>/img/assets/uconn.png" alt="UCONN"/>
+						<img src="<?php bloginfo('template_directory');?>/img/assets/uconn-white.png" alt="UCONN"/>
 					</span>
 				</a> 
 			</span>
 			<span id="uc-title">
 				<a href="http://uconn.edu">
-					<span id="uc-title-universityof"> 
-						<span class="uc-header-fallback" id="uc-title-universityof-fallback">
-							<img src="<?php bloginfo('template_directory');?>/img/assets/university-of.png" alt="University of"/>
+				
+					<div class="hidden-phone">
+						<span id="uc-title-universityof"> 
+							<span class="uc-header-fallback" id="uc-title-universityof-fallback">
+								<img src="<?php bloginfo('template_directory');?>/img/assets/university-of-white.png" alt="University of"/>
+							</span> 
 						</span> 
-					</span> 
-					<span id="uc-title-connecticut"> 
-						<span class="uc-header-fallback" id="uc-title-connecticut-fallback">
-							<img src="<?php bloginfo('template_directory');?>/img/assets/connecticut.png" alt="Connecticut" />
-						</span>
-					</span> 
+						<span id="uc-title-connecticut"> 
+							<span class="uc-header-fallback" id="uc-title-connecticut-fallback">
+								<img src="<?php bloginfo('template_directory');?>/img/assets/connecticut-white.png" alt="Connecticut" />
+							</span>
+						</span> 
+					</div>
+					
+					<div class="visible-phone">
+						<span id="uc-title-connecticut-full"> 
+							<span class="uc-header-fallback" id="uc-title-connecticut-fallback">
+								<img src="<?php bloginfo('template_directory');?>/img/assets/university-of-connecticut-white.png" alt="Connecticut" />
+							</span>
+						</span> 
+					</div>
+					
 				</a>
 			</span> 
 		</h1>
@@ -83,7 +95,7 @@
 								<input name="cof" type="hidden" value="FORID:10" />
 								<input name="ie" type="hidden" value="UTF-8" />
 							<input type="text" name="q" placeholder="Search..." id="uc-search-field" value="" />
-							<input type="image" id="uc-search-button" alt="Search" src="<?php bloginfo('template_directory');?>/img/assets/search-icon.png" />
+							<input type="image" id="uc-search-button" alt="Search" src="<?php bloginfo('template_directory');?>/img/assets/search-icon-white.png" />
 						</fieldset>
 									</form>
 					</div>
@@ -144,8 +156,7 @@
 			<div class="navbar-inner navbar_inner">
 			<div class="container">			  
 			  <div class="nav-collapse collapse">
-				<?php
-				
+					<?php
 					$args = array(
 						'theme_location' => 'top_nav_menu',
 						'depth'		 => 2,
@@ -156,6 +167,17 @@
 
 					wp_nav_menu($args);
 					?>
+					
+					<!-- This script makes each navigation li item 100% height. -->
+					<script type="text/javascript">
+					maxHeight = 0;
+					$(".li_1,.li_2,.li_3,.li_4,.li_5,.li_6").each(function() {
+						 maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+					})
+					$(".li_2,.li_3,.li_4,.li_5,.li_6,.li_1").each(function() {
+						$(this).css('padding-top', maxHeight - $(this).height() + 'px');
+					}) </script>
+					
 			  </div><!--/.nav-collapse -->
 			</div>
 			</div>

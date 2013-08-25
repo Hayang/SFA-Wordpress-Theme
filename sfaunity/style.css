@@ -79,8 +79,6 @@ License URI:
 	}
 } 
 
-/* End Fonts */
-
 /* --------------------
 	FONT ASSOCIATIONS
  -------------------- */
@@ -117,7 +115,7 @@ height: 100%;
 	min-height: 100%;
 }
 #sub_wrapper {
-	overflow:auto;
+	overflow:visible;
 	padding-bottom: 50px;
 }
 
@@ -212,10 +210,10 @@ height: 100%;
 		#uc-header #uc-title {
 			position:absolute;
 				top:18px;
-				left:124px;
+				left:125px;
 			height:21px;
-			padding-left:9px;
-			border-left:2px solid #3f4760;
+			padding-left:12px;
+			border-left:1px solid #c8ccd5;
 			}
 			#uc-header #uc-title a {
 				display:block;
@@ -302,39 +300,18 @@ height: 100%;
 				float:left;
 				margin-left:10px;
 				}
-				#uc-header .uc-utility-btn-wrap {
-					-webkit-border-radius: 4px;
-					-moz-border-radius: 4px;
-					border-radius: 4px;
-					-moz-box-shadow:    1px 1px 0 0 #000000;
-					-webkit-box-shadow: 1px 1px 0 0 #000000;
-					box-shadow:         1px 1px 0 0 #000000;				
+				#uc-header .uc-utility-btn-wrap {				
 					}
 				#uc-header .uc-utility-btn {
 					display:block;
 					position:relative;
 					width:32px;
 					height:32px;
-					background-color:#27355f;
-					border:1px solid #1e2b51;
-					-webkit-border-radius: 3px;
-					-moz-border-radius: 3px;
-					border-radius: 3px;
-					
-					-moz-box-shadow:    inset 1px 1px 0 #3957b0;
-					-webkit-box-shadow: inset 1px 1px 0 #3957b0;
-					box-shadow:         inset 1px 1px 0 #3957b0;
-					
-					background: #304994;
-						background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMwNDk5NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYzMxNzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-						background: -moz-linear-gradient(top,  #304994 0%, #1c3173 100%); 
-						background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#304994), color-stop(100%,#1c3173)); 
-						background: -webkit-linear-gradient(top,  #304994 0%,#1c3173 100%); 
-						background: -o-linear-gradient(top,  #304994 0%,#1c3173 100%); 
-						background: -ms-linear-gradient(top,  #304994 0%,#1c3173 100%);
-						background: linear-gradient(to bottom,  #304994 0%,#1c3173 100%); 
-						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304994', endColorstr='#1c3173',GradientType=0 ); 
+					background-color: #d8d8d8;
 					}
+					#uc-header .uc-utility-btn:hover {
+						background-color: #aaa;
+						}
 					.ie9 #uc-header .uc-utility-btn {
 						filter:none;
 						}
@@ -372,25 +349,22 @@ height: 100%;
 							}
 						#uc-header .uc-container #uc-search fieldset {
 							border-radius:4px;
-							-moz-box-shadow:  		1px 1px 1px rgba(255,255,255,0.2);
-							-webkit-box-shadow:  	1px 1px 1px rgba(255,255,255,0.2);
-							box-shadow:  			1px 1px 1px rgba(255,255,255,0.2);
 							}
 						#uc-search #uc-search-field {
 							height: auto; /* Added to negate bootstrap */
 							width: 175px;
-							padding: 7px 28px 4px 7px;
+							padding: 9px 28px 4px 9px;
 							background-image: none;
-							background-color: #212976;
-							-moz-box-shadow: 		inset 2px 2px 3px rgba(0,0,0,0.3);
-							-webkit-box-shadow: 	inset 2px 2px 3px rgba(0,0,0,0.3);
-							box-shadow: 			inset 2px 2px 3px rgba(0,0,0,0.3);
-							border-radius: 3px;
+							background-color: #d8d8d8;
 							color: white;
 							line-height:20px;
-							border-top:1px solid #070e24;
-							border-left:1px solid #070e24;
 							}
+							#uc-search #uc-search-field:hover{
+								background-color: #bbb;
+								}
+							#uc-search input,textarea {
+								color: white;
+								}
 						#uc-search #uc-search-button {
 							position: absolute;
 							right: 7px;
@@ -401,7 +375,7 @@ height: 100%;
 
 #uc-header {
 	color:#fff;
-	background-color:#0f1938;
+	background-color:#fff;
 	}
 	
 		.uc-svg #uc-logo-svg {
@@ -431,7 +405,13 @@ height: 100%;
 		border-right:0;
 		}
 }
-	
+
+#uc-title-connecticut-full {
+	position: relative;
+	top:-7px;
+	height:10px;
+	}
+
 @media (max-width: 680px) {
 	#uc-title {
 		width:200px;
@@ -440,12 +420,6 @@ height: 100%;
 		#uc-title a {
 			margin-top:3px;
 			}
-			#uc-title-universityof #uc-title-universityof-svg,
-			#uc-title-connecticut #uc-title-connecticut-svg {
-				position: relative;
-				top:-8px;
-				height:10px;
-				}
 	#uc-search #uc-search-field {
 		width:140px;
 		}
@@ -466,8 +440,8 @@ height: 100%;
  ----------------------------- */
  
 @media (max-width: 767px) {
-  .top_header {
-     margin-left:-20px;
+  #top_header {
+    margin-left:-20px;
 	margin-right:-20px;
   }
 }
@@ -484,7 +458,7 @@ height: 100%;
  ------------------------ */
  
 .school_header {
-	height: 55px;
+	min-height: 55px;
 	letter-spacing: 0.07em;
 }
 
@@ -507,32 +481,14 @@ height: 100%;
 	margin-top: 18px;
 	margin-left: 20px;
 }
-/* END DEPARTMENTAL HEADER */
 
 /* --------------------
 	MAIN NAV BAR
  -------------------- */
  
-.nav_bar{
+.navbar{
 	margin-bottom: 0px;
 	/* overwrites bootstrap to clear the margin */
-}
-
-#sfa_mobilenavbutton {
-	border: 0;
-	background: none;
-	box-shadow: none;
-	float: right;
-	margin-top: 7px;
-}
-
-#sfa_mobilenavbutton img {
-	height: auto;
-}
-
-.navbar .nav {
-	margin: 0 0 0 0;
-	width: 100%; /* sets the percentage of the navigation container */
 }
 
 .navbar_inner {
@@ -543,47 +499,67 @@ height: 100%;
 	border: 0px;
 	background-image: none;
 	background-color: white;
-	min-height: 0;
+	min-height: 30px;
 	width: 100%;
 	margin-bottom: 0px;
-	/* just a bunch of overwrites here */
+	/* these are bootstrap overwrites */
 }
-
-.container .btn-navbar {
-	margin-bottom: 4px;
-	/* overwrites bootstrap fix button margin issue */
-}
-
-.navbar .nav li {
-	min-height: 30px;
-	display: block;
-	max-width: 100%;
-}
-
-.navbar .nav li a {
-	display: block;
-	line-height: 1em;
-	font-size: 16px;
-	text-shadow: none;
-	font-weight: bold;
-	text-transform: uppercase;
-	letter-spacing: 0.07em;
-	color: white;
-	text-indent: -5px;
-	padding: 8px 0px 6px 20px;
-	max-width: 100%;
-		/* Word Wrapping */
-		white-space: pre-wrap;      /* CSS3 */   
-		white-space: -moz-pre-wrap; /* Firefox */    
-		white-space: -pre-wrap;     /* Opera <7 */   
-		white-space: -o-pre-wrap;   /* Opera 7 */    
-		word-wrap: break-word;      /* IE */
-}
-
-	.navbar .nav li a:hover {
-		color: #0f1938;	
-		background-color: inherit;
+	
+	.navbar ul.nav {
+		margin: 0 0 0 0;
+		width: 100%; /* full-width navigation bar */
 	}
+
+		.navbar ul.nav li.li_1,
+		.navbar ul.nav li.li_2,
+		.navbar ul.nav li.li_3,
+		.navbar ul.nav li.li_4,
+		.navbar ul.nav li.li_5,
+		.navbar ul.nav li.li_6 {
+			min-width: 16.6667%;
+			display: block;
+			max-width: 16.6666667%;
+			/* sets each navigation item to 1/6 when viewing on large screens */
+		} 
+
+		@media (max-width: 960px) {
+			.navbar ul.nav li.li_1,
+			.navbar ul.nav li.li_2,
+			.navbar ul.nav li.li_3,
+			.navbar ul.nav li.li_4,
+			.navbar ul.nav li.li_5,
+			.navbar ul.nav li.li_6 {
+				max-width: 100%;
+				display: block;
+				/* sets each navigation item to 100% when past the small-screen breakpoint */
+			}	
+		}
+
+		.navbar .nav li a {
+			color: white;
+			display: block;
+			line-height: 1em;
+			letter-spacing: 0.07em;
+			padding: 8px 0px 6px 15px;
+			font-size: 16px;
+			text-transform: uppercase;
+			text-shadow: none;
+			font-weight: bold;
+				/* Word Wrapping */
+				white-space: pre-wrap;      /* CSS3 */   
+				white-space: -moz-pre-wrap; /* Firefox */    
+				white-space: -pre-wrap;     /* Opera <7 */   
+				white-space: -o-pre-wrap;   /* Opera 7 */    
+				word-wrap: break-word;      /* IE */
+		}
+
+			.navbar .nav li a:hover {
+				color: #0f1938;	
+				background-color: inherit;
+					
+				transition-duration: .15s;
+				-webkit-transition-duration: .15s; /* Safari */
+			}
 
 	.navbar .nav > .active > a,
 	.navbar .nav > .active > a:focus {
@@ -617,12 +593,23 @@ background-color: #F25018;
 /* changes the background color for dropdwon */
 }
 
-/* styling for each one of navigation */
-.nav li {
-	min-width: 16.6667%;
+@media (min-width: 768px) {
+  #top_header {
+    max-width: 16.66666666666666667%;
+  }
 }
 
-/* END MAIN NAV BAR */
+#sfa_mobilenavbutton {
+	border: 0;
+	background: none;
+	box-shadow: none;
+	float: right;
+	margin-top: 7px;
+}
+
+#sfa_mobilenavbutton img {
+	height: auto;
+}
 
 /* --------------------
 	HERO UNIT
@@ -633,7 +620,19 @@ background-color: #F25018;
 	max-height: 410px;
 	border-radius: 0px; /* bootstrap overrule */
 }
-/* END HERO UNIT */
+
+#slider_main .nivo-controlNav {
+	height: 0;
+	padding: 0;
+	overflow: visible;
+	position: relative;
+	top:-50px;
+	z-index: 9999;
+}
+
+#slider_main .nivoSlider {
+	margin: 0;
+}
 
 /* --------------------
 	TRI-BOX UNIT
@@ -646,6 +645,19 @@ background-color: #F25018;
 
 .box_headers h3 {
 	margin: 0;
+	clear: none;
+	display: inline;
+}
+
+.box_headers #cal_icon {
+	display: inline-block;
+	height: 29px;
+	width: 29px;
+	margin-left: 10px;
+	vertical-align: baseline;
+	background-image: url('img/assets/calendar.png');
+	background-position: bottom;
+	background-repeat: no-repeat;
 }
 
 .box_headers h3 a {
@@ -713,7 +725,6 @@ a.box_readmore {
 .right_box {
 	margin-bottom: 10px;
 }
-/*  END THREE CONTENT UNIT */
 
 /* --------------------
 	WORDPRESS CORE
@@ -807,6 +818,7 @@ a img.aligncenter {
 #left_column {
 	position:relative;
 	padding-left:17px;
+	width: 16.52991452991453%;
 }
  
 p#breadcrumbs {
@@ -890,8 +902,9 @@ ul.navigation_list a {
  
 #post_body {
 	position: relative;
-	padding: 53px 20px 60px 0;
+	padding: 53px 20px 60px 9px;
 	min-height: 100%;
+	margin-left: .564102564102564%;
 }
 
 .grid_aligned #post_body {
@@ -900,7 +913,7 @@ ul.navigation_list a {
 }
 
 #post_body .flush {
-	margin-left: -0.427350427350424%;
+	margin-left: -1.427350427350424%;
 }
 
 #post_body h1,
@@ -911,7 +924,6 @@ ul.navigation_list a {
 }
 
 #post_body img {
-	margin-bottom: 20px;
 }
 
 h3#page_blacktitle,
@@ -1097,6 +1109,7 @@ h4.widget_title {
 	vertical-align: top;
 	font-size: 24px;
 	margin-top: 0;
+	margin-left: 15px;
 	font-weight: normal;
 	line-height: 100%;
 }
@@ -1110,7 +1123,7 @@ h5.related {
 
 .widget_content {
 	color: #555;
-	margin-left: 10px;
+	margin-left: 25px;
 	font-size: 16px;
 	line-height: 1.2;
 }
@@ -1205,6 +1218,7 @@ h2#event_page_title {
 	clear: none;
 	display: block;
 	margin-top: 0;
+	margin-bottom: 26px;
 	text-transform: none;
 	font-size: 46.75px;
 }
@@ -1212,9 +1226,20 @@ h2#event_page_title {
 /* DAILY */
 #post_body .event_day_title {
 	color: #93bd0c;
+	margin: 0;
 }
 
-#post_body .event_day_time {
+#post_body .event_day_time{
+	color: #93bd0c;
+	font-weight: normal;
+	margin-top: 0;
+}
+
+#post_body .event_day_location{
+	color: #93bd0c;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .event_day_descr {
@@ -1223,9 +1248,7 @@ h2#event_page_title {
 /* WEEKLY */
 
 #post_body .event_week_day {
-	margin-top: 0;
-	font-weight: normal;
-	text-transform: uppercase;
+	margin: 0 0 5px 0;
 	color: #93bd0c;
 }
 
@@ -1233,9 +1256,9 @@ h2#event_page_title {
 }
 
 #post_body h5.event_week_single {
-	margin: 0;
-	color: #F27200;
+	color: #93bd0c;
 	font-weight: normal;
+	margin-top: 0;
 }
 
 /* MONTHLY */
@@ -1282,7 +1305,7 @@ h2#event_page_title {
 
 
 .events_right_column {
-	padding-top: 135px;
+	padding-top: 145px;
 }
 	
 .events_button {
@@ -1305,10 +1328,39 @@ h2#event_page_title {
 	FACULTY DIRECTORY AND BIOS
  --------------------------------- */
 
+ .row-fluid ul.fac_list {
+	list-style: none;
+	padding: 13px;
+	margin-left:13px;
+}
+
+ul.fac_list:hover {
+	background-color: #eee;
+}
+
+	ul.fac_list .fac_list_title h3{
+		font-size: 24px;
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	
+		ul.fac_list .fac_list_title h3 a {
+			color: inherit;
+		}
+
+	ul.fac_list .fac_list_small {
+		position: relative;
+		line-height: 1.4;
+		font-size: 15px;
+		list-style: none;
+		word-wrap: break-word; 
+	}
+
 #bio_title h2{
 	margin: 0;
 	vertical-align: top;
 }
+
 #bio_title h3{
 	margin-top: 5px;
 	font-size: 24px;
@@ -1331,9 +1383,11 @@ h2#event_page_title {
 	line-height: 1.4;
 	position: relative;
 	padding-left: 90px;
+	height: 20px;
 }
 
 #bio_info ul strong {
+	height: 20px;
 	color: #93bd0c;
 	display: block;
 	position: absolute;
@@ -1434,28 +1488,105 @@ background-color: inherit;
             display: none;
         }
 		
-/* DROPDOWN BOOTSTRAP OVERRIGHT */
+/* DROPDOWN BOOTSTRAP OVERWRITE */
 
-/* FACULTY-MAIN PAGE */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-#faculty_overview  img {
-	float: left;
-	padding-right: 20px;
-	max-height: 200px;
-	max-width: 200px;
-}
-
-#faculty_overview  p {
-	height: 200px;
-	vertical-align: middle;
-}
-
-#faculty_cat_list h2 {
-	float: left;
+	## UC Slideshow Widget
 	
-}
+		- this one is weird, but it's what I could think of
+		- would prefer a solution with more variable hieghts. 
+		- maintains fixed aspect ratio across all widhts and breakpoints. 
+		
+*/						
+	.uc-ssw {
+		border: none;
+		}
+		.uc-ssw .theme-light.slider-wrapper {
+			padding:0 !important;
+			}
+		.uc-ssw .nivoSlider {
+			overflow: hidden;
+			margin-bottom: 0 !important;
+			}
+			/* default for older browsers. */
+			.span3 .uc-ssw .nivoSlider {
+				height:86px;
+				}
+			.span4 .uc-ssw .nivoSlider {
+				height: 117px;
+				}
+			.span6 .uc-ssw .nivoSlider {
+				height: 179px;
+				}
+			.span8 .uc-ssw .nivoSlider {
+				height: 241px;
+				}
+			.span12 .uc-ssw .nivoSlider {
+				height:366px;
+				}
+			
+			@media (min-width: 1200px) {
+				.span3 .uc-ssw .nivoSlider {
+					height:105px;
+					}
+				.span4 .uc-ssw .nivoSlider {
+					height: 144px;
+					}
+				.span6 .uc-ssw .nivoSlider {
+					height: 222px;
+					}
+				.span8 .uc-ssw .nivoSlider {
+					height: 300px;
+					}
+				.span12 .uc-ssw .nivoSlider {
+					height:456px;
+					}
+				}
+			@media (min-width: 980px) and (max-width: 1199px) {
+				
+				}
+			@media (min-width: 480px) and (max-width: 979px)  {
+				.span3 .uc-ssw .nivoSlider {
+					height:65px;
+					}
+				.span4 .uc-ssw .nivoSlider {
+					height: 89px;
+					}
+				.span6 .uc-ssw .nivoSlider {
+					height: 137px;
+					}
+				.span8 .uc-ssw .nivoSlider {
+					height: 185px;
+					}
+				.span12 .uc-ssw .nivoSlider {
+					height:282px;
+					}
+				}
+			@media (max-width: 479px) {
+				.span3 .uc-ssw .nivoSlider,
+				.span4 .uc-ssw .nivoSlider,
+				.span6 .uc-ssw .nivoSlider,
+				.span8 .uc-ssw .nivoSlider,
+				.span12 .uc-ssw .nivoSlider {
+					height:117px;
+					}
+				}
 
-/* END FACULTY-MAIN PAGE */
-
+			.uc-ssw .nivoSlider img {
+				min-width: 100%;
+				min-height: 100%;
+				}
+				.
+			.uc-ssw .slider-wrapper	{
+				padding: 0 !important;
+				}
+				
+				
+		#home1 .nivoSlider a.nivo-imageLink {
+			width:auto !important;
+			height: auto !important;
+			min-height: 100% !important;
+			min-width: 100% !important;
+			}
 

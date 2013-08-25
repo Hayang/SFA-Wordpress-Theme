@@ -81,7 +81,7 @@ function add_faculty_custom_post() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		//~ 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
-		'supports' => array( 'page-attributes', 'author', 'thumbnail', 'excerpt', 'editor',)
+		'supports' => array( 'page-attributes', 'author', 'thumbnail', 'editor',)
 	); 
 
 	register_post_type( 'faculty', $args );
@@ -144,8 +144,15 @@ $meta_box['faculty'] = array(
             'id' => 'fac_phone_number',
             'type' => 'text',
             'default' => ''
-        )
-    )
+        ),
+        array(
+            'name' => 'Fax Number',
+            'desc' => '',
+            'id' => 'fac_fax_number',
+            'type' => 'text',
+            'default' => ''
+        ),
+	)
 );
 
 add_action('admin_menu', 'plib_add_box');

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-	<?php 
 
+	<?php 
 		$category_name = single_cat_title('',FALSE);
 		$category_id = get_cat_ID( $category_name );  
 		$category = get_category($category_id ,false);
@@ -14,6 +14,7 @@
 			$parent_cat_id = $category->term_id ;
 		}
 		?>
+		
 	<!-- MAIN BODY --->	
 	<div class="row-fluid">
 		
@@ -60,18 +61,18 @@
 				<?php } else { ?> <!-- if it's a post after first post -->
 				
 					<?php
-					if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?>
-					<div class="row-fluid listing_row"> 
+					if ( ($postCount > 1) && ($postCount % 2 == 0) ) { ?> <!-- if the post is the first of two in a row, start a new row -->
+						<div class="row-fluid listing_row"> 
 					<?php } ?>
 					
-						<div class="span6" >
+						<div class="span6">
 						<a href="<?php the_permalink(); ?>">
 							<div class="sub_featured_image">
-							<?php 
-							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-							the_post_thumbnail( 'listing_small_featured_image' );
-							}
-							?>
+								<?php 
+								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								the_post_thumbnail( 'listing_small_featured_image' );
+								}
+								?>
 							</div>
 							<h4 class="post_listing_title"><?php the_title();?> </h4>
 						</a>

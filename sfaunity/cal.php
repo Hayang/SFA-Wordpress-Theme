@@ -14,8 +14,6 @@ if(isset($_GET['ajax'])){
 	curl_close($ch);
 	exit();
 }
-
-
 	
 					
 if (isset($_GET['t'])){
@@ -170,19 +168,21 @@ var $this_month = array();
 				<div class="row-fluid">
 
 					<!-- Image, for the first event only -->
-					<img class="span3 event_day_image featued_image_1col" src="http://web2.uconn.edu/wdlcalendar/Images/events/l_<?php echo ($occurrence->image)?>" />
+					<img class="span3 event_day_image" src="http://web2.uconn.edu/wdlcalendar/Images/events/l_<?php echo ($occurrence->image)?>" />
 					
-					<div class="span9"> 
+					<div class="span9">
 							<!-- First event for the day -->
 								<a href="http://web2.uconn.edu/wdlcalendar/index.php/occurrence/<?php echo $occurrence->id ?>">
-								<h3 class="event_day_title">
-									<span class="event_day_time"><?php echo(date('g:iA',$occurrence->start) )?></span><span class="event_day_location"> at the <?php echo ($occurrence->building); ?></span>
-									<br />
-									<?php echo ($occurrence->title); ?>
-								</h3>
+									<h3 class="event_day_title">
+										<?php echo ($occurrence->title); ?><span class="event_day_time"> at <?php echo(date('g:iA',$occurrence->start) )?> </span>
+										<br />
+									</h3>
+									<p class="event_day_location"> <?php echo ($occurrence->building); ?></p>
 								</a>
+								
+								<p class="event_day_descr"> 
 								<?php echo ($occurrence->description); ?>
-							
+								</p>
 
 					</div>
 				</div> <!-- END ONE EVENT -->
@@ -252,13 +252,13 @@ var $this_month = array();
 					<img class="span3 event_week_image" src="http://web2.uconn.edu/wdlcalendar/Images/events/l_<?php echo ($occurrence->image)?>" />
 					
 					<div class="span9">
-					<h3 class="event_week_day">On <?php if (!$same_day) echo date('l',$occurrence->start); ?><span class="event_week_daynum"> <?php if (!$same_day) echo date('j',$occurrence->start); ?></span></h3>
+					<h3 class="event_week_day"><?php if (!$same_day) echo date('l',$occurrence->start); ?><span class="event_week_daynum"> <?php if (!$same_day) echo date('j',$occurrence->start); ?></span></h3>
 					
 						<!-- First event for the day -->
 						<a href="http://web2.uconn.edu/wdlcalendar/index.php/occurrence/<?php echo $occurrence->id ?>">
-							<h5 class="event_week_single">
-								<b><?php echo(date('g:iA ',$occurrence->start) )?></b> - <?php echo ($occurrence->title); ?>
-							</h5>
+							<p class="event_week_single">
+								<b><?php echo(date('g:iA ',$occurrence->start) )?></b><?php echo ($occurrence->title); ?>
+							</p>
 						</a>
 
 					</div>

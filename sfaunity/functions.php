@@ -1,7 +1,17 @@
 <?php
 
-// Add Faculty Custom Post Types
+// Permalink by slug
+function rh_get_page_permalink($name)
+{
+$page_id = rh_get_pageid($name);
+return get_permalink($page_id);
+}
+
+// Add Custom Post Types
 require('faculty_function.php');
+
+//Event date meta, for the homepage's events/whats'on combined feed.
+require('event_date_meta_boxes.php');
 
 // Add post thumbnail support
 add_theme_support( 'post-thumbnails' ); 
@@ -22,7 +32,7 @@ function the_post_thumbnail_caption() {
   }
 }
 // Register RoyalSlider Files
-register_new_royalslider_files(1);
+//register_new_royalslider_files(1);
 
 // When Admin Bar at top is not activated, don't insert a blank space
 //~ function my_function_admin_bar(){ return false; }
@@ -33,9 +43,11 @@ register_nav_menus( array(
 ) );
 
 // include jQuery
-add_action( 'wp_enqueue_script', 'load_jquery' );
-function load_jquery() {
-    wp_enqueue_script( 'jquery' );
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
 }
 
 /**
@@ -152,7 +164,6 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 
 // Main Sidebar Register
 
-
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
 		'name' => 'Sidebar Page',
@@ -167,6 +178,13 @@ if ( function_exists('register_sidebar') ) {
 		'after_widget' => '</div></div>',
 		'before_title' => '<h4 class="widget_title">',
 		'after_title' => '</h4><div class="widget_content">'
+	));
+	register_sidebar(array(
+		'name' => 'Homepage Slider',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => ''
 	));
 }
 
@@ -270,7 +288,7 @@ function sfa_theme_customizer_register($wp_customize) {
  
     ));
 	$wp_customize->add_control('tri_content_left', array(
-    'label'      => __('Left Box Content (Enter Category Slug Only)', 'uconn'),
+    'label'      => __('Left Box Content to Appear with Events (Enter Category Slug Only)', 'uconn'),
     'section'    => 'tri_box_options',
     'settings'   => 'tri_left_content',
     ));
@@ -280,7 +298,7 @@ function sfa_theme_customizer_register($wp_customize) {
  
     ));
 	$wp_customize->add_control('tri_select_left', array(
-    'label'      => __('Left Box Label', 'uconn'),
+    'label'      => __('Events Combined Postings Label', 'uconn'),
     'section'    => 'tri_box_options',
     'settings'   => 'tri_left_setting',
     ));
