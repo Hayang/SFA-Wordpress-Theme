@@ -350,6 +350,8 @@ function sfa_theme_customizer_register($wp_customize) {
     'settings'   => 'tri_right_content',
     ));
 	
+// NAVIGATION HEIGHT
+	
 }
 
 function sfa_css_customizer () {

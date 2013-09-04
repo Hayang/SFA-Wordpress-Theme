@@ -1,0 +1,9 @@
+.navbar ul.nav li.li_1 a,
+.navbar ul.nav li.li_2 a,
+.navbar ul.nav li.li_3 a,
+.navbar ul.nav li.li_4 a,
+.navbar ul.nav li.li_5 a,
+.navbar ul.nav li.li_6 a{
+	height: 33px;
+	/* sets each navigation item to 1/6 when viewing on large screens */
+} 

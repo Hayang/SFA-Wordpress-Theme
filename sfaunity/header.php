@@ -35,7 +35,6 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	
 	<?php wp_head(); ?> 
-	
 </head>
 	
 <body>
@@ -168,15 +167,7 @@
 					wp_nav_menu($args);
 					?>
 					
-					<!-- This script makes each navigation li item 100% height. -->
-					<script type="text/javascript">
-					maxHeight = 0;
-					$(".li_1,.li_2,.li_3,.li_4,.li_5,.li_6").each(function() {
-						 maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-					})
-					$(".li_2,.li_3,.li_4,.li_5,.li_6,.li_1").each(function() {
-						$(this).css('padding-top', maxHeight - $(this).height() + 'px');
-					}) </script>
+
 					
 			  </div><!--/.nav-collapse -->
 			</div>

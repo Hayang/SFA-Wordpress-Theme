@@ -32,8 +32,12 @@
 
 /* TRI BOX */
 
+.box_headers h3 {
+	color: #434343;
+}
+
 .tri_box_single {
-	background-color: #31547A;
+	background-color: #609cc7;
 }
 
 /* HEADERS */
